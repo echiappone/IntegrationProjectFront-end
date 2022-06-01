@@ -10,7 +10,9 @@ function Navbar() {
                     <a href="/">DOAQUI!</a>
                     <a href="/">Como funciona</a>
                     <a href="/doacoes">Quero doar</a>
+                    <a href="/">Nossas ações</a>
                     <a href="/login">Sobre nós</a>
+
                 </div>
                 <div id="menu_social_media">
                     {/* Icone Facebook */}
