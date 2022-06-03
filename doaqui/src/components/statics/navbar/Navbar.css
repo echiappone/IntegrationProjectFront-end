@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-nav {
+/* Estilo do menu navbar"*/
+#menu {
     position: fixed;
     top: 0;
-    width: 99%;
+    width: 98%;
     height: 70px;
 
     display: flex;
@@ -12,36 +13,35 @@ nav {
     align-items: center;
 }
 
-
-/* menu_buttons */
-#menu_buttons a {
+/* Estilo dos botoes do menu navbar"*/
+.menu-item {
+    cursor: pointer !important;
+    color: white !important;
     text-decoration: none;
-    margin: 70px 50px 70px 50px;
     font-family: 'Open Sans', sans-serif;
-    color: black;
     font-weight: bold;
+    margin: 60px;
 }
 
-#menu_buttons :nth-child(1){
-    cursor: pointer;
-    padding: 10px 30px;
-    border-radius: 10px;
-    background-color: #E67E22
-    ;
-    color: white;
-    transition-delay: 800ms;
+/* Estilo do botao "Doaqui"*/
+.button-doaqui{
+    cursor: pointer !important;
+    padding: 10px 30px !important;
+    border-radius: 10px !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+    color: white !important;
+    outline: 4px solid white;
+    outline-offset: -4px;
 }
 
-#menu_buttons :nth-child(1):hover{
-    background-color: rgba(255, 166, 0, 0.712);
-    border: 1px solid black;
-    color: black;
+/* Efeito quando passa o mouse em cima do botao "Doaqui"*/
+.button-doaqui:hover{
+    background-color: #E67E22 !important;
+    color: white !important;
 }
 
-/* menu_social_media */
-
+/* Facebook, instagram e Linkedin*/
 #menu_social_media svg {
     width: 43px;
     height: 45px;
-    transition-delay: 800ms;
 }
