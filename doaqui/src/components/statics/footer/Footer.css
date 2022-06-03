@@ -1,3 +1,14 @@
 .radius {
     border-radius: 10px;
 }
+
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding: 50px 0 2px;
+    border-top-left-radius: 180px;
+    font-size: 13px;
+    line-height: 16px;
+}
