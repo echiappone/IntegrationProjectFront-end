@@ -86,7 +86,7 @@ function Navbar() {
                         <Link to='/login' className='text-decorator-none'>
                             <Box mx={1} className='menu-item'>
                                 <Typography variant="h6">
-                                    Cadastrar Ong
+                                    Cadastrar Doação
                                 </Typography>
                             </Box>
                         </Link>
