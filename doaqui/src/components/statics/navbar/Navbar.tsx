@@ -18,7 +18,7 @@ function Navbar() {
 
                     {/*Logo*/}
                     <Link to='/' className='text-decorator-none'>
-                        <Box className='button-doaqui'>
+                        <Box id='button-logo'>
                             <Typography variant="h5">
                                 Doaqui
                             </Typography>

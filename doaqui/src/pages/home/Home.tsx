@@ -14,7 +14,7 @@ function Home() {
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
                         </Box>
-                        <Button variant="outlined" className='botao'>Doa aqui</Button>
+                        <Button variant="outlined" className='button-doaqui'>Doa aqui</Button>
                     </Box>
                 </Grid>
                 <Grid item xs={6} >

@@ -7,13 +7,22 @@
    font-weight: bold !important;
 }
 
-.botao{
-    border-color: rgb(255, 255, 255) !important;
-    background-color: #E67E22 !important;
-    color: rgb(255, 255, 255) !important;
-    font-weight: bold !important;
-}
-
 .doacoes{
     background-color: white;
+}
+
+/* Estilo do botao "Logo Doaqu"*/
+.button-doaqui{
+    cursor: pointer !important;
+    padding: 10px 30px !important;
+    border-radius: 10px !important;
+    background-color: #E67E22 !important;
+    color: white !important;
+    
+}
+
+/* Efeito quando passa o mouse em cima do botao "Logo Doaqui"*/
+.button-doaqui:hover{
+    background-color: #331B3B !important;
+    color: white !important;
 }

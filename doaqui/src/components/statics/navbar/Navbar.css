@@ -16,27 +16,26 @@
 /* Estilo dos botoes do menu navbar"*/
 .menu-item {
     cursor: pointer !important;
-    color: white !important;
+    color: #331B3B !important;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     margin: 60px;
 }
 
-/* Estilo do botao "Doaqui"*/
-.button-doaqui{
+/* Estilo do botao "Logo Doaqui"*/
+#button-logo{
     cursor: pointer !important;
     padding: 10px 30px !important;
     border-radius: 10px !important;
-    background-color: rgba(255, 255, 255, 0) !important;
+    background-color: #E67E22 !important;
     color: white !important;
-    outline: 4px solid white;
-    outline-offset: -4px;
+    
 }
 
-/* Efeito quando passa o mouse em cima do botao "Doaqui"*/
-.button-doaqui:hover{
-    background-color: #E67E22 !important;
+/* Efeito quando passa o mouse em cima do botao "Logo Doaqui"*/
+#button-logo:hover{
+    background-color: #331B3B !important;
     color: white !important;
 }
 
@@ -45,3 +44,8 @@
     width: 43px;
     height: 45px;
 }
+
+/* colocar borda interna
+outline: 4px solid white;
+outline-offset: -4px;
+*/

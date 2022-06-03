@@ -1,7 +1,25 @@
+.box1{
+    background-color: #E67E22;
+    height: 120px;
+}
+
+.box2{
+    background-color: #E67E22;
+    height: 60px;
+}
+
+.redes{
+    font-size: 60px !important;
+    color: white;
+}
+
+.textos{
+   color: white;
+}
+
 .radius {
     border-radius: 10px;
 }
-
 footer{
     width: 100%;
     position: absolute;

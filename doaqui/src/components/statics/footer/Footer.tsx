@@ -1,39 +1,51 @@
 import React from 'react';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import GithubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Box, Grid } from '@mui/material';
-import { borderRadius } from '@mui/system';
+import './Footer.css'
 
 function Footer() {
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
-                    <Box style={{ backgroundColor: "#E67E22", height: "120px" }}>
+                    
+                    {/*flooter box 1 */}
+                    <Box className='box1'>
+
+                        {/*Siga-nos */}
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos no LinkedIn </Typography>
+                            <Typography variant="h5" align="center" gutterBottom className='textos'>Siga-nos no LinkedIn </Typography>
                         </Box>
+
+                        {/*LinkedIn de todos do grupo 02 */}
                         <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://www.facebook.com/generationbrasil" target="_blank">
-                                <img src="" alt="" />
+
+                            {/*LinkedIn Erick */}
+                            <a href="https://www.linkedin.com/in/erickchiappone/" target="_blank">
+                                <LinkedInIcon className='redes'/>
                             </a>
-                            <a href="https://www.instagram.com/generationbrasil/" target="_blank">
-                                <InstagramIcon style={{ fontSize: 60, color: "white" }} />
+
+                            {/*LinkedIn Naomy */}
+                            <a href="https://www.linkedin.com/in/naomy-santana-77900a211/" target="_blank">
+                                <LinkedInIcon className='redes'/>
                             </a>
-                            <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank">
-                                <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
+
+                            {/*LinkedIn Yasmin */}
+                            <a href="https://www.linkedin.com/in/yasmim-cristine-5b803523b/" target="_blank">
+                                <LinkedInIcon className='redes'/>
                             </a>
                         </Box>
                     </Box>
-                    <Box style={{ backgroundColor: "#E67E22", height: "60px" }}>
+
+                    {/*flooter box 2 */}
+                    <Box className='box2'>
                         <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >
-                            Todos os direitos reservados ao Tive Dev 2 .NET Generation © 2022 Copyright:</Typography>
+                            <Typography variant="subtitle2" align="center" gutterBottom className='textos'>
+                            Todos os direitos reservados ao Grupo 02 Turma 01 .NET FullStack Generation Brasil © 2022</Typography>
                         </Box>
                         <Box>
                             <a target="_blank" href="https://brasil.generation.org">
-                                <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">brasil.generation.org</Typography>
+                                <Typography variant="subtitle2" gutterBottom className='textos' align="center">https://brazil.generation.org/</Typography>
                             </a>
                         </Box>
                     </Box>
