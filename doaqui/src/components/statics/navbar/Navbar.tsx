@@ -83,7 +83,7 @@ function Navbar() {
                         </Link>
 
                         {/*Botão cadastrar Doação*/}
-                        <Link to='/login' className='text-decorator-none'>
+                        <Link to='/cadastroDoacoes' className='text-decorator-none'>
                             <Box mx={1} className='menu-item'>
                                 <Typography variant="h6">
                                     Cadastrar Doação
