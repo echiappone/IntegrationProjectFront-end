@@ -8,6 +8,8 @@ import Login from './pages/login/Login';
 import Home from "./pages/home/Home"
 import './App.css';
 
+import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
+
 
 function App() {
   return(
@@ -22,6 +24,9 @@ function App() {
           <Route path="/doacoes" element={<Doacoes />} />
           
           <Route path="/cadastroDoacoes" element={<CadastroDoacoes />} />
+
+          <Route path="/cadastroUsuario" element={<CadastroUsuario />} />
+          
 
         </Routes>
       </div>
