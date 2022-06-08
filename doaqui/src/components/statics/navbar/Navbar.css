@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /* Estilo do menu navbar"*/
@@ -6,46 +7,65 @@
     top: 0;
     width: 98%;
     height: 70px;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+>>>>>>> ab2f69e0d18b02b371f4d44f5a98c596a1550f48
 
+nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 50px 100px;
+
 }
 
-/* Estilo dos botoes do menu navbar"*/
-.menu-item {
-    cursor: pointer !important;
-    color: #331B3B !important;
+nav section {
+    z-index: 1;
+}
+
+nav section a {
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    margin: 60px;
+    margin-left: 0.5rem;
+
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: black;
+
+    transition: 900ms;
+
+    z-index: 1;
 }
 
-/* Estilo do botao "Logo Doaqui"*/
-#button-logo{
-    cursor: pointer !important;
-    padding: 10px 30px !important;
-    border-radius: 10px !important;
-    background-color: #E67E22 !important;
-    color: white !important;
-    
+nav section a:hover {
+    background-color: rgba(255, 166, 0, 0.307);
 }
 
-/* Efeito quando passa o mouse em cima do botao "Logo Doaqui"*/
-#button-logo:hover{
-    background-color: #331B3B !important;
-    color: white !important;
+nav section svg path{
+    color:green;
 }
 
-/* Facebook, instagram e Linkedin*/
-#menu_social_media svg {
-    width: 43px;
-    height: 45px;
+nav section svg:hover {
+    fill: rgba(255, 166, 0, 0.327);
+    transform: scale(1.1);
 }
 
-/* colocar borda interna
-outline: 4px solid white;
-outline-offset: -4px;
-*/
+#menu_sections :nth-child(1){
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    padding: 10px 40px;
+    margin-left: 1rem;
+    background-color: rgb(255, 166, 0);
+    color: rgb(255, 255, 255);
+}
+
+#social_media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 2px;
+    margin-right: 25px;
+    z-index: 2;
+}
+

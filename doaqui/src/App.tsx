@@ -1,38 +1,35 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/statics/navbar/Navbar';
-import Footer from './components/statics/footer/Footer';
-import CadastroDoacoes from './pages/cadastroDoacoes/CadastroDoacoes';
-import Doacoes from './pages/doacoes/Doacoes';
-import Login from './pages/login/Login';
 import Home from "./pages/home/Home"
 import './App.css';
 
-import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
-
-
 
 function App() {
+<<<<<<< HEAD
   return(
     <Router>
       <Navbar />
 
         <Routes> // Antigo Switch
+=======
+  return (
+    <main id='app'>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+>>>>>>> ab2f69e0d18b02b371f4d44f5a98c596a1550f48
           
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/doacoes" element={<Doacoes />} />
-          
-          <Route path="/cadastroDoacoes" element={<CadastroDoacoes />} />
-
-          <Route path="/cadastroUsuario" element={<CadastroUsuario />} />
-          
-
         </Routes>
+<<<<<<< HEAD
 
       <Footer />
     </Router>
+=======
+      </Router>
+      <img id='background' src="https://i.imgur.com/vcW2lYW.png" alt="Back" />
+    </main>
+>>>>>>> ab2f69e0d18b02b371f4d44f5a98c596a1550f48
   );
 }
 
