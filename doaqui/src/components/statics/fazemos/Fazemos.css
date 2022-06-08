@@ -46,14 +46,14 @@
     width: 70%;
 }
 
-footer{
+#como_funciona footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-footer p {
+#como_funciona footer p {
 
     line-height: 1.5;
 
