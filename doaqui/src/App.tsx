@@ -16,7 +16,7 @@ function App() {
   return(
     <Router>
       <Navbar />
-      <div style={{ minHeight: '100vh' }}>
+
         <Routes> // Antigo Switch
           
           <Route path="/" element={<Home />} />
@@ -30,7 +30,7 @@ function App() {
           
 
         </Routes>
-      </div>
+
       <Footer />
     </Router>
   );
