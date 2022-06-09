@@ -58,3 +58,25 @@ nav section svg:hover {
     z-index: 2;
 }
 
+@media (max-width: 1200px) {
+    nav {
+        align-items: flex-start;
+        padding: 50px 10px;    
+    }
+
+    nav section a {
+        margin-left: 0.3rem;
+        padding: 3px 10px;
+        transition: 900ms;
+    }
+
+    #social_media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        padding-top:  0px;
+        margin-right: 0px;
+
+    }
+}

@@ -11,10 +11,9 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
-          
         </Routes>
       </Router>
-      <img id='background' src="https://i.imgur.com/vcW2lYW.png" alt="Back" />
+      
     </main>
   );
 }

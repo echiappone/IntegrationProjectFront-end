@@ -1,28 +1,30 @@
-.caixa{
-    background-color: #05C19C;
+#background {
+    position: absolute;
+    width: 55%;
+    top: -60px;
+    right: 0px;
+    max-width: 700px;
+    max-height:1000px;
 }
 
-.titulo{
-   color: white !important;
-   font-weight: bold !important;
+@media (max-width: 1330px) {
+    #background {
+        top: -40px;
+        right: -5%;
+    }
 }
 
-.doacoes{
-    background-color: white;
+@media (max-width: 1170px) {
+    #background {
+        top: -40px;
+        right: -5%;
+        width: 50%;
+        transition: 900ms;
+    }
 }
 
-/* Estilo do botao "Logo Doaqu"*/
-.button-doaqui{
-    cursor: pointer !important;
-    padding: 10px 30px !important;
-    border-radius: 10px !important;
-    background-color: #E67E22 !important;
-    color: white !important;
-    
-}
-
-/* Efeito quando passa o mouse em cima do botao "Logo Doaqui"*/
-.button-doaqui:hover{
-    background-color: #331B3B !important;
-    color: white !important;
+@media (max-width: 1000px) {
+    #background {
+        display: none;
+    }
 }
