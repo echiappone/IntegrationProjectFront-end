@@ -1,21 +1,24 @@
 .Navbar {
-    height: 60px;
+    padding: 10px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #5265c4;
+    background: transparent;
 }
 
 .Navbar>.nav-logo {
+    font-family: 'Bebas Neue';
     font-weight: 700;
     font-size: 21px;
     margin: 15px;
-    color: #ffffff;
+    color: #331B3B;
 }
 
 .Navbar>.nav-items>a {
-    color: #ffffff;
+    color: #331B3B;
+    font-family: 'Bebas Neue';
     font-size: 16px;
+    font-weight: bold;
     text-decoration: none;
     margin: 15px;
     position: relative;
@@ -33,7 +36,7 @@
     bottom: 0;
     width: 0;
     height: 2px;
-    background: #ffffff;
+    background: #331B3B;
     transition: all 0.45s;
 }
 
@@ -80,7 +83,7 @@
         position: relative;
         width: 32px;
         height: 2px;
-        background: #ffffff;
+        background: #331B3B;
         transition: all 0.45s ease-in-out;
     }
 
@@ -89,7 +92,7 @@
         content: "";
         position: absolute;
         height: 2px;
-        background: #ffffff;
+        background: #331B3B;
         border-radius: 2px;
         transition: all 0.45s ease-in-out;
     }

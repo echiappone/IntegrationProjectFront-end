@@ -5,14 +5,14 @@ import Banner from '../../components/statics/banner/Banner';
 import Fazemos from '../../components/statics/fazemos/Fazemos';
 import Contribuir from '../../components/statics/contribuir/Contribuir';
 import Footer from '../../components/statics/footer/Footer';
-import Navbar from '../../components/statics/navbar/Navbar';
+import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
 import NavbarErick from '../../components/statics/navbarErick/NavbarErick';
 
 function Home() {
     return (
         <>
             <img id='background' src="https://i.imgur.com/vcW2lYW.png" alt="Back" />
-            <Navbar />
+            <NavbarIndex />
             <Banner />
             <Fazemos />
             <Contribuir />

@@ -5,6 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from "react-use-localstorage";
 import { login } from "../../services/Service";
 import Usuario from "../../models/Usuario";
+import Footer from '../../components/statics/footer/Footer';
+import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
+import NavbarErick from '../../components/statics/navbarErick/NavbarErick';
+import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 import './Login.css';
 
 function Login() {
@@ -56,7 +60,7 @@ function Login() {
     }, [token, navigate]);
 
     return (
-        <>
+        <>  <NavbarPages />
             <Grid container direction='row' justifyContent='center' alignItems='center'>
                 <Grid alignItems='center' xs={6}>
                     <Box paddingX={20}>
@@ -93,6 +97,7 @@ function Login() {
 
                 </Grid>
             </Grid>
+            <Footer />
         </>
     );
 }

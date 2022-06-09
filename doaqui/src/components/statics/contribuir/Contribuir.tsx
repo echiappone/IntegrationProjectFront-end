@@ -15,14 +15,15 @@ function Contribuir() {
                         <p>
                             Se você é uma EMPRESA ou possui CNPJ e gostaria de fazer uma doação, clique no botão abaixo:
                         </p>
-                        <a href="">EMPRESA</a>
+                        <a href="/fazer-doacao">EMPRESA</a>
                     </article>
                     <article>
-                        <img src="https://i.imgur.com/Sfyc4ZH.png" alt="" />
+                        <img src="https://i.imgur.com/Sfyc4ZH.png" alt="Ong" />
                         <p>
                             Se você é uma ONG e gostaria de poder receber doações, clique no botão abaixo:
                         </p>
-                        <a href="">ONG</a>
+                        <a href="/cadastro-usuario">ONG</a>
+                        
                     </article>
                 </section>
             </main>

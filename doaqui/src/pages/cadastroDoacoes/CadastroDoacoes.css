@@ -1,36 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body{
-    background-color: #05C19C;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    min-height: 100vh;
-}
-
 .imagem2{
-    background-image: url(https://www.santos.sp.gov.br/static/files_www/styles/newspagemodal/public/field/image/alimentosolidario_2.png);
+    background-image: url(https://observatorio3setor.org.br/wp-content/uploads/2022/02/top-view-vegetables-fruits-bag-scaled.jpg);
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;
     background-size: cover;
-    background-position: right;
+    background-position: center;
 }
 
 .textos2{
     font-weight: bold !important;
- }
+}
 
- .btnCancelar{
-     margin-right: 20px !important;
- }
+.btnCancelar{
+    margin-right: 20px !important;
+}

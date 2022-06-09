@@ -1,21 +1,31 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import './Navbar.css'
+import './NavbarIndex.css'
 
 
-function Navbar() {
+function NavbarIndex() {
     return (
         <>
             <nav>
-                <section id='menu_sections'>
-                    <a href="#doaqui">DOAQUI!</a>
-                    <a href="#como_funciona">Como Funciona</a>
-                    <a href="#quero_doar">Quero Doar</a>
-                    <a href="#nossas_acoes">Nossas Ações</a>
-                    <a href="#sobre_nos">Sobre Nós</a>
+
+                <section id='nav_logo'>
+                    <a href="/" className='logo'></a>
                 </section>
 
+                <section id='nav_itens'>
+                    <a href="#como_funciona">Como Funciona</a>
+                    <a href="#nossas_acoes">Nossas Ações</a>
+                    <a href="#sobre_nos">Sobre Nós</a>
+                    <a href="/fazer-doacao">Quero Doar</a>
+                </section>
+
+                <section id='nav_itens'>
+                    <a href="/cadastro-usuario">Cadastrar ONG</a>
+                    <a href="/login">Login</a>
+                </section>
+
+                {/*
                 <section id='social_media'>
                     <svg width="43" height="45" viewBox="0 0 63 65" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M49.3079 43.0028C46.3818 47.9702 41.3283 51.9318 35.7455 53.9043C30.1641 55.8763 24.1689 55.8248 19.297 52.955C14.4251 50.0852 11.4736 44.8665 10.4926 39.0289C9.51124 33.1897 10.5262 26.8493 13.4523 21.8818C16.3784 16.9144 21.4319 12.9529 27.0147 10.9804C32.5961 9.00835 38.5913 9.05982 43.4632 11.9296C48.3351 14.7995 51.2866 20.0181 52.2676 25.8558C53.2489 31.6949 52.234 38.0353 49.3079 43.0028Z" stroke="#331B3B" stroke-opacity="0.64" stroke-width="2" />
@@ -32,9 +42,10 @@ function Navbar() {
                         <path d="M49.3076 43.0028C46.3815 47.9702 41.328 51.9318 35.7452 53.9043C30.1638 55.8763 24.1686 55.8248 19.2967 52.955C14.4248 50.0852 11.4733 44.8665 10.4922 39.0289C9.51094 33.1897 10.5259 26.8493 13.452 21.8818C16.3781 16.9144 21.4316 12.9529 27.0144 10.9804C32.5958 9.00835 38.591 9.05982 43.4629 11.9296C48.3348 14.7995 51.2863 20.0181 52.2673 25.8558C53.2486 31.6949 52.2337 38.0353 49.3076 43.0028Z" stroke="#331B3B" stroke-opacity="0.64" stroke-width="2" />
                     </svg>
                 </section>
+                */}
             </nav>
         </>
     )
 }
 
-export default Navbar;
+export default NavbarIndex;

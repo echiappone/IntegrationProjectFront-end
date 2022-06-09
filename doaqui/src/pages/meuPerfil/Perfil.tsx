@@ -1,12 +1,13 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import Footer from '../../components/statics/footer/Footer';
-import Navbar from '../../components/statics/navbar/Navbar';
+import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
+import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 import './Perfil.css';
 
 function Perfil() {
     return (
         <>
-            <Navbar />
+            <NavbarPages />
 
             <div className="perfil-container">
                 <h1>
