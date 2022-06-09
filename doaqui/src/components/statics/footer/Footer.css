@@ -30,3 +30,7 @@ footer{
     font-size: 13px;
     line-height: 16px;
 }
+
+a{
+    text-decoration: none;
+}
