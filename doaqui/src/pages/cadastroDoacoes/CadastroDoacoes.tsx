@@ -1,41 +1,68 @@
 import React from "react";
 import { Grid, Box, Typography, Button, TextField } from "@material-ui/core";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./CadastroDoacoes.css";
 
-function CadastroDoacoes(){
+function CadastroDoacoes() {
     return (
-        <Grid container direction='row' justifyContent="center" alignItems='center' className='img-box'>
-            <Grid item xs={6} className='imagem2'></Grid>
-            <Grid item xs={6} alignItems='center'>
-                <Box padding={10}>
-                <form>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar doação</Typography>
-                        <TextField id='título' label='título' variant='outlined' name='título' margin='normal' fullWidth />
-                        <TextField id='descrição' label='descrição' variant='outlined' name='descrição' margin='normal' fullWidth />
-                        <TextField id='E-mail' label='E-mail' variant='outlined' name='E-mail' margin='normal' fullWidth />
-                        <TextField id='Cnpj' label='Cnpj' variant='outlined' name='Cnpj' margin='normal' fullWidth />
-                        <TextField id='quantidade' label='quantidade' variant='outlined' name='quantidade' margin='normal' fullWidth />
-                        <TextField id='validade' label='validade' variant='outlined' name='validade' margin='normal' fullWidth />
-                        <Box marginTop={2} textAlign='center'>
-                            <Link to='/home' className='text-decorator-none'>
-                                <Button type='submit' variant='contained' color='secondary' className='btnCancelar'>
-                                    Cancelar
-                                </Button>
-                            </Link>
-                            <Button type='submit' variant='contained' color='primary'>
-                                Cadastrar
+        <div className="box">
+            <div className="img-box">
+                
+            </div>
+            <div className="form-box">
+                <h2>Cadastrar doação</h2>
+
+                <form action="#">
+
+                    <div className="input-group">
+                        <label htmlFor="título"> Título</label>
+                        <input type="text" id="título" placeholder="Título do produto" />
+                        <div id="txtTítulo"></div>
+                    </div>
+
+                    <div className="input-group">
+                        <label htmlFor="descricao">Descrição</label>
+                        <input type="descricao" id="descricao" placeholder="Descrição do produto" />
+                        <div id="txtDescricao"></div>
+                    </div>
+
+
+                    <div className="input-group">
+                        <label htmlFor="Cnpj">Cnpj</label>
+                        <input type="Cnpj" id="Cnpj" placeholder="Informe seu Cnpj" />
+                        <div id="txtCnpj"></div>
+                    </div>
+
+                    <div className="input-group">
+                        <label htmlFor="email">E-mail</label>
+                        <input type="email" id="email" placeholder="Digite o seu email" required />
+                        <div id="txtEmail"></div>
+                    </div>
+
+                    <div className="input-group">
+                        <label htmlFor="Quantidade">Quantidade</label>
+                        <input type="txtQuantidade" id="Quantidade" placeholder="Informe a quantidade de produtos" required />
+                    </div>
+
+                    <div className="input-group">
+                        <label htmlFor="Validade">Validade</label>
+                        <input type="txtValidade" id="Validade" placeholder="Informe a validade do produto" required />
+                    </div>
+
+                    <div className="btnCancelar">
+                        <Link to='/home' className='text-decorator-none'>
+                            <Button type='submit' variant='contained' color='secondary' className='btnCancelar'>
+                                Cancelar
                             </Button>
-                        </Box>
-                    </form>
-                </Box>
+                        </Link>
+                        <Button type='submit' variant='contained' color='primary'>
+                            Cadastrar
+                        </Button>
+                    </div>
 
-            </Grid>
-
-
-
-
-        </Grid>
+                </form>
+            </div>
+        </div>
     );
 }
 

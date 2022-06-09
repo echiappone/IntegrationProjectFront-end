@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Estilo do menu navbar"*/
+#menu {
+
+    top: 0;
+    width: 98%;
+    height: 70px;
+}
 
 nav {
     display: flex;
