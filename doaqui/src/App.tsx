@@ -7,6 +7,7 @@ import './App.css';
 import CadastroDoacoes from './pages/cadastroDoacoes/CadastroDoacoes';
 import Login from './pages/login/Login';
 import Doacoes from './pages/doacoes/Doacoes';
+import Perfil from './pages/meuPerfil/Perfil';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/fazer-doacao' element={<CadastroDoacoes />} />
           <Route path='/login' element={<Login />} />
           <Route path='/doacoes' element={<Doacoes />} />
+          <Route path='/perfil' element={<Perfil />}/>
         </Routes>
       </Router>
       

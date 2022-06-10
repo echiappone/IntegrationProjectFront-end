@@ -36,15 +36,11 @@
 }
 
 #perfil-avatar{
-    width:25vw;
-    height:25vw;
+    width:35vw;
+    height:35vw;
     margin: 0 auto;
 }
 
-#perfil-icon-edit{
-    width:25vw;
-    height:25vw;
-}
 
 /* CODIGO CONTAINER DIREITA*/
 
@@ -71,4 +67,9 @@
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 700;
     font-size: 40px;
+}
+
+#perfil-container-right-top form{
+    width: 100%;
+    margin-top: 10px;
 }
