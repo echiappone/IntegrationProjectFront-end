@@ -1,24 +1,39 @@
+.transicao {
+    transition-timing-function: 1s;
+}
+
+
+/*MENU PRINCIPAL*/
 .Navbar {
+    position: fixed;
+    width: 100%;
+
     padding: 10px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.925);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.192);
 }
+/*FIM MENU PRINCIPAL*/
 
+/*LOGO*/
 .Navbar>.nav-logo {
-    font-family: 'Bebas Neue';
-    font-weight: 700;
-    font-size: 21px;
-    margin: 15px;
-    color: #331B3B;
-}
 
+    background-image: url(https://i.imgur.com/9A0998r.png);
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+    background-size: contain;
+    background-position: center;
+    margin: 15px;
+}
+/*FIM LOGO*/
+
+/*ITEM1*/
 .Navbar>.nav-items>a {
-    color: #331B3B;
-    font-family: 'Bebas Neue';
-    font-size: 16px;
-    font-weight: bold;
+    color: #FF7F0B;
+    font-family: 'Hind Vadodara';
+    font-size: 20px;
     text-decoration: none;
     margin: 15px;
     position: relative;
@@ -36,40 +51,113 @@
     bottom: 0;
     width: 0;
     height: 2px;
-    background: #331B3B;
+    background: #FF7F0B;
     transition: all 0.45s;
 }
 
 .Navbar>.nav-items>a:hover::before {
     width: 100%;
 }
+/*FIM ITEM1*/
 
+/*ITEM2*/
+.Navbar>.nav-items2>a {
+    color: #FF7F0B;
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    text-decoration: none;
+    margin: 15px;
+    position: relative;
+    opacity: 0.9;
+}
+
+.Navbar>.nav-items2>a:hover {
+    opacity: 1;
+}
+
+.Navbar>.nav-items2>a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #FF7F0B;
+    transition: all 0.45s;
+}
+
+.Navbar>.nav-items2>a:hover::before {
+    width: 100%;
+}
+/*FIM ITEM2*/
+
+/*MENU HAMBURGUER*/
 .Navbar>.nav-toggle {
     display: none;
 }
+/*FIM MENU HAMBURGUER*/
 
-@media (max-width: 700px) {
+
+/*MENU HAMBURGUER ABERTO*/
+@media (max-width: 1000px) {
+
+    /*ITEM1*/
     .Navbar>.nav-items {
-        position: absolute;
+        margin-top: 30px;
         top: 60px;
         display: flex;
         flex-direction: column;
-        background: #3b4da7;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: translateX(-100%);
+        background: rgba(255, 255, 255, 0.925);
+        box-shadow: -6px 6px 1em -10px rgba(0, 0, 0, 0.192);
+        position: fixed;
+        right: 0;
+        width: 40%;
+        height: 33%;
+        transform: translateX(100%);
         transition: all .45s;
+        border-end-start-radius: 5%;
     }
 
     .Navbar>.nav-items>a::before {
-        background: transparent;
+        background: #FF7F0B;
     }
 
     .Navbar>.nav-items.open {
         transform: translateX(0);
     }
 
+    /*FIM ITEM1*/
+
+    /*ITEM2*/
+
+    
+    /*ITEM2*/
+    /*
+    .Navbar>.nav-items2 {
+        top: 60px;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        position: fixed;
+        right: 0;
+        width: 40%;
+        height: 50%;
+        transform: translateX(100%);
+        transition: all .45s;
+        border-end-start-radius: 5%;
+    }
+
+    .Navbar>.nav-items2>a::before {
+        background: #FF7F0B;
+    }
+
+    .Navbar>.nav-items2.open {
+        transform: translateX(0);
+    }
+    */
+    /*FIM ITEM2*/
+
+    /*MENU HAMBURGUER - ANIMACOES*/
     .Navbar>.nav-toggle {
         display: flex;
         width: 50px;
@@ -83,7 +171,7 @@
         position: relative;
         width: 32px;
         height: 2px;
-        background: #331B3B;
+        background: #FF7F0B;
         transition: all 0.45s ease-in-out;
     }
 
@@ -92,7 +180,7 @@
         content: "";
         position: absolute;
         height: 2px;
-        background: #331B3B;
+        background: #FF7F0B;
         border-radius: 2px;
         transition: all 0.45s ease-in-out;
     }
@@ -121,4 +209,16 @@
     .nav-toggle.open>.bar::after {
         transform: rotate(-45deg) translate(26px, 26px);
     }
+    /*FIM MENU HAMBURGUER - ANIMACOES*/
 }
+/*FIM MENU HAMBURGUER ABERTO*/
+
+
+/*IDEIA PARA O BOAZ ME AJUDAR*/
+/*
+@media (window.scrollY > 10) {
+    .Navbar {
+        background: white;
+    }
+}
+*/

@@ -12,7 +12,7 @@ function Home() {
     return (
         <>
             <img id='background' src="https://i.imgur.com/vcW2lYW.png" alt="Back" />
-            <NavbarIndex />
+            <NavbarErick />
             <Banner />
             <Fazemos />
             <Contribuir />

@@ -9,7 +9,7 @@ import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 
 function CadastroDoacoes() {
     return (
-        <>  <NavbarPages />
+        <>  <NavbarErick />
             <Grid container direction='row' justifyContent="center" alignItems='center' className='img-box'>
                 <Grid item xs={6} className='imagem2'></Grid>
                 <Grid item xs={6} alignItems='center'>

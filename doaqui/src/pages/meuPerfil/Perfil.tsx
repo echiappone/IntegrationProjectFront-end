@@ -3,13 +3,13 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import Footer from '../../components/statics/footer/Footer';
 import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
+import NavbarErick from '../../components/statics/navbarErick/NavbarErick';
 import './Perfil.css';
 
 function Perfil() {
     return (
         <>
-            <NavbarPages />
-
+            <NavbarErick />
             <div id="perfil-container">
                 <div id="perfil-container-left">
                     <div id="perfil-container-left-top">
@@ -35,7 +35,6 @@ function Perfil() {
                     </div>
                 </div>
             </div>
-            
             <Footer />
         </>
     );
