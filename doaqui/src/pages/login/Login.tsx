@@ -60,45 +60,34 @@ function Login() {
     }, [token, navigate]);
 
     return (
+        /*tem que adicionar o navbar*/
         <>
-            <NavbarErick />
-            <Grid container direction='row' justifyContent='center' alignItems='center'>
-                <Grid alignItems='center' xs={6}>
-                    <Box paddingX={20}>
-                        <form onSubmit={onSubmit}>
-                            <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Entrar</Typography>
+        
+             <div className="containerPrincipal">
+                <div className="box">
+                    <div className="img-box">
+                        / <img src={'#'} alt="logo" /> aqui nesse campo vai o logo/
+                    </div>
+                    <div className="form-box">
+                        <h2>Login</h2>
+                        <form action="#">
+                            <div className="input-group">
+                                <label>E-mail</label>
+                                <input type="email" id="email" placeholder="Digite o seu email" />
+                                <div id="txtEmail"></div>
+                            </div>
+                            <div className="input-group w50">
+                                <label>Senha</label>
+                                <input type="password" id="senha" placeholder="Digite sua senha" />
+                            </div>
+                            <div className="input-group">
+                                <button>Login</button>
+                            </div>
 
-                            <TextField
-                                value={usuario.email}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                                id='email' label='email' variant='outlined' name='email' margin='normal' fullWidth />
-
-                            <TextField
-                                value={usuario.senha}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                                id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
-
-                            <Box marginTop={2} textAlign='center'>
-                                <Button type='submit' variant='contained' color='primary'>
-                                    Logar
-                                </Button>
-                            </Box>
                         </form>
-                        <Box display='flex' justifyContent='center' marginTop={2}>
-                            <Box marginRight={1}>
-                                <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
-                            </Box>
-                            <Link to='/cadastrousuario'>
-                                <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
-                            </Link>
-                        </Box>
-                    </Box>
-                </Grid>
-                <Grid xs={6} className='imagem'>
-
-                </Grid>
-            </Grid>
-            <Footer />
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
