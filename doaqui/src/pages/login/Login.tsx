@@ -53,14 +53,15 @@ function Login() {
 
     useEffect(() => {
 
-        if (token !== '' ) {
+        if (token !== '') {
             navigate('/home');
         }
 
     }, [token, navigate]);
 
     return (
-        <>  <NavbarPages />
+        <>
+            <NavbarErick />
             <Grid container direction='row' justifyContent='center' alignItems='center'>
                 <Grid alignItems='center' xs={6}>
                     <Box paddingX={20}>

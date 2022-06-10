@@ -7,8 +7,7 @@ import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 function Doacoes() {
   return (
     <>
-    
-      <NavbarPages />
+      <NavbarErick />
       <div>Doacoes</div>
       <Footer />
     </>
