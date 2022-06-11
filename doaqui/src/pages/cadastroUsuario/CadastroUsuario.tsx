@@ -80,13 +80,15 @@ function CadastroUsuario() {
     }
 
     return (
-        <>
-            <div className="containerPrincipal">
-                <div className="img-box"> /*tem que adicionar o logo */
+        <>  
+            <NavbarErick />
+            <div id="containerPrincipal">
+                <div id="img-box"> 
+                    <img src="https://i.imgur.com/JeIA6aN.png" alt="logo" />
                 </div>
-                <div className="form-box">
-                    <h2>Criar Conta</h2>
-                    <p> Já é um membro? <a href="Login/login.html"> Login </a> </p>
+                <div id="form-box">
+                    <h1>Criar Conta</h1>
+                    <p> Já é um membro? <a href="/login"> Login </a> </p>
                     <form action="#">
 
                         <div className="input-group">
@@ -112,6 +114,13 @@ function CadastroUsuario() {
                             <label>E-mail</label>
                             <input type="email" id="email" placeholder="Digite o seu email" />
                             <div id="txtEmail"></div>
+                        </div>
+
+
+                        <div className="input-group">
+                            <label> Endereço</label>
+                            <input type="Endereco" id="Endereco" placeholder="Digite o Endereço" />
+                            <div id="txtEndereco"></div>
                         </div>
 
                         <div className="input-group w50">
