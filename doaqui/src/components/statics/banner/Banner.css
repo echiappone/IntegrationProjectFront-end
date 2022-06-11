@@ -6,7 +6,7 @@
 
     display: flex;
     flex-direction: column;
-    z-index: 10;
+    padding-top: 125px;
 }
 
 #banner_txt {
