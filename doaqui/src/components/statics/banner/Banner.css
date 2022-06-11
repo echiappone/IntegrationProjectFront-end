@@ -2,34 +2,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@700&display=swap');
 
 
-#banner {
-
+#banner{
     display: flex;
     flex-direction: column;
     padding-top: 125px;
 }
 
-#banner_txt {
+#banner_txt{
     width: 425px;
     margin-left: 15%;
+
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-#banner_txt h1 {
+#banner_txt h1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 55px;
+    font-family: 'Hind Vadodara', sans-serif;
+    font-weight: 700;
+    font-size: 65px;
+    width: 500px;
+}
+
+#banner_txt_conteudo{
+    padding-top: 35px;
+}
+
+#span-borda{
     margin-top: 0px;
     margin-bottom: 0px;
     height: 45px;
-
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 65px;
+    border-bottom: 18px solid #05c19c;
 }
 
 #banner_txt p {
 
-    line-height: 0.9;
-
+    line-height: 1;
+    margin-top: 30px;
     font-weight: 350;
-    font-size: 40px;
+    font-size: 48px;
+    width: 600px;
+    max-width: 600px;
+    min-width: 600px;
+    padding-top: 35px;
 }
 
 #banner_btn{
@@ -37,6 +59,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin:0 auto;
+    padding-top: 25px;
 }
 
 #banner_btn a {
@@ -44,13 +68,14 @@
 
     font-family: 'Bebas Neue', cursive;
     border-radius: 5px;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     padding: 10px 40px;
     margin-left: 1rem;
     background-color: #331B3B;
     color: rgb(255, 255, 255);
-
+    width: 120%;
+    
     transition: 400ms;
 }
 
