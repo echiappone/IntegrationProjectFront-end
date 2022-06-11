@@ -17,7 +17,8 @@ function Perfil() {
                     <div id="perfil-container-left-top">
                         <Avatar id="perfil-avatar"
                             alt="Imagem Usuario"
-                            src=""
+                            src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png"
+                            variant="circular"
                         />
                         <h1>Nome da ONG</h1>
                     </div>
