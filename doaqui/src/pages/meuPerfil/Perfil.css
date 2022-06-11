@@ -6,7 +6,7 @@
     justify-content: center;
     width: 100%;
     background-color: #F5F5F5;
-    padding-top: 100px;
+    padding-top: 125px;
 }
 /* CODIGO CONTAINER ESQUERDA*/
 #perfil-container-left{
@@ -19,7 +19,6 @@
 }
 
 #perfil-container-left-top{
-    background-image: pink;
     align-items: center;
     justify-content: center;
     width: 60%;
@@ -126,7 +125,7 @@
 }
 
 #perfil-container-right-bottom form{
-    width: 100%;
+    width: 80%;
     margin-top: 10px;
 }
 
