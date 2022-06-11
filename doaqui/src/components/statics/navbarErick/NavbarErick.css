@@ -114,6 +114,8 @@
         right: 0;
         width: 40%;
         height: 33%;
+        min-height: 300px;
+        min-width: 170px;
         transform: translateX(100%);
         transition: all .45s;
         border-end-start-radius: 5%;
