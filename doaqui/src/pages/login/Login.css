@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
+.gridprincipal {
+    background-color: #f5f5f5;
+}
 
 .textos1{
     font-weight: bold !important;
+    color: #E67E22;
  }
  
  .imagem{
@@ -16,26 +20,15 @@
      text-decoration: none;
  }
 
- .label1 {
-    display: none;
- }
+
 
  .emailSenha {
     border-radius: 20px;
  }
 
 
-
-
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 .containerPrincipal{
-    background-color: white;
+    background-color: #f5f5f5;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -53,7 +46,8 @@
 
 .form-box{
     min-width: 400px;
-    background-color:#69DAC4;
+    box-shadow: 2px black;
+    background-color: #fbfbfb;
     backdrop-filter: blur(40px);
     padding: 30px 40px;
     width: 50%;
@@ -105,7 +99,11 @@ form .input-group button{
 }
 
 form .input-group button:focus{
-    background: #e66b00;
+    background: #dd6700;
+}
+
+form .input-group button:hover{
+    background: #dd6700;
 }
 
 @media (max-width:930px) {
@@ -115,12 +113,4 @@ form .input-group button:focus{
     .imagem{
         display: none !important;
     }
-
-}
-@media (max-width:500px) {
-    .w50{
-        width: 100%;
-        padding: 0;
-    }
-    
 }

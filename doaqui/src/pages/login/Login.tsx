@@ -63,10 +63,10 @@ function Login() {
     return (
         <>
             <NavbarErick />
-            <Grid container direction='row' justifyContent='center' alignItems='center'>
+            <Grid container direction='row' justifyContent='center' alignItems='center'className="gridprincipal">
                 <Grid alignItems='center' xs={6}>
-                    <Box paddingX={20}>
-                        <form onSubmit={onSubmit}>
+                    <Box className="containerPrincipal" paddingX={20} >
+                        <form className="form-box" onSubmit={onSubmit}>
                             <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Login</Typography>
 
                             {/* ****ANTIGO EMAIL****
@@ -91,26 +91,26 @@ function Login() {
                                 <div id="txtEmail"></div>
                             </div>
 
-                            <div className="input-group w50" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
+                            <div className="input-group" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
                                 <label>Senha</label>
                                 <input type="password" id="senha" placeholder="Digite sua senha" />
                             </div>
-                            
+
                             <Box marginTop={2} textAlign='center' className="input-group">
                                 <Button type='submit' variant='contained' color='primary'>
                                     Logar
                                 </Button>
                             </Box>
-                        </form>
-                        
-                        <Box display='flex' justifyContent='center' marginTop={2}>
-                            <Box marginRight={1}>
-                                <Typography variant='subtitle1' gutterBottom align='center' className='label1'>Não tem uma conta?</Typography>
+
+                            <Box display='flex' justifyContent='center' marginTop={2}>
+                                <Box marginRight={1}>
+                                    <Typography variant='subtitle1' gutterBottom align='center' className='label1'>Não tem uma conta?</Typography>
+                                </Box>
+                                <Link to='/cadastrousuario'>
+                                    <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                                </Link>
                             </Box>
-                            <Link to='/cadastrousuario'>
-                                <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
-                            </Link>
-                        </Box>
+                        </form>
                     </Box>
                 </Grid>
                 <Grid xs={6} className='imagem'></Grid>
@@ -118,7 +118,7 @@ function Login() {
             <Footer />
 
 
-        {/*
+            {/*
             <NavbarErick />
 
 
