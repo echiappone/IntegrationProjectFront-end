@@ -10,11 +10,16 @@ import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
 import NavbarErick from '../../components/statics/navbarErick/NavbarErick';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 import './Login.css';
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/actions";
+import { toast } from 'react-toastify';
+
 
 function Login() {
 
     let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const dispatch = useDispatch();
+    const [token, setToken] = useState('');
     const [idCriador, setIdCriador] = useLocalStorage('id');
 
     const [usuario, setUsuario] = useState<Usuario>(
@@ -40,20 +45,37 @@ function Login() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
 
         e.preventDefault();
-
-        try {
-
-            await login(`/api/Usuarios/logar`, usuario, setToken, setIdCriador);
-
-            alert('Usuário logado com sucesso!');
-        } catch (error) {
-            alert('Dados do usuário inconsistentes. Erro ao logar!');
-        }
-    }
+            try{
+                await login(`/usuarios/logar`, Login, setToken)
+                toast.success('Usuário logado com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
+                }catch(error){
+                    toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: false,
+                        theme: "colored",
+                        progress: undefined,
+                        });
+                }
+            }
+    
 
     useEffect(() => {
 
         if (token !== '') {
+            dispatch(addToken(token));
             navigate('/home');
         }
 

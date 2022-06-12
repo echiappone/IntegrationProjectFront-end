@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import useLocalStorage from 'react-use-localstorage';
 import "./NavbarErick.css";
+
+
 const NavbarErick = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
