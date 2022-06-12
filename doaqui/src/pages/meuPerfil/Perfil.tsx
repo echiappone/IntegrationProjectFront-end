@@ -1,9 +1,7 @@
 import Avatar from "@mui/material/Avatar";
 import React from "react";
 import Footer from '../../components/statics/footer/Footer';
-import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
-import NavbarErick from '../../components/statics/navbarErick/NavbarErick';
 import {TextField, Box, Button} from '@material-ui/core';
 import './Perfil.css';
 
@@ -11,7 +9,7 @@ function Perfil() {
     return (
         // eslint-disable-next-line react/jsx-no-comment-textnodes
         <>
-            <NavbarErick />
+            <NavbarPages />
             <div id="perfil-container">
                 <div id="perfil-container-left">
                     <div id="perfil-container-left-top">
