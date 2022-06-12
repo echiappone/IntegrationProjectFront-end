@@ -15,7 +15,7 @@ const NavbarErick = () => {
             </div>
             <div className={`nav-items2 ${isOpen && "open"}`}>
                     <a href="/login">Login</a>
-                    <a href="/cadastro-usuario">Cadastre-se</a>
+                    <a href="/cadastro">Cadastre-se</a>
             </div>
             <div>
                 <div

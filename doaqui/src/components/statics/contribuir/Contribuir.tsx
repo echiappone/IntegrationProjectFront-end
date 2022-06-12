@@ -22,7 +22,7 @@ function Contribuir() {
                         <p>
                             Se você é uma ONG e gostaria de poder receber doações, clique no botão abaixo:
                         </p>
-                        <a href="/cadastro-usuario">ONG</a>
+                        <a href="/cadastro">ONG</a>
                         
                     </article>
                 </section>
