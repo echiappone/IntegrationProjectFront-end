@@ -18,30 +18,32 @@
 #banner_title h1 {
     margin-top: 0px;
     margin-bottom: 0px;
-    height: 45px;
-
+    height: 55px;
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 65px;
+    width: 700px;
 }
 
-#banner_title #acontecer{
+#h2_acontecer{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 55px;
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 300;
+    font-size: 65px;
+    width: 700px;
 }
 
 #banner_img {
     width: 95%;
     height: auto;
-    margin-top: 40px;
-
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     background-color: #DFFDED;
-
     border-top-right-radius: 400px;
 }
 
@@ -64,6 +66,18 @@
     font-size: 25px;
     width: 70%;
 }
+
+#span-borda-fazemos{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 45px;
+    font-family: 'Hind Vadodara', sans-serif;
+    font-weight: 700;
+    font-size: 65px;
+    border-bottom: 18px solid #05c19c;
+    font-weight: 300;
+}
+
 @media (max-width:1200px){
     #banner_img {
         border-top-right-radius: 250px;

@@ -32,7 +32,7 @@
     padding-top: 35px;
 }
 
-#span-borda{
+.span-borda{
     margin-top: 0px;
     margin-bottom: 0px;
     height: 45px;
@@ -43,7 +43,6 @@
 }
 
 #banner_txt p {
-
     line-height: 1;
     margin-top: 30px;
     font-weight: 350;
@@ -65,7 +64,6 @@
 
 #banner_btn a {
     text-decoration: none;
-
     font-family: 'Bebas Neue', cursive;
     border-radius: 5px;
     font-size: 40px;
@@ -75,12 +73,9 @@
     background-color: #331B3B;
     color: rgb(255, 255, 255);
     width: 120%;
-    
     transition: 400ms;
 }
 
 #banner_btn a:hover {
     opacity: 0.5;
 }
-
-
