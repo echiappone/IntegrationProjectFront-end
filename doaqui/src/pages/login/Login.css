@@ -1,16 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+.gridprincipal {
+    background-color: #f5f5f5;
+}
+
 .textos1{
     font-weight: bold !important;
+    color: #E67E22;
  }
  
  .imagem{
-     background-image: url(https://www.santos.sp.gov.br/static/files_www/styles/newspagemodal/public/field/image/alimentosolidario_2.png);
+     background-image: url(https://i.imgur.com/JeIA6aN.png);
      background-repeat: no-repeat;
-     width: 100vh;
      min-height: 100vh;
-     background-size: cover;
-     background-position: right;
+     background-position: center;
  }
 
  .text-decorator-none{
      text-decoration: none;
  }
+
+
+
+ .emailSenha {
+    border-radius: 20px;
+ }
+
+
+.containerPrincipal{
+    background-color: #f5f5f5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+.w50{
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+}
+
+.form-box{
+    min-width: 400px;
+    box-shadow: 2px black;
+    background-color: #fbfbfb;
+    backdrop-filter: blur(40px);
+    padding: 30px 40px;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.form-box h2{
+    font-size: 30px;
+}
+
+.form-box form{
+    margin: 20px 0;
+}
+form .input-group{
+    margin-bottom: 15px;
+}
+form .input-group label{
+    color: #3D3D3D;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+form .input-group input{
+    width: 100%;
+    height: 47px;
+    background-color: rgba(255, 255, 255, 0.32);
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid #69dac33a;
+    padding: 15px;
+    font-size: 15px;
+    color: #616161;
+    transition: all 0.4s ease;
+}
+form .input-group input:focus{
+    border: 2px solid #E67E22;
+}
+form .input-group button{
+    width: 100%;
+    height: 47px;
+    background: #E67E22;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form .input-group button:focus{
+    background: #dd6700;
+}
+
+form .input-group button:hover{
+    background: #dd6700;
+}
+
+@media (max-width:930px) {
+    .form-box{
+        width: 80%;
+    }
+    .imagem{
+        display: none !important;
+    }
+}

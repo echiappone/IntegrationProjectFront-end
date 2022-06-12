@@ -94,78 +94,65 @@ function CadastroUsuario() {
     return (
         <>  
             <NavbarErick />
-            <Grid container direction='row' justifyContent='center' alignItems='center'>
-                <Grid item xs={6} className='imagem2'></Grid>
-                <Grid item xs={6} alignItems='center'>
-                    <Box paddingX={10}>
-                        <form onSubmit={onSubmit}>
-                            <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
+            <div id="containerPrincipal">
+                <div id="img-box"> 
+                    <img src="https://i.imgur.com/JeIA6aN.png" alt="logo" />
+                </div>
+                <div id="form-box">
+                    <h1>Criar Conta</h1>
+                    <p> Já é um membro? <a href="/login"> Login </a> </p>
+                    <form action="#">
 
-                            <TextField
-                                value={usuario.nome}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                                id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth />
+                        <div className="input-group">
+                            <label> Nome da ONG </label>
+                            <input type="text" id="nome" placeholder="Digite o seu nome completo" />
+                            <div id="txtNome"></div>
+                        </div>
 
-                            <TextField
-                                value={usuario.email}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                                id='email' label='email' variant='outlined' name='email' margin='normal' type='email' fullWidth />
-
-                            <TextField
-                                value={usuario.senha}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                                id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
-
-
-                            <TextField
-                                value={confirmarSenha}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
-                                id='confirmarSenha' label='confirmarSenha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
-
-                            <TextField
-                                value={usuario.telefone}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                                id='telefone' label='telefone' variant='outlined' name='telefone' margin='normal' fullWidth />
+                        <div className="input-group">
+                            <label>CNPJ</label>
+                            <input type="CNPJ" id="CNPJ" placeholder="Digite o CNPJ da sua empresa" />
+                            <div id="txtCNPJ"></div>
+                        </div>
 
 
-                            <FormControl
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                                variant="outlined">
-                                <InputLabel htmlFor="outlined-age-native-simple">tipo</InputLabel>
-                                <Select
-                                    value={usuario.tipo}
-                                    native
-                                    label="tipo"
-                                    inputProps={{
-                                        name: 'tipo',
-                                        id: 'outlined-age-native-simple',
-                                    }}
-                                >
-                                    <option aria-label="None" value="" />
-                                    <option value="NORMAL">NORMAL</option>
-                                    <option value="ADMINISTRADOR">ADMINISTRADOR</option>
-                                </Select>
-                            </FormControl>
+                        <div className="input-group">
+                            <label> Telefone</label>
+                            <input type="Telefone" id="Telefone" placeholder="Digite o Telefone" />
+                            <div id="txtTelefone"></div>
+                        </div>
 
-                            <Grid container direction="row" justifyContent="space-between" alignItems="center">
-                                <Box marginY={2} textAlign='center'>
-                                    <Link to='/login' className='text-decorator-none'>
-                                        <Button variant='outlined' className='btnCancelar'>
-                                            Cancelar
-                                        </Button>
-                                    </Link>
-                                </Box>
-                                <Box marginY={2} textAlign='center'>
-                                    <Button type='submit' variant='contained' color='primary'>
-                                        Cadastrar
-                                    </Button>
-                                </Box>
-                            </Grid>
-                        </form>
-                    </Box>
-                </Grid>
-            </Grid>
-            <Footer />
+                        <div className="input-group">
+                            <label>E-mail</label>
+                            <input type="email" id="email" placeholder="Digite o seu email" />
+                            <div id="txtEmail"></div>
+                        </div>
+
+
+                        <div className="input-group">
+                            <label> Endereço</label>
+                            <input type="Endereco" id="Endereco" placeholder="Digite o Endereço" />
+                            <div id="txtEndereco"></div>
+                        </div>
+
+                        <div className="input-group w50">
+                            <label> Senha</label>
+                            <input type="password" id="senha" placeholder="Digite sua senha" />
+                        </div>
+
+                        <div className="input-group w50">
+                            <label> Confirmar Senha</label>
+                            <input type="password" id="Confirmarsenha" placeholder="Confirme a senha" />
+                        </div>
+
+                        <div className="input-group">
+                            <button>Cadastrar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
         </>
     );
 }

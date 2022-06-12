@@ -4,7 +4,10 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #banner_title {
@@ -60,4 +63,21 @@
     font-weight: 350;
     font-size: 25px;
     width: 70%;
+}
+@media (max-width:1200px){
+    #banner_img {
+        border-top-right-radius: 250px;
+    }
+}
+
+@media (max-width:930px){
+    #banner_img {
+        border-top-right-radius: 220px;
+    }
+}
+
+@media (max-width:600px){
+    #banner_img {
+        border-top-right-radius: 150px;
+    }
 }

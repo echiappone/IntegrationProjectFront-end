@@ -1,26 +1,24 @@
+
+
 #perfil-container{
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
-    background-color: red;
+    background-color: #F5F5F5;
+    padding-top: 125px;
 }
 /* CODIGO CONTAINER ESQUERDA*/
 #perfil-container-left{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 55%;
-    height: 100vh;
+    width: 50%;
     position: relative;
-    background-color: blue;
     justify-content:flex-start;
 }
 
 #perfil-container-left-top{
-    background-image: pink;
     align-items: center;
     justify-content: center;
     width: 60%;
@@ -41,28 +39,32 @@
     margin: 0 auto;
 }
 
-#perfil-icon-edit{
-    width:25vw;
-    height:25vw;
-}
 
-/* CODIGO CONTAINER DIREITA*/
+/* CODIGO CONTAINER DIREITA CIMA*/
 
 #perfil-container-right{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
-    height: 100vh;
+    width: 50%;
     position: relative;
-    background-color: green;
-    justify-content:flex-start;
+    align-items: center;
+}
+
+.h1-cima{
+    line-height: 59.92px;
+    size: 40px;
+}
+
+.h1-baixo{
+    line-height: 53.93px;
+    size: 36px;
 }
 
 #perfil-container-right-top{
-
     width: 100%;
     margin-top: 30px;
+    align-items: center;
 }
 
 #perfil-container-right-top h1{
@@ -71,4 +73,86 @@
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 700;
     font-size: 40px;
+}
+
+#perfil-container-right-top form{
+    width: 80%;
+    margin-top: 10px;
+}
+
+#box-botao-atualizar-dados{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+}
+
+#botao-atualizar-dados{
+    width: 40%;
+    min-width: 150px;
+    margin-top: 50px;
+    height: 75px;
+    background-color: #05C19C;
+    border-radius: 20px;
+    border: none;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#botao-atualizar-dados p{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 50px;
+    color: white;
+}
+
+/* CODIGO CONTAINER DIREITA BAIXO*/
+
+#perfil-container-right-bottom{
+    width: 100%;
+    margin-top: 30px;
+    align-items: center;
+}
+
+#perfil-container-right-bottom h1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Hind Vadodara', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+#perfil-container-right-bottom form{
+    width: 80%;
+    margin-top: 10px;
+}
+
+#box-botao-atualizar-senha{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+}
+
+#botao-atualizar-senha{
+    width: 40%;
+    min-width: 150px;
+    margin-top: 50px;
+    height: 75px;
+    background-color: #05C19C;
+    border-radius: 20px;
+    border: none;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#botao-atualizar-senha p{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 50px;
+    color: white;
 }
