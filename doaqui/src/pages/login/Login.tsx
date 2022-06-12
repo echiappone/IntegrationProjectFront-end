@@ -7,8 +7,6 @@ import useLocalStorage from "react-use-localstorage";
 import { login } from "../../services/Service";
 import Usuario from "../../models/Usuario";
 import Footer from '../../components/statics/footer/Footer';
-import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
-import NavbarErick from '../../components/statics/navbarErick/NavbarErick';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 import './Login.css';
 import { useDispatch } from "react-redux";
@@ -84,7 +82,7 @@ function Login() {
 
     return (
         <>
-            <NavbarErick />
+            <NavbarPages />
             <Grid container direction='row' justifyContent='center' alignItems='center'className="gridprincipal">
                 <Grid alignItems='center' xs={6}>
                     <Box className="containerPrincipal" paddingX={20} >

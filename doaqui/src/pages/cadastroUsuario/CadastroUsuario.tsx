@@ -5,8 +5,6 @@ import Usuario from "../../models/Usuario";
 import { Grid, Typography, Button, TextField, FormControl, InputLabel, Select } from '@material-ui/core';
 import { Box } from "@mui/material";
 import Footer from '../../components/statics/footer/Footer';
-import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
-import NavbarErick from '../../components/statics/navbarErick/NavbarErick';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 import './CadastroUsuario.css';
 import { toast } from 'react-toastify';
@@ -93,7 +91,7 @@ function CadastroUsuario() {
 
     return (
         <>  
-            <NavbarErick />
+            <NavbarPages />
             <div id="containerPrincipal">
                 <div id="img-box"> 
                     <img src="https://i.imgur.com/JeIA6aN.png" alt="logo" />
@@ -152,7 +150,7 @@ function CadastroUsuario() {
                     </form>
                 </div>
             </div>
-
+            <Footer />
         </>
     );
 }

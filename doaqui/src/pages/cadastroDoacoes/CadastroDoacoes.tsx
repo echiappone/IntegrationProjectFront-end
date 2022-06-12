@@ -3,13 +3,11 @@ import { Grid, Box, Typography, Button, TextField } from "@material-ui/core";
 import { Link } from "react-router-dom"
 import "./CadastroDoacoes.css";
 import Footer from '../../components/statics/footer/Footer';
-import NavbarErick from '../../components/statics/navbarErick/NavbarErick';
-import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 
 function CadastroDoacoes() {
     return (
-        <>  <NavbarErick />
+        <>  <NavbarPages />
             <Grid container direction='row' justifyContent="center" alignItems='center' className='img-box'>
                 <Grid item xs={6} className='imagem2'></Grid>
                 <Grid item xs={6} alignItems='center'>

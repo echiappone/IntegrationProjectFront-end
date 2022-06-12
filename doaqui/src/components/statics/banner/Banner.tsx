@@ -14,7 +14,7 @@ function Banner() {
                     </section>
                 </section>
                 <section id="banner_btn">
-                    <a href="">DOAQUI!</a>
+                    <a href="/cadastro-doacao">DOAQUI!</a>
                 </section>
             </main>
         </>
