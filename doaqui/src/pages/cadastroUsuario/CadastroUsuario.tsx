@@ -13,7 +13,7 @@ function CadastroUsuario() {
 
     let navigate = useNavigate();
 
-    const [confirmarSenha, setConfirmarSenha] = useState<String>("")
+    const [confirmarSenha, setConfirmarSenha] = useState<string>("")
 
     const [usuario, setUsuario] = useState<Usuario>(
         {
@@ -23,7 +23,7 @@ function CadastroUsuario() {
             senha: "",
             telefone: "",
             endereco: "",
-            cnpj: 0,
+            cnpj: "",
             tipo: ""
         }
     );
@@ -36,7 +36,7 @@ function CadastroUsuario() {
             senha: "",
             telefone: "",
             endereco: "",
-            cnpj: 0,
+            cnpj: "",
             tipo: ""
         }
     );
@@ -102,45 +102,45 @@ function CadastroUsuario() {
                     <form action="#">
 
                         <div className="input-group">
-                            <label> Nome da ONG </label>
-                            <input type="text" id="nome" placeholder="Digite o seu nome completo" />
+                            <label htmlFor="nome"> Nome da ONG </label>
+                            <input value={usuario.nome} type="text" id="nome" placeholder="Digite o seu nome completo" />
                             <div id="txtNome"></div>
                         </div>
 
                         <div className="input-group">
-                            <label>CNPJ</label>
-                            <input type="CNPJ" id="CNPJ" placeholder="Digite o CNPJ da sua empresa" />
+                            <label htmlFor="cnpj">CNPJ</label>
+                            <input value={usuario.cnpj} type="CNPJ" id="cnpj" placeholder="Digite o CNPJ da sua empresa" />
                             <div id="txtCNPJ"></div>
                         </div>
 
 
                         <div className="input-group">
-                            <label> Telefone</label>
-                            <input type="Telefone" id="Telefone" placeholder="Digite o Telefone" />
+                            <label htmlFor="telefone"> Telefone</label>
+                            <input value={usuario.telefone} type="Telefone" id="telefone" placeholder="Digite o Telefone" />
                             <div id="txtTelefone"></div>
                         </div>
 
                         <div className="input-group">
-                            <label>E-mail</label>
-                            <input type="email" id="email" placeholder="Digite o seu email" />
+                            <label htmlFor="email">E-mail</label>
+                            <input value={usuario.email} type="email" id="email" placeholder="Digite o seu email" />
                             <div id="txtEmail"></div>
                         </div>
 
 
                         <div className="input-group">
-                            <label> Endereço</label>
-                            <input type="Endereco" id="Endereco" placeholder="Digite o Endereço" />
+                            <label htmlFor="endereco"> Endereço</label>
+                            <input value={usuario.endereco} type="Endereco" id="endereco" placeholder="Digite o Endereço" />
                             <div id="txtEndereco"></div>
                         </div>
 
                         <div className="input-group w50">
-                            <label> Senha</label>
-                            <input type="password" id="senha" placeholder="Digite sua senha" />
+                            <label htmlFor="senha"> Senha</label>
+                            <input value={usuario.senha} type="password" id="senha" placeholder="Digite sua senha" />
                         </div>
 
                         <div className="input-group w50">
-                            <label> Confirmar Senha</label>
-                            <input type="password" id="Confirmarsenha" placeholder="Confirme a senha" />
+                            <label htmlFor="confirmarSenha"> Confirmar Senha</label>
+                            <input value={confirmarSenha} type="password" id="confirmarSenha" placeholder="Confirme a senha" />
                         </div>
 
                         <div className="input-group">

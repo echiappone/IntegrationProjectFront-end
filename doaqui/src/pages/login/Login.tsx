@@ -21,47 +21,42 @@ function Login() {
         const [token, setToken] = useState('');
         const [idCriador, setIdCriador] = useLocalStorage('id');
 
-        const [userLogin, setUserLogin] = useState<Usuario>(
-            {
-                id: 0,
-                nome: "",
-                email: "",
-                senha: "",
-                telefone: "",
-                endereco: "",
-                tipo: "NORMAL"
-            }
-            )
-    
-            function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-    
-                setUserLogin({
-                    ...userLogin,
-                    [e.target.name]: e.target.value
-                })
-            }
-    
-                useEffect(()=>{
-                    if(token != ''){
-                        dispatch(addToken(token));
-                        navigate('/meuPerfil')
-                    }
-                }, [token])
-    
-            async function onSubmit(e: ChangeEvent<HTMLFormElement>){
-                e.preventDefault();
-                try{
-                    await login(`/usuarios/logar`, userLogin, setToken)
-                    toast.success('Usuário logado com sucesso!', {
-                        position: "top-right",
-                        autoClose: 2000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: false,
-                        draggable: false,
-                        theme: "colored",
-                        progress: undefined,
-                        });
+    const [usuario, setUsuario] = useState<Usuario>(
+        {
+            id: 0,
+            nome: "",
+            email: "",
+            senha: "",
+            telefone: "",
+            endereco: "",
+            cnpj: "",
+            tipo: "NORMAL"
+        }
+    );
+
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+        setUsuario({
+            ...usuario,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+
+        e.preventDefault();
+            try{
+                await login(`/usuarios/logar`, Login, setToken)
+                toast.success('Usuário logado com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
                 }catch(error){
                     toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
                         position: "top-right",
@@ -84,15 +79,32 @@ function Login() {
                     <Box className="containerPrincipal" paddingX={20} >
                         <form className="form-box" onSubmit={onSubmit}>
                             <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Login</Typography>
-                            <div className="input-group" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
-                                <label>E-mail</label>
-                                <input type="email" id="email" placeholder="Digite o seu email" />
+
+                            {/* ****ANTIGO EMAIL****
+                            
+                            <TextField className="input-group"
+                                value={usuario.email}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                label='email' variant='outlined' name='email' margin='normal' fullWidth />
+                            */}
+
+                            {/* ****ANTIGA SENHA****
+
+                            <TextField className="input-group"
+                                value={usuario.senha}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth/>
+                            */}
+
+                            <div className="input-group">
+                                <label htmlFor="email">E-mail</label>
+                                <input value={usuario.email} type="email" id="email" placeholder="Digite o seu email" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                                 <div id="txtEmail"></div>
                             </div>
 
-                            <div className="input-group" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
+                            <div className="input-group">
                                 <label>Senha</label>
-                                <input type="password" id="senha" placeholder="Digite sua senha" />
+                                <input value={usuario.senha} type="password" id="senha" placeholder="Digite sua senha" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             </div>
 
                             <Box marginTop={2} textAlign='center' className="input-group">
