@@ -15,6 +15,7 @@
     align-items: center;
     background: rgba(255, 255, 255, 0.925);
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.192);
+    backdrop-filter: blur(3px);
 }
 /*FIM MENU PRINCIPAL*/
 
@@ -51,7 +52,7 @@
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: #FF7F0B;
     transition: all 0.45s;
 }
@@ -82,7 +83,7 @@
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: #FF7F0B;
     transition: all 0.45s;
 }
@@ -173,7 +174,7 @@
     .nav-toggle>.bar {
         position: relative;
         width: 32px;
-        height: 2px;
+        height: 3px;
         background: #FF7F0B;
         transition: all 0.45s ease-in-out;
     }
@@ -182,9 +183,9 @@
     .nav-toggle>.bar::after {
         content: "";
         position: absolute;
-        height: 2px;
+        height: 3px;
         background: #FF7F0B;
-        border-radius: 2px;
+        border-radius: 1px;
         transition: all 0.45s ease-in-out;
     }
 
@@ -215,7 +216,6 @@
     /*FIM MENU HAMBURGUER - ANIMACOES*/
 }
 /*FIM MENU HAMBURGUER ABERTO*/
-
 
 /*IDEIA PARA O BOAZ ME AJUDAR*/
 /*

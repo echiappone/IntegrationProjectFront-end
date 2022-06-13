@@ -79,3 +79,56 @@
 #banner_btn a:hover {
     opacity: 0.5;
 }
+
+/*responsividade fonte*/
+@media (max-width: 1280px) {
+    #banner_txt{
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 1230px) {
+    #banner_txt{
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 1150px) {
+    #banner_txt p {
+        font-size: 40px;
+        width: 500px;
+        min-width: 500px;
+    }
+    .span-borda{
+        border-bottom: 14px solid #05c19c;
+    }
+    #banner_txt p {
+        line-height: 1.1;
+    }
+}
+
+@media (max-width: 610px) {
+    #banner_txt h1 {
+        font-size: 60px;
+    }
+    .span-borda{
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 560px) {
+    #banner_txt h1 {
+        font-size: 52px;
+    }
+
+    .span-borda{
+        font-size: 52px;
+    }
+
+    #banner_txt p {
+        margin-top: 0px;
+        font-size: 35px;
+        width: 450px;
+        min-width: 450px;
+    }
+}
