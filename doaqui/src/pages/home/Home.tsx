@@ -10,7 +10,7 @@ import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
 function Home() {
     return (
         <>
-            <img id='background' src="https://i.imgur.com/vcW2lYW.png" alt="Back" />
+            <img id='background' src="https://i.imgur.com/uF7VOmS.png" alt="Back" />
             <NavbarIndex />
             <Banner />
             <Fazemos />
