@@ -29,6 +29,7 @@ function Login() {
             senha: "",
             telefone: "",
             endereco: "",
+            cnpj: "",
             tipo: "NORMAL"
         }
     );
@@ -105,15 +106,15 @@ function Login() {
                                 id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth/>
                             */}
 
-                            <div className="input-group" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
-                                <label>E-mail</label>
-                                <input type="email" id="email" placeholder="Digite o seu email" />
+                            <div className="input-group">
+                                <label htmlFor="email">E-mail</label>
+                                <input value={usuario.email} type="email" id="email" placeholder="Digite o seu email" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                                 <div id="txtEmail"></div>
                             </div>
 
-                            <div className="input-group" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
+                            <div className="input-group">
                                 <label>Senha</label>
-                                <input type="password" id="senha" placeholder="Digite sua senha" />
+                                <input value={usuario.senha} type="password" id="senha" placeholder="Digite sua senha" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             </div>
 
                             <Box marginTop={2} textAlign='center' className="input-group">
