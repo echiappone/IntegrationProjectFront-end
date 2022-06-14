@@ -33,7 +33,7 @@ function FooterNao() {
                 </div>
 
                 <div id="footer_img" >
-                    <img src="./img.css/WhatsApp Image 2022-06-07 at 14.28.17.jpeg" alt=""></img>
+                    <img src="https://pbs.twimg.com/profile_images/1496323515750006785/0Lx6Fn2Q_400x400.jpg" alt=""></img>
                     <img src="./img.css/WhatsApp Image 2022-06-01 at 09.23.14.jpeg" alt=""></img>
                     <img src="./img.css/WhatsApp Image 2022-06-02 at 14.25.55.jpeg" alt=""></img>
                     <img src="./img.css/WhatsApp Image 2022-06-07 at 16.36.44.jpeg" alt=""></img>

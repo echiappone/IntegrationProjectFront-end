@@ -9,35 +9,26 @@ function Footer() {
             <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
                     
-                    {/*flooter box 1 */}
+                    {/*footer box 1 
                     <Box className='box1'>
-
-                        {/*Siga-nos */}
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
                             <Typography variant="h5" align="center" gutterBottom className='textos'>Siga-nos no LinkedIn </Typography>
                         </Box>
-
-                        {/*LinkedIn de todos do grupo 02 */}
                         <Box display="flex" alignItems="center" justifyContent="center">
-
-                            {/*LinkedIn Erick */}
                             <a href="https://www.linkedin.com/in/erickchiappone/" target="_blank">
                                 <LinkedInIcon className='redes'/>
                             </a>
-
-                            {/*LinkedIn Naomy */}
                             <a href="https://www.linkedin.com/in/naomy-santana-77900a211/" target="_blank">
                                 <LinkedInIcon className='redes'/>
                             </a>
-
-                            {/*LinkedIn Yasmin */}
                             <a href="https://www.linkedin.com/in/yasmim-cristine-5b803523b/" target="_blank">
                                 <LinkedInIcon className='redes'/>
                             </a>
                         </Box>
                     </Box>
-
-                    {/*flooter box 2 */}
+                    */}
+                        
+                    {/*footer box 2 */}
                     <Box className='box2'>
                         <Box paddingTop={1}>
                             <Typography variant="subtitle2" align="center" gutterBottom className='textos'>
