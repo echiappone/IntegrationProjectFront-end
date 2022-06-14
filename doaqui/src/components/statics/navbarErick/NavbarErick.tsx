@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import useLocalStorage from 'react-use-localstorage';
 import "./NavbarErick.css";
+
+
 const NavbarErick = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
@@ -15,7 +18,7 @@ const NavbarErick = () => {
             </div>
             <div className={`nav-items2 ${isOpen && "open"}`}>
                     <a href="/login">Login</a>
-                    <a href="/cadastro-usuario">Cadastre-se</a>
+                    <a href="/cadastro">Cadastre-se</a>
             </div>
             <div>
                 <div

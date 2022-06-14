@@ -7,7 +7,8 @@
 .Navbar {
     position: fixed;
     width: 100%;
-
+    z-index: 1000000;
+    top:0;
     padding: 10px 5px;
     display: flex;
     justify-content: space-between;
@@ -113,6 +114,8 @@
         right: 0;
         width: 40%;
         height: 33%;
+        min-height: 300px;
+        min-width: 170px;
         transform: translateX(100%);
         transition: all .45s;
         border-end-start-radius: 5%;

@@ -7,7 +7,7 @@ function Contribuir() {
             <main id="quero_doar">
                 <header>
                     <h1>Adorei! Quero contribuir</h1>
-                    <h1 id="passos">Quais são meus proximos passos?</h1>
+                    <h2 id="h2_passos">Quais são meus <span id="span-borda-contribuir">proximos passos?</span></h2>
                 </header>
                 <section>
                     <article>
@@ -22,7 +22,7 @@ function Contribuir() {
                         <p>
                             Se você é uma ONG e gostaria de poder receber doações, clique no botão abaixo:
                         </p>
-                        <a href="/cadastro-usuario">ONG</a>
+                        <a href="/cadastro">ONG</a>
                         
                     </article>
                 </section>

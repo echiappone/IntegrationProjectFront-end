@@ -1,10 +1,11 @@
 interface Doacao {
     id: number;
-    contato?: string| null;
-    quantidade?: string| null;
-    descricao?: string| null;
-    validade?: string| null;
-    cnpj_Doador?: string| null;
+    titulo: string;
+    contato: string;
+    quantidade: string;
+    descricao: string;
+    validade: string;
+    cnpj_Doador: string;
 }
 
 export default Doacao;

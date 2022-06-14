@@ -6,16 +6,17 @@ import Fazemos from '../../components/statics/fazemos/Fazemos';
 import Contribuir from '../../components/statics/contribuir/Contribuir';
 import Footer from '../../components/statics/footer/Footer';
 import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
-import NavbarErick from '../../components/statics/navbarErick/NavbarErick';
+import FooterNao from '../../components/statics/footerNao/FooterNao';
 
 function Home() {
     return (
         <>
-            <img id='background' src="https://i.imgur.com/vcW2lYW.png" alt="Back" />
-            <NavbarErick />
+            <img id='background' src="https://i.imgur.com/uF7VOmS.png" alt="Back" />
+            <NavbarIndex />
             <Banner />
             <Fazemos />
             <Contribuir />
+            <FooterNao />
             <Footer />
         </>
     );

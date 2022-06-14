@@ -1,12 +1,12 @@
 interface Usuario {
     id: number;
-    nome?: string| null;
-    email?: string| null;
-    senha?: string| null;
-    telefone?: string| null;
-    endereco?: string| null;
-    cnpj?: number;
-    tipo?: string| null;
+    nome: string;
+    email: string;
+    senha: string;
+    telefone: string;
+    endereco: string;
+    cnpj: string;
+    tipo: string;
 }
 
 export default Usuario;
