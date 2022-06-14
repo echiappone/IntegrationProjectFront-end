@@ -41,6 +41,12 @@ function Login() {
             [e.target.name]: e.target.value
         })
     }
+    useEffect(()=>{
+        if(token != ''){
+            dispatch(addToken(token));
+            navigate('/home')
+        }
+    }, [token])
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
 
