@@ -7,6 +7,8 @@ import Contribuir from '../../components/statics/contribuir/Contribuir';
 import Footer from '../../components/statics/footer/Footer';
 import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
 import FooterNao from '../../components/statics/footerNao/FooterNao';
+import Carrossel from '../../components/statics/carrossel/Carrossel';
+import Poema from '../../components/statics/poema/Poema';
 
 function Home() {
     return (
@@ -16,6 +18,8 @@ function Home() {
             <Banner />
             <Fazemos />
             <Contribuir />
+            <Carrossel />
+            <Poema />
             <FooterNao />
             <Footer />
         </>

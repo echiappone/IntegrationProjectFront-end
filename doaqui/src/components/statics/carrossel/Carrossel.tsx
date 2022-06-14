@@ -43,5 +43,5 @@ function Carrossel () {
                  </div>
     )
 }
- 
+
 export default Carrossel
