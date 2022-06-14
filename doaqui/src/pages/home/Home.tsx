@@ -6,6 +6,7 @@ import Fazemos from '../../components/statics/fazemos/Fazemos';
 import Contribuir from '../../components/statics/contribuir/Contribuir';
 import Footer from '../../components/statics/footer/Footer';
 import NavbarIndex from '../../components/statics/navbarIndex/NavbarIndex';
+import FooterNao from '../../components/statics/footerNao/FooterNao';
 
 function Home() {
     return (
@@ -15,6 +16,7 @@ function Home() {
             <Banner />
             <Fazemos />
             <Contribuir />
+            <FooterNao />
             <Footer />
         </>
     );
