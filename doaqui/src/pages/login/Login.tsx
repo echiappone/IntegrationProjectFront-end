@@ -16,10 +16,10 @@ import { toast } from 'react-toastify';
 
 function Login() {
 
-    let navigate = useNavigate();
-    const dispatch = useDispatch();
-    const [token, setToken] = useState('');
-    const [idCriador, setIdCriador] = useLocalStorage('id');
+        let navigate = useNavigate();
+        const dispatch = useDispatch();
+        const [token, setToken] = useState('');
+        const [idCriador, setIdCriador] = useLocalStorage('id');
 
     const [usuario, setUsuario] = useState<Usuario>(
         {
@@ -41,6 +41,12 @@ function Login() {
             [e.target.name]: e.target.value
         })
     }
+    useEffect(()=>{
+        if(token != ''){
+            dispatch(addToken(token));
+            navigate('/home')
+        }
+    }, [token])
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
 
@@ -71,18 +77,8 @@ function Login() {
                 }
             }
     
-
-    useEffect(() => {
-
-        if (token !== '') {
-            dispatch(addToken(token));
-            navigate('/home');
-        }
-
-    }, [token, navigate]);
-
-    return (
-        <>
+        return (
+            <>
             <NavbarPages />
             <Grid container direction='row' justifyContent='center' alignItems='center'className="gridprincipal">
                 <Grid alignItems='center' xs={6}>
@@ -137,40 +133,8 @@ function Login() {
                 <Grid xs={6} className='imagem'></Grid>
             </Grid>
             <Footer />
-
-
-            {/*
-            <NavbarErick />
-
-
-            <div className="containerPrincipal">
-
-            
-                <div className="form-box">
-                    <h2>Login</h2>
-                    <form action="#">
-                        <div className="input-group">
-                            <label>E-mail</label>
-                            <input type="email" id="email" placeholder="Digite o seu email" />
-                            <div id="txtEmail"></div>
-                        </div>
-                        <div className="input-group w50">
-                            <label>Senha</label>
-                            <input type="password" id="senha" placeholder="Digite sua senha" />
-                        </div>
-                        <div className="input-group">
-                            <button>Login</button>
-                        </div>
-
-                    </form>
-
-                </div>
-            
-
-            </div>
-            <Footer />
-            */}
-        </>
+            </>
     );
 }
-export default Login;
+    
+export default Login ;
