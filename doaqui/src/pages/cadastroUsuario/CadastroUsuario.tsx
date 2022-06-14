@@ -24,7 +24,7 @@ function CadastroUsuario() {
             telefone: "",
             endereco: "",
             cnpj: "",
-            tipo: ""
+            tipo: "NORMAL"
         }
     );
 
@@ -64,7 +64,7 @@ function CadastroUsuario() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         if(confirmarSenha == usuario.senha){
-        cadastroUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResultado)
+        await cadastroUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResultado)
         toast.success('Usuario cadastrado com sucesso', {
             position: "top-right",
             autoClose: 2000,
@@ -75,6 +75,9 @@ function CadastroUsuario() {
             theme: "colored",
             progress: undefined,
             });
+
+            navigate("/login");
+
         } else {
             toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
                 position: "top-right",
@@ -99,52 +102,57 @@ function CadastroUsuario() {
                 <div id="form-box">
                     <h1>Criar Conta</h1>
                     <p> Já é um membro? <a href="/login"> Login </a> </p>
-                    <form action="#">
+                    <form onSubmit={onSubmit}>
 
                         <div className="input-group">
                             <label htmlFor="nome"> Nome da ONG </label>
-                            <input value={usuario.nome} type="text" id="nome" placeholder="Digite o seu nome completo" />
+                            <input value={usuario.nome} type="text" id="nome" name="nome" placeholder="Digite o seu nome completo" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtNome"></div>
                         </div>
 
                         <div className="input-group">
                             <label htmlFor="cnpj">CNPJ</label>
-                            <input value={usuario.cnpj} type="CNPJ" id="cnpj" placeholder="Digite o CNPJ da sua empresa" />
+                            <input value={usuario.cnpj} type="text" id="cnpj" name="cnpj" placeholder="Digite o CNPJ da sua empresa" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtCNPJ"></div>
                         </div>
 
 
                         <div className="input-group">
                             <label htmlFor="telefone"> Telefone</label>
-                            <input value={usuario.telefone} type="Telefone" id="telefone" placeholder="Digite o Telefone" />
+                            <input value={usuario.telefone} type="text" id="telefone" name="telefone" placeholder="Digite o Telefone" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtTelefone"></div>
                         </div>
 
                         <div className="input-group">
                             <label htmlFor="email">E-mail</label>
-                            <input value={usuario.email} type="email" id="email" placeholder="Digite o seu email" />
+                            <input value={usuario.email} type="email" id="email" name="email" placeholder="Digite o seu email" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtEmail"></div>
                         </div>
 
 
                         <div className="input-group">
                             <label htmlFor="endereco"> Endereço</label>
-                            <input value={usuario.endereco} type="Endereco" id="endereco" placeholder="Digite o Endereço" />
+                            <input value={usuario.endereco} type="text" id="endereco" name="endereco" placeholder="Digite o Endereço" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtEndereco"></div>
                         </div>
 
                         <div className="input-group w50">
                             <label htmlFor="senha"> Senha</label>
-                            <input value={usuario.senha} type="password" id="senha" placeholder="Digite sua senha" />
+                            <input value={usuario.senha} type="password" id="senha" name="senha" placeholder="Digite sua senha" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                         </div>
 
                         <div className="input-group w50">
                             <label htmlFor="confirmarSenha"> Confirmar Senha</label>
-                            <input value={confirmarSenha} type="password" id="confirmarSenha" placeholder="Confirme a senha" />
+                            <input value={confirmarSenha} type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme a senha" onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} />
+                        </div>
+
+                        <div className="input-group w50">
+                            <label htmlFor="tipo"> Tipo</label>
+                            <input value={usuario.tipo} type="text" id="tipo" name="tipo" placeholder="tipo" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                         </div>
 
                         <div className="input-group">
-                            <button>Cadastrar</button>
+                            <button type="submit">Cadastrar</button>
                         </div>
 
                     </form>
