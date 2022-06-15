@@ -44,15 +44,7 @@
     margin-bottom: 0px;
     height: 45px;
     font-family: 'Hind Vadodara', sans-serif;
-    font-weight: 300;
-    font-size: 48px;
+    font-weight: 700;
+    font-size: 65px;
     border-bottom: 18px solid #05c19c;
-}
-
-#container_carrossel{
-    padding-top: 300px;
-}
-
-#container_carrossel{
-    width: 100%;
 }
