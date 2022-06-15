@@ -12,32 +12,15 @@ import Doacao from '../../../models/Doacao';
 import { toast } from 'react-toastify';
 
 function ListaDoacao() {
-
+    
     const [posts, setPosts] = useState<Doacao[]>([]);
     let navigate = useNavigate();
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
 
-    useEffect(() => {
-        if (token == "") {
-            toast.error('Você precisa estar logado', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-            });
-              navigate("/login")
-
-            }
-        }, [token])
-
     async function getPost() {
-        await busca("/api/Doacoes", setPosts, {
+        await busca("/api/Doacao/todas", setPosts, {
             headers: {
                 'Authorization': token
             }
@@ -52,53 +35,55 @@ function ListaDoacao() {
 
     return (
         <>
+        
             {
                 posts.map(post => (
                     <Box m={2} >
                         <Card variant="outlined">
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Postagens
+                                    Doação de:
                                 </Typography>
                                 <Typography variant="h5" component="h2">
                                     {}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {post.descricao}
+                                    {"Produto: "+ post.titulo}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {post.validade}
+                                    {"Descrição: "+ post.descricao}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {post.contato}
+                                    {"Validade: "+ post.validade}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {post.cnpj_Doador}
+                                    {"Quantidade: "+ post.quantidade}
                                 </Typography>
+                                
                             </CardContent>
                             <CardActions>
                                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                                    <Link to={`/formularioDoacao/${post.id}`} className="text-decorator-none" >
                                         <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                                                atualizar
+                                            <Button variant="contained" className="marginLeft" size='small' color="inherit" >
+                                                Mais informações
                                             </Button>
                                         </Box>
-                                    </Link>
-                                    <Link to={`/deletarDoacao/${post.id}`} className="text-decorator-none">
+
+            
                                         <Box mx={1}>
-                                            <Button variant="contained" size='small' color="secondary">
-                                                deletar
+                                            <Button variant="contained" size='small' color="primary">
+                                                Quero essa doação
                                             </Button>
                                         </Box>
-                                    </Link>
+
                                 </Box>
                             </CardActions>
                         </Card>
                     </Box>
                 ))
             }
+
         </>
     )
 }
