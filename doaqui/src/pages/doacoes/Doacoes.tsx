@@ -8,6 +8,10 @@ import TabDoacao from "../../components/doacoes/tabdoacao/TabDoacao";
 import CardDoacoes from "../../components/statics/cardDoacoes/CardDoacoes";
 import Footer from '../../components/statics/footer/Footer';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
+import BarraPesquisa from "../../components/statics/barraPesquisa/BarraPesquisa";
+import './Doacoes.css';
+
+
 
 function Doacoes() {
 

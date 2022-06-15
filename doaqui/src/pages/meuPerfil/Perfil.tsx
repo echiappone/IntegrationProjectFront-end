@@ -2,8 +2,9 @@ import Avatar from "@mui/material/Avatar";
 import React from "react";
 import Footer from '../../components/statics/footer/Footer';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
-import {TextField, Box, Button} from '@material-ui/core';
+import { Box, Button} from '@material-ui/core';
 import './Perfil.css';
+
 
 function Perfil() {
     return (
@@ -64,8 +65,8 @@ function Perfil() {
                         </div>
 
                         <div className="input-group">
-                            <label> Endereço</label>
-                            <input type="Endereco" id="Endereco" placeholder="Digite o Endereço" />
+                            <label>Endereço</label>
+                            <input type="text" id="Endereco" placeholder="Digite o Endereço" />
                             <div id="txtEndereco"></div>
                         </div>
 
