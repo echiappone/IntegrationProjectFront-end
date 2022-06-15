@@ -98,7 +98,7 @@ function CadastroUsuario() {
     return (
         <>  
             <NavbarPages />
-            <div id="containerPrincipal">
+            <div id='containerPrincipal'>
                 <div id="img-box"> 
                     <img src="https://i.imgur.com/JeIA6aN.png" alt="logo" />
                 </div>
@@ -107,55 +107,55 @@ function CadastroUsuario() {
                     <p> Já é um membro? <a href="/login"> Login </a> </p>
                     <form onSubmit={onSubmit}>
 
-                        <div className="input-group">
+                        <div className="input-group-usuario">
                             <label htmlFor="nome"> Nome da ONG </label>
                             <input value={usuario.nome} type="text" id="nome" name="nome" placeholder="Digite o seu nome completo" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtNome"></div>
                         </div>
 
-                        <div className="input-group">
+                        <div className="input-group-usuario">
                             <label htmlFor="cnpj">CNPJ</label>
                             <input value={usuario.cnpj} type="text" id="cnpj" name="cnpj" placeholder="Digite o CNPJ da sua empresa" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtCNPJ"></div>
                         </div>
 
 
-                        <div className="input-group">
+                        <div className="input-group-usuario">
                             <label htmlFor="telefone"> Telefone</label>
                             <input value={usuario.telefone} type="text" id="telefone" name="telefone" placeholder="Digite o Telefone" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtTelefone"></div>
                         </div>
 
-                        <div className="input-group">
+                        <div className="input-group-usuario">
                             <label htmlFor="email">E-mail</label>
                             <input value={usuario.email} type="email" id="email" name="email" placeholder="Digite o seu email" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtEmail"></div>
                         </div>
 
 
-                        <div className="input-group">
+                        <div className="input-group-usuario">
                             <label htmlFor="endereco"> Endereço</label>
                             <input value={usuario.endereco} type="text" id="endereco" name="endereco" placeholder="Digite o Endereço" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtEndereco"></div>
                         </div>
 
-                        <div className="input-group w50">
+                        <div className="input-group-usuario w50">
                             <label htmlFor="senha"> Senha</label>
                             <input value={usuario.senha} type="password" id="senha" name="senha" placeholder="Digite sua senha" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                         </div>
 
-                        <div className="input-group w50">
+                        <div className="input-group-usuario w50">
                             <label htmlFor="confirmarSenha"> Confirmar Senha</label>
                             <input value={confirmarSenha} type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme a senha" onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} />
                         </div>
 
-                        <div className="input-group">
-                            <label htmlFor="foto"> Endereço</label>
+                        <div className="input-group-usuario">
+                            <label htmlFor="foto"> Foto</label>
                             <input value={usuario.foto} type="text" id="foto" name="foto" placeholder="Digite a URL da sua foto" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="foto"></div>
                         </div>
                         
-                        <div className="input-group">
+                        <div className="input-group-usuario">
                             <button type="submit">Cadastrar</button>
                         </div>
 

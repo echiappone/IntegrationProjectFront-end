@@ -21,8 +21,6 @@
      text-decoration: none;
  }
 
-
-
  .emailSenha {
     border-radius: 20px;
  }
@@ -62,16 +60,16 @@
 .form-box form{
     margin: 20px 0;
 }
-form .input-group{
+form .input-group-login{
     margin-bottom: 15px;
 }
-form .input-group label{
+form .input-group-login label{
     color: #3D3D3D;
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
-form .input-group input{
+form .input-group-login input{
     width: 100%;
     height: 47px;
     background-color: rgba(255, 255, 255, 0.32);
@@ -83,10 +81,10 @@ form .input-group input{
     color: #616161;
     transition: all 0.4s ease;
 }
-form .input-group input:focus{
+form .input-group-login input:focus{
     border: 2px solid #E67E22;
 }
-form .input-group button{
+form .input-group-login button{
     width: 100%;
     height: 47px;
     background: #E67E22;
@@ -99,11 +97,11 @@ form .input-group button{
     font-size: 16px;
 }
 
-form .input-group button:focus{
+form .input-group-login button:focus{
     background: #dd6700;
 }
 
-form .input-group button:hover{
+form .input-group-login button:hover{
     background: #dd6700;
 }
 
