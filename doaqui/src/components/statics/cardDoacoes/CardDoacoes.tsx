@@ -1,11 +1,7 @@
 import React from "react";
-import './Doacoes.css';
+import './CardDoacoes.css';
 
-function Estilo () {
-    
-}
-
-function Doacoes() {
+function CardDoacoes() {
     
     return (
         <>
@@ -121,4 +117,4 @@ function Doacoes() {
     );
 }
 
-export default Doacoes;
+export default CardDoacoes;

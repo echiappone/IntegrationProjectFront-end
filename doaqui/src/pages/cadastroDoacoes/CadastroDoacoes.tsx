@@ -6,6 +6,7 @@ import Footer from '../../components/statics/footer/Footer';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 
 function CadastroDoacoes() {
+
     return (
         <>  <NavbarPages />
             <Grid container direction='row' justifyContent="center" alignItems='center' className='img-box'>

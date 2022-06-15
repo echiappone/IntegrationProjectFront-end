@@ -12,39 +12,43 @@ import './Login.css';
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/actions";
 import { toast } from 'react-toastify';
+import AutenticarDTO from "../../models/AutenticarDTO";
 
 
 function Login() {
 
     let navigate = useNavigate();
-    const dispatch = useDispatch();
-    const [token, setToken] = useState('');
-    const [idCriador, setIdCriador] = useLocalStorage('id');
+    const [token, setToken] = useLocalStorage('token');
+    const [idOng, setIdOng] = useLocalStorage('id');
+    const [cnpjOng, setCnpjOng] = useLocalStorage('cnpj');
 
-    const [usuario, setUsuario] = useState<Usuario>(
+    const [dto, setDTO] = useState<AutenticarDTO>(
         {
-            id: 0,
-            nome: "",
             email: "",
-            senha: "",
-            telefone: "",
-            endereco: "",
-            cnpj: "",
-            tipo: "NORMAL"
+            senha: ""
         }
     );
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
-        setUsuario({
-            ...usuario,
+        setDTO({
+            ...dto,
             [e.target.name]: e.target.value
         })
     }
     useEffect(() => {
-        if (token != '') {
-            dispatch(addToken(token));
-            navigate('/home')
+        if (token !== '') {
+            navigate('/doacoes')
+            toast.success('Você já esta logado', {
+                position: "bottom-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         }
     }, [token])
 
@@ -52,9 +56,9 @@ function Login() {
 
         e.preventDefault();
         try {
-            await login(`/usuarios/logar`, Login, setToken)
+            await login(`/api/Autenticacao`, dto, setToken, setIdOng, setCnpjOng)
             toast.success('Usuário logado com sucesso!', {
-                position: "top-right",
+                position: "bottom-right",
                 autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -63,9 +67,12 @@ function Login() {
                 theme: "colored",
                 progress: undefined,
             });
+
+            navigate("/doacoes")
+
         } catch (error) {
             toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
-                position: "top-right",
+                position: "bottom-right",
                 autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -104,13 +111,13 @@ function Login() {
 
                             <div className="input-group">
                                 <label htmlFor="email">E-mail</label>
-                                <input value={usuario.email} type="email" id="email" name="email" placeholder="Digite o seu email" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                                <input value={dto.email} type="email" id="email" name="email" placeholder="Digite o seu email" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                                 <div id="txtEmail"></div>
                             </div>
 
                             <div className="input-group">
                                 <label htmlFor="senha">Senha</label>
-                                <input value={usuario.senha} type="password" id="senha" name="senha" placeholder="Digite sua senha" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                                <input value={dto.senha} type="password" id="senha" name="senha" placeholder="Digite sua senha" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             </div>
 
                             <Box marginTop={2} textAlign='center' className="input-group">

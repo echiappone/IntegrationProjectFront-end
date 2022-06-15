@@ -7,6 +7,7 @@ interface Usuario {
     endereco: string;
     cnpj: string;
     tipo: string;
+    foto: string;
 }
 
 export default Usuario;

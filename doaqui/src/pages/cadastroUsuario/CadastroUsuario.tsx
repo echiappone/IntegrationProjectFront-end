@@ -8,11 +8,13 @@ import Footer from '../../components/statics/footer/Footer';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 import './CadastroUsuario.css';
 import { toast } from 'react-toastify';
+import useLocalStorage from "react-use-localstorage";
 
 function CadastroUsuario() {
 
     let navigate = useNavigate();
 
+    const [token, setToken] = useLocalStorage('token');
     const [confirmarSenha, setConfirmarSenha] = useState<string>("")
 
     const [usuario, setUsuario] = useState<Usuario>(
@@ -24,7 +26,8 @@ function CadastroUsuario() {
             telefone: "",
             endereco: "",
             cnpj: "",
-            tipo: "NORMAL"
+            tipo: "ONG",
+            foto:""
         }
     );
 
@@ -37,17 +40,17 @@ function CadastroUsuario() {
             telefone: "",
             endereco: "",
             cnpj: "",
-            tipo: ""
+            tipo: "ONG",
+            foto: ""
         }
     );
 
     useEffect(() => {
-
-        if (usuarioResultado.id === 0) {
-            navigate('/login');
+        if (token !== '') {
+            navigate('/doacoes')
         }
-
-    }, [usuarioResultado, navigate]);
+        
+    }, [token])
 
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
@@ -64,9 +67,9 @@ function CadastroUsuario() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         if(confirmarSenha == usuario.senha){
-        await cadastroUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResultado)
+        await cadastroUsuario(`/api/Usuarios`, usuario, setUsuarioResultado)
         toast.success('Usuario cadastrado com sucesso', {
-            position: "top-right",
+            position: "bottom-right",
             autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -80,7 +83,7 @@ function CadastroUsuario() {
 
         } else {
             toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
-                position: "top-right",
+                position: "bottom-right",
                 autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -146,14 +149,17 @@ function CadastroUsuario() {
                             <input value={confirmarSenha} type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme a senha" onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} />
                         </div>
 
-                        <div className="input-group w50">
-                            <label htmlFor="tipo"> Tipo</label>
-                            <input value={usuario.tipo} type="text" id="tipo" name="tipo" placeholder="tipo" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                        <div className="input-group">
+                            <label htmlFor="foto"> Endereço</label>
+                            <input value={usuario.foto} type="text" id="foto" name="foto" placeholder="Digite a URL da sua foto" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                            <div id="foto"></div>
                         </div>
-
+                        
                         <div className="input-group">
                             <button type="submit">Cadastrar</button>
                         </div>
+
+                        
 
                     </form>
                 </div>
