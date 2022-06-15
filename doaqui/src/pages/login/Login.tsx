@@ -109,18 +109,18 @@ function Login() {
                                 id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth/>
                             */}
 
-                            <div className="input-group">
+                            <div className="input-group-login">
                                 <label htmlFor="email">E-mail</label>
                                 <input value={dto.email} type="email" id="email" name="email" placeholder="Digite o seu email" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                                 <div id="txtEmail"></div>
                             </div>
 
-                            <div className="input-group">
+                            <div className="input-group-login">
                                 <label htmlFor="senha">Senha</label>
                                 <input value={dto.senha} type="password" id="senha" name="senha" placeholder="Digite sua senha" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             </div>
 
-                            <Box marginTop={2} textAlign='center' className="input-group">
+                            <Box marginTop={2} textAlign='center' className="input-group-login">
                                 <Button type='submit' variant='contained' color='primary'>
                                     Logar
                                 </Button>
