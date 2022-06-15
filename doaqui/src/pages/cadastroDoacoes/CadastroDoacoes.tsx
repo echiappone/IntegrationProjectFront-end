@@ -14,6 +14,7 @@ function CadastroDoacoes() {
                     <Box padding={10}>
                         <form>
                             <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar doação</Typography>
+                           <label>foto: </label><input type="file" name="foto"/>
                             <TextField id='título' label='título' variant='outlined' name='título' margin='normal' fullWidth />
                             <TextField id='descrição' label='descrição' variant='outlined' name='descrição' margin='normal' fullWidth />
                             <TextField id='E-mail' label='E-mail' variant='outlined' name='E-mail' margin='normal' fullWidth />

@@ -1,6 +1,7 @@
 interface Doacao {
     id: number;
     titulo: string;
+    foto: string;
     contato: string;
     quantidade: string;
     descricao: string;
