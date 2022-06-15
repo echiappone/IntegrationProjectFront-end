@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@700&display=swap');
+
 .box1{
     background-color: #E67E22;
     height: 120px;
@@ -15,6 +17,8 @@
 
 .textos{
    color: white;
+   font-family: 
+   'Hind Vadodara', sans-serif;
 }
 
 .radius {

@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@700&display=swap');
+
+
 .footer {
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Hind Vadodara', sans-serif;
     box-sizing: border-box;
     width: 100%;
     bottom: 0;
@@ -35,56 +39,6 @@
     position: relative;
 }
 
-
-.email-id{
-    width: fit-content;
-    border-bottom: 1px solid #ccc;
-    margin: 20px 0;
-
-
-}
-
-ul li{
-    list-style: none;
-    margin-bottom: 12px;
-
-}
-
-ul li a{
-    text-decoration: none;
-    color: #fff;
-}
-form .far{
-    font-size: 18px;
-    margin-right: 10px;
-}
-
-form input{
-    width: 100px;
-    background: transparent;
-    color: #ccc;
-    border: 0;
-    outline: none;
-}
-
-form button{
-    background: green;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-
-}
-hr{
-    width: 50%;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-    margin: 20px auto;
-
-}
-.copyright{
-    text-align: center;
-}
-
 #footer_img {
     display: flex;
     flex-direction: row;
@@ -93,10 +47,14 @@ hr{
     align-items: center;
     flex-grow: 3;
 }
+#footer_img a {
+    margin-bottom: 20px;  
+}
 
 #footer_img img {
     width: 100px; 
     height: 100px;
     border-radius: 50%;
-    margin: 5px;
+    margin: 10px;
 }
+

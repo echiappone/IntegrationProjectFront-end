@@ -33,13 +33,33 @@ function FooterNao() {
                 </div>
 
                 <div id="footer_img" >
-                    <img src="https://pbs.twimg.com/profile_images/1496323515750006785/0Lx6Fn2Q_400x400.jpg" alt=""></img>
-                    <img src="./img.css/WhatsApp Image 2022-06-01 at 09.23.14.jpeg" alt=""></img>
-                    <img src="./img.css/WhatsApp Image 2022-06-02 at 14.25.55.jpeg" alt=""></img>
-                    <img src="./img.css/WhatsApp Image 2022-06-07 at 16.36.44.jpeg" alt=""></img>
-                    <img src="./img.css/WhatsApp Image 2022-06-07 at 16.03.30.jpeg" alt=""></img>
-                    <img src="./img.css/WhatsApp Image 2022-06-01 at 09.27.03.jpeg" alt=""></img>
-                    <img src="./img.css/WhatsApp Image 2022-06-01 at 09.25.01.jpeg" alt=""></img>
+                    <a href="https://www.linkedin.com/in/echiappone/" target="_blank">
+                        <img src="https://i.imgur.com/niKPbTs.png" alt="Erick"></img>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/naomy-santana//" target="_blank">
+                        <img src="https://i.imgur.com/QLM5RNl.png" alt="Naomy"></img>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/renatanunes97/" target="_blank">
+                        <img src="https://i.imgur.com/VfYBMBm.png" alt="Renata"></img>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/yasmim-cristine//" target="_blank">
+                        <img src="https://i.imgur.com/onATXyJ.png" alt="Yasmim"></img>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/dev-fabricio-dias/" target="_blank">
+                        <img src="https://i.imgur.com/5VwoA2o.png" alt="Fabricio"></img>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/gustavo-carvalho-dev/" target="_blank">
+                        <img src="https://i.imgur.com/BacBbSq.png" alt="Gustavo"></img>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/nickole-bueno/" target="_blank">
+                        <img src="https://i.imgur.com/0nDlJYT.png" alt="Nickole"></img>
+                    </a>
                 </div>
             </div>
 
