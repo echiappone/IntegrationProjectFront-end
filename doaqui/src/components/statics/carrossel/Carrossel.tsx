@@ -4,14 +4,11 @@ import { Carousel } from "react-bootstrap";
 function Carrossel() {
   return (
     <>
-      <main id="como_funciona">
-        <header id="banner_title">
-          <h1>Como nós fazemos</h1>
-          <h2 id="h2_acontecer">isso <span id="span-borda-fazemos">acontecer?</span></h2>
+      <main id="todosTextos">
+        <header id="titulo">
+          <h1>Nossas ações!</h1>
+          <h2 id="subtitulo">Veja algumas imagens das <span id="span-borda">doações recebidas</span></h2>
         </header>
-        <section id="banner_img">
-          <img src="https://i.imgur.com/PNN4A1e.png" alt="Fazemos" />
-        </section>
       </main>
       
       <div>
@@ -23,8 +20,8 @@ function Carrossel() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3>FOME</h3>
+              <p>São 14 milhões de pessoas a mais passando fome no país. Os dados são do 2º Inquérito Nacional sobre Insegurança Alimentar</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={500}>
@@ -34,8 +31,8 @@ function Carrossel() {
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3>ONGS</h3>
+              <p>Uma Organização Não Governamental (ONG) é um tipo de entidade sem fins lucrativos</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -45,8 +42,8 @@ function Carrossel() {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              <h3>DOE!</h3>
+              <p>Doar é um gesto de amor, multiplique! Amor pela Vida! Ajude a Resgatar e Transformar Vidas!</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
