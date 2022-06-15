@@ -109,7 +109,7 @@ function CadastroUsuario() {
 
                         <div className="input-group-usuario">
                             <label htmlFor="nome"> Nome da ONG </label>
-                            <input value={usuario.nome} type="text" id="nome" name="nome" placeholder="Digite o seu nome completo" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                            <input value={usuario.nome} type="text" id="nome" name="nome" placeholder="Digite o nome da ONG" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtNome"></div>
                         </div>
 
@@ -158,8 +158,6 @@ function CadastroUsuario() {
                         <div className="input-group-usuario">
                             <button type="submit">Cadastrar</button>
                         </div>
-
-                        
 
                     </form>
                 </div>
