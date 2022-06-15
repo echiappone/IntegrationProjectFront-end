@@ -156,3 +156,28 @@
     line-height: 50px;
     color: white;
 }
+
+form .input-group-perfil{
+    margin-bottom: 15px;
+}
+form .input-group-perfil label{
+    color: #3D3D3D;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+form .input-group-perfil input{
+    width: 100%;
+    height: 47px;
+    background-color: rgba(255, 255, 255, 0.32);
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid #69dac33a;
+    padding: 15px;
+    font-size: 15px;
+    color: #616161;
+    transition: all 0.4s ease;
+}
+form .input-group-perfil input:focus{
+    border: 2px solid #E67E22;
+}
