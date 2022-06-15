@@ -10,6 +10,7 @@ import Footer from '../../components/statics/footer/Footer';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 import BarraPesquisa from "../../components/statics/barraPesquisa/BarraPesquisa";
 import './Doacoes.css';
+import NavbarLogado from "../../components/statics/navbarLogado/NavbarLogado";
 
 
 
@@ -26,9 +27,8 @@ function Doacoes() {
 
   return (
     <>
-      <NavbarPages />
+      <NavbarLogado />
       <TabDoacao />
-      <Footer />
     </>
 
   )

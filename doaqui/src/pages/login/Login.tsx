@@ -36,21 +36,6 @@ function Login() {
             [e.target.name]: e.target.value
         })
     }
-    useEffect(() => {
-        if (token !== '') {
-            navigate('/doacoes')
-            toast.success('Você já esta logado', {
-                position: "bottom-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-                });
-        }
-    }, [token])
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
 
