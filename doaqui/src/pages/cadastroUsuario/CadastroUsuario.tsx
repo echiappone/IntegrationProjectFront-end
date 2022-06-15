@@ -8,12 +8,14 @@ import Footer from '../../components/statics/footer/Footer';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 import './CadastroUsuario.css';
 import { toast } from 'react-toastify';
+import useLocalStorage from "react-use-localstorage";
 
 function CadastroUsuario() {
 
     let navigate = useNavigate();
 
-    const [confirmarSenha, setConfirmarSenha] = useState<String>("")
+    const [token, setToken] = useLocalStorage('token');
+    const [confirmarSenha, setConfirmarSenha] = useState<string>("")
 
     const [usuario, setUsuario] = useState<Usuario>(
         {
@@ -23,8 +25,9 @@ function CadastroUsuario() {
             senha: "",
             telefone: "",
             endereco: "",
-            cnpj: 0,
-            tipo: ""
+            cnpj: "",
+            tipo: "ONG",
+            foto:""
         }
     );
 
@@ -36,18 +39,18 @@ function CadastroUsuario() {
             senha: "",
             telefone: "",
             endereco: "",
-            cnpj: 0,
-            tipo: ""
+            cnpj: "",
+            tipo: "ONG",
+            foto: ""
         }
     );
 
     useEffect(() => {
-
-        if (usuarioResultado.id === 0) {
-            navigate('/login');
+        if (token !== '') {
+            navigate('/doacoes')
         }
-
-    }, [usuarioResultado, navigate]);
+        
+    }, [token])
 
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
@@ -64,9 +67,9 @@ function CadastroUsuario() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         if(confirmarSenha == usuario.senha){
-        cadastroUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResultado)
+        await cadastroUsuario(`/api/Usuarios`, usuario, setUsuarioResultado)
         toast.success('Usuario cadastrado com sucesso', {
-            position: "top-right",
+            position: "bottom-right",
             autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -75,9 +78,12 @@ function CadastroUsuario() {
             theme: "colored",
             progress: undefined,
             });
+
+            navigate("/login");
+
         } else {
             toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
-                position: "top-right",
+                position: "bottom-right",
                 autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -99,53 +105,61 @@ function CadastroUsuario() {
                 <div id="form-box">
                     <h1>Criar Conta</h1>
                     <p> Já é um membro? <a href="/login"> Login </a> </p>
-                    <form action="#">
+                    <form onSubmit={onSubmit}>
 
                         <div className="input-group">
-                            <label> Nome da ONG </label>
-                            <input type="text" id="nome" placeholder="Digite o seu nome completo" />
+                            <label htmlFor="nome"> Nome da ONG </label>
+                            <input value={usuario.nome} type="text" id="nome" name="nome" placeholder="Digite o seu nome completo" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtNome"></div>
                         </div>
 
                         <div className="input-group">
-                            <label>CNPJ</label>
-                            <input type="CNPJ" id="CNPJ" placeholder="Digite o CNPJ da sua empresa" />
+                            <label htmlFor="cnpj">CNPJ</label>
+                            <input value={usuario.cnpj} type="text" id="cnpj" name="cnpj" placeholder="Digite o CNPJ da sua empresa" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtCNPJ"></div>
                         </div>
 
 
                         <div className="input-group">
-                            <label> Telefone</label>
-                            <input type="Telefone" id="Telefone" placeholder="Digite o Telefone" />
+                            <label htmlFor="telefone"> Telefone</label>
+                            <input value={usuario.telefone} type="text" id="telefone" name="telefone" placeholder="Digite o Telefone" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtTelefone"></div>
                         </div>
 
                         <div className="input-group">
-                            <label>E-mail</label>
-                            <input type="email" id="email" placeholder="Digite o seu email" />
+                            <label htmlFor="email">E-mail</label>
+                            <input value={usuario.email} type="email" id="email" name="email" placeholder="Digite o seu email" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtEmail"></div>
                         </div>
 
 
                         <div className="input-group">
-                            <label> Endereço</label>
-                            <input type="Endereco" id="Endereco" placeholder="Digite o Endereço" />
+                            <label htmlFor="endereco"> Endereço</label>
+                            <input value={usuario.endereco} type="text" id="endereco" name="endereco" placeholder="Digite o Endereço" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             <div id="txtEndereco"></div>
                         </div>
 
                         <div className="input-group w50">
-                            <label> Senha</label>
-                            <input type="password" id="senha" placeholder="Digite sua senha" />
+                            <label htmlFor="senha"> Senha</label>
+                            <input value={usuario.senha} type="password" id="senha" name="senha" placeholder="Digite sua senha" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                         </div>
 
                         <div className="input-group w50">
-                            <label> Confirmar Senha</label>
-                            <input type="password" id="Confirmarsenha" placeholder="Confirme a senha" />
+                            <label htmlFor="confirmarSenha"> Confirmar Senha</label>
+                            <input value={confirmarSenha} type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme a senha" onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} />
                         </div>
 
                         <div className="input-group">
-                            <button>Cadastrar</button>
+                            <label htmlFor="foto"> Endereço</label>
+                            <input value={usuario.foto} type="text" id="foto" name="foto" placeholder="Digite a URL da sua foto" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                            <div id="foto"></div>
                         </div>
+                        
+                        <div className="input-group">
+                            <button type="submit">Cadastrar</button>
+                        </div>
+
+                        
 
                     </form>
                 </div>

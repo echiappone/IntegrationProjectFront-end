@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@700&display=swap');
+
+
+.footer {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind Vadodara', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to right, #000000, #000000);
+    color: #fff;
+    padding: 50px 0 2px;
+    border-top-right-radius: 180px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.row{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    width: 80%;
+}
+
+.col{
+    
+    flex-grow: 1;
+    width: 400px;
+    margin: 20px;
+}
+
+.col h2{
+    width: fit-content;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#footer_img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 3;
+}
+#footer_img a {
+    margin-bottom: 20px;  
+}
+
+#footer_img img {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
