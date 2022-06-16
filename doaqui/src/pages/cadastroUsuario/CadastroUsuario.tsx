@@ -1,9 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { cadastroUsuario } from "../../services/Service";
 import Usuario from "../../models/Usuario";
-import { Grid, Typography, Button, TextField, FormControl, InputLabel, Select } from '@material-ui/core';
-import { Box } from "@mui/material";
 import Footer from '../../components/statics/footer/Footer';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 import './CadastroUsuario.css';
@@ -66,22 +64,23 @@ function CadastroUsuario() {
     
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(confirmarSenha == usuario.senha){
-        await cadastroUsuario(`/api/Usuarios`, usuario, setUsuarioResultado)
-        toast.success('Usuario cadastrado com sucesso', {
-            position: "bottom-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: "colored",
-            progress: undefined,
-            });
-
-            navigate("/login");
-
-        } else {
+        if(confirmarSenha === usuario.senha)
+        {
+            await cadastroUsuario(`/api/Usuarios`, usuario, setUsuarioResultado)
+            toast.success('Usuario cadastrado com sucesso', {
+                position: "bottom-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
+                navigate("/login");
+        }
+        else
+        {
             toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
                 position: "bottom-right",
                 autoClose: 2000,
@@ -98,11 +97,11 @@ function CadastroUsuario() {
     return (
         <>  
             <NavbarPages />
-            <div id='containerPrincipal'>
-                <div id="img-box"> 
+            <div id='containerPrincipal-usuario'>
+                <div id="img-box-usuario"> 
                     <img src="https://i.imgur.com/JeIA6aN.png" alt="logo" />
                 </div>
-                <div id="form-box">
+                <div id="form-box-usuario">
                     <h1>Criar Conta</h1>
                     <p> Já é um membro? <a href="/login"> Login </a> </p>
                     <form onSubmit={onSubmit}>

@@ -5,13 +5,14 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-#containerPrincipal{
+#containerPrincipal-doacoes{
     background-color: #F5F5F5;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
     min-height: 100vh;
+    padding-top: 70px;
 }
 .w50{
     width: 50%;
@@ -22,7 +23,7 @@
     display: flex;
     width: 930px;
 }
-#img-box{
+#img-box-doacoes{
     background-image: "https://i.imgur.com/JeIA6aN.png";
     width: 40%;
     height: 100%;
@@ -31,10 +32,10 @@
     padding: 20px;
     border-radius: 20px  0 0 20px;
 }
-#img-box img{
+#img-box-doacoes img{
     width: 100%;
 }
-#form-box{
+#form-box-doacoes{
 
     backdrop-filter: blur(40px);
     padding: 30px 40px;
@@ -42,18 +43,18 @@
     border-radius: 0 20px 20px 0;
     box-shadow: 50px;
 }
-#form-box h1{
+#form-box-doacoes h1{
     font-size: 55px;
 }
-#form-box p{
+#form-box-doacoes p{
     font-weight: bold;
     color: #3D3D3D;
 }
-#form-box p a{
+#form-box-doacoes p a{
     color: #E67E22;
     text-decoration: none;
 }
-#form-box form{
+#form-box-doacoes form{
     margin: 20px 0;
 }
 form .input-group-doacao{

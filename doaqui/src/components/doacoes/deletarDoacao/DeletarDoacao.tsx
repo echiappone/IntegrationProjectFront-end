@@ -19,7 +19,7 @@ function DeletarDoacao() {
       );
 
     useEffect(() => {
-        if (token == "") {
+        if (token === "") {
             alert("Você precisa estar logado")
             navigate("/login")
 
@@ -63,7 +63,7 @@ function DeletarDoacao() {
                                 Deseja deletar a Doacao:
                             </Typography>
                             <Typography color="textSecondary" >
-                                {doacao?.descricao}
+                                {doacao?.descricaoDoacao}
                             </Typography>
                         </Box>
 

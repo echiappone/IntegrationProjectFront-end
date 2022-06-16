@@ -1,7 +1,8 @@
 import Avatar from "@mui/material/Avatar";
 import React from "react";
 import Footer from "../../components/statics/footer/Footer";
-import { Box, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import { Box } from "@mui/material";
 import "./Perfil.css";
 import NavbarLogado from "../../components/statics/navbarLogado/NavbarLogado";
 

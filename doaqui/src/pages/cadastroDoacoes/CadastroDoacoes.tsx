@@ -1,9 +1,7 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { cadastroDoacao } from "../../services/Service";
 import Doacao from "../../models/Doacao";
-import { Grid, Typography, Button, TextField, FormControl, InputLabel, Select } from '@material-ui/core';
-import { Box } from "@mui/material";
 import Footer from '../../components/statics/footer/Footer';
 import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
 import './CadastroDoacoes.css';
@@ -20,10 +18,11 @@ function CadastroDoacoes() {
             id: 0,
             titulo: "",
             contato: "",
-            quantidade: "",
-            descricao: "",
+            quantidade: 0,
+            descricaoDoacao: "",
             validade: "",
-            cnpj_Doador: ""
+            cnpJ_Doador: "",
+            foto: ""
         }
     );
 
@@ -32,10 +31,11 @@ function CadastroDoacoes() {
             id: 1,
             titulo: "",
             contato: "",
-            quantidade: "",
-            descricao: "",
+            quantidade: 1,
+            descricaoDoacao: "",
             validade: "",
-            cnpj_Doador: ""
+            cnpJ_Doador: "",
+            foto: ""
         }
     );
     
@@ -48,28 +48,44 @@ function CadastroDoacoes() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        cadastroDoacao(`/api/Doacao`, doacao, setDoacaoResultado)
-        toast.success('Doação cadastrada com sucesso', {
-            position: "bottom-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: "colored",
-            progress: undefined,
-            });
+        if(doacao.cnpJ_Doador !== '' && doacao.contato !== '' && doacao.descricaoDoacao !== '' && doacao.quantidade !== 0 && doacao.titulo !== '' && doacao.validade !== '' && doacao.foto !== '')
+        {
+            await cadastroDoacao(`/api/Doacao`, doacao, setDoacaoResultado);
+            toast.success('Doação cadastrada com sucesso', {
+                position: "bottom-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
+        }
+        else
+        {
+            toast.error('Dados inconsistentes. Favor verificar as informações preenchidas.', {
+                position: "bottom-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
+        }
     }
 
     return (
         
         <>
         <NavbarPages />
-                <div id="containerPrincipal">
-                    <div id="img-box"> 
+                <div id="containerPrincipal-doacoes">
+                    <div id="img-box-doacoes"> 
                         <img src="https://i.imgur.com/JeIA6aN.png" alt="logo" />
                     </div>
-                    <div id="form-box">
+                    <div id="form-box-doacoes">
                         <h1>DOAQUI</h1>
                         <form onSubmit={onSubmit}>
 
@@ -81,7 +97,7 @@ function CadastroDoacoes() {
 
                             <div className="input-group-doacao">
                                 <label htmlFor="cnpj"> CNPJ </label>
-                                <input value={doacao.cnpj_Doador} type="text" id="cnpj_Doador" name="cnpj_Doador" placeholder="Digite o CNPJ da sua empresa" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                                <input value={doacao.cnpJ_Doador} type="text" id="cnpj_Doador" name="cnpJ_Doador" placeholder="Digite o CNPJ da sua empresa" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                                 <div id="txtCPNJ"></div>
                             </div>
 
@@ -107,12 +123,20 @@ function CadastroDoacoes() {
 
                             <div className="input-group-doacao">
                                 <label htmlFor="descricao"> Descrição</label>
-                                <input value={doacao.descricao} type="text" id="descricao" name="descricao" placeholder="Digite uma descrição" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                                <input value={doacao.descricaoDoacao} type="text" id="descricao" name="descricaoDoacao" placeholder="Digite uma descrição" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                            </div>
+
+                            <div className="input-group-doacao">
+                                <label htmlFor="fotos"> Foto</label>
+                                <input value={doacao.foto} type="text" id="foto" name="foto" placeholder="Digite a URL da imagem" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                                <div id="txtFoto"></div>
                             </div>
 
                             <div className="input-group-doacao">
                                 <button type="submit">Cadastrar</button>
                             </div>
+
+                            
                         </form>
                     </div>
                 </div>

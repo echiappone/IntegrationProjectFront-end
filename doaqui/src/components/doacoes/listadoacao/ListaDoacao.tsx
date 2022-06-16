@@ -51,7 +51,7 @@ function ListaDoacao() {
                                     {"Produto: "+ post.titulo}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {"Descrição: "+ post.descricao}
+                                    {"Descrição: "+ post.descricaoDoacao}
                                 </Typography>
                                 <Typography variant="body2" component="p">
                                     {"Validade: "+ post.validade}
