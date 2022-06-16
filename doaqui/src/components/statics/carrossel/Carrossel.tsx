@@ -6,14 +6,14 @@ function Carrossel() {
   return (
     <>
       <main id="todosTextos">
-        <header id="titulo">
+        <header id="h1_acoes">
           <h1>Nossas ações!</h1>
-          <h2 id="subtitulo">Veja algumas imagens das <span id="span-borda">doações recebidas</span></h2>
+          <h2 id="h2_acoes">Veja algumas imagens das <span id="span-borda">doações recebidas.</span></h2>
         </header>
       </main>
       
-      <div>
-        <Carousel>
+      <div id='div-carrossel'>
+        <Carousel id='carrossel'>
           <Carousel.Item interval={1000}>
             <img
               className="d-block w-100"
@@ -43,8 +43,8 @@ function Carrossel() {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h3>DOE!</h3>
-              <p>Doar é um gesto de amor, multiplique! Amor pela Vida! Ajude a Resgatar e Transformar Vidas!</p>
+              <h3 className="h3_b" >DOE!</h3>
+              <p className="p_b"> Doar é um gesto de amor, multiplique! Amor pela Vida! Ajude a Resgatar e Transformar Vidas!</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

@@ -5,7 +5,7 @@
 }
 
 .textos1{
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: bold !important;
     color: #E67E22;
  }
@@ -60,6 +60,11 @@
 .form-box form{
     margin: 20px 0;
 }
+
+#link-cadastro {
+    text-decoration: none !important;
+}
+
 form .input-group-login{
     margin-bottom: 15px;
 }
