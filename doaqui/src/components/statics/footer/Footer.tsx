@@ -35,7 +35,7 @@ function Footer() {
                             Todos os direitos reservados ao Grupo 02 Turma 01 .NET FullStack Generation Brasil © 2022</Typography>
                         </Box>
                         <Box>
-                            <a target="_blank" href="https://brasil.generation.org" text-decoration="none">
+                            <a target="_blank" href="https://brasil.generation.org" className='a_footer'>
                                 <Typography variant="subtitle2" gutterBottom className='textos' align="center">https://brazil.generation.org/</Typography>
                             </a>
                         </Box>
