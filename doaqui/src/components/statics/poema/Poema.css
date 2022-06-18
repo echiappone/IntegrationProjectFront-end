@@ -1,0 +1,28 @@
+.container {
+     display: flex;
+     flex-flow: row;
+     justify-content: center;
+     align-items: center;
+     padding-top: 35px;
+     padding-bottom: 65px;
+}
+
+.Img {
+    margin: 100px;
+}
+
+.Poema {
+    font-family: 'Hind Vadodara', sans-serif;
+    font-size: 20px;
+}
+
+.Autor_e_título {
+    font-family: 'Hind Vadodara', sans-serif;
+    font-size: 30px;
+}
+
+.aspas {
+    margin: 3px;
+    flex-direction: row;
+    margin-top: -500px;
+}
