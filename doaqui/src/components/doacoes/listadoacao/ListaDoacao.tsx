@@ -1,31 +1,44 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { busca } from '../../../services/Service'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { busca, buscaId } from '../../../services/Service';
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import './ListaDoacao.css';
 import useLocalStorage from 'react-use-localstorage';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { useSelector } from "react-redux";
 import { TokenState } from '../../../store/tokens/tokensReducer';
-import Doacao from '../../../models/Doacao';
+import Doacoes from '../../../models/Doacao';
 import { toast } from 'react-toastify';
+import Usuario from '../../../models/Usuario';
 
 function ListaDoacao() {
     
-    const [posts, setPosts] = useState<Doacao[]>([]);
+    const [posts, setPosts] = useState<Doacoes[]>([]);
+    const [token, setToken] = useLocalStorage('token');
     let navigate = useNavigate();
-    const token = useSelector<TokenState, TokenState["tokens"]>(
-        (state) => state.tokens
-    );
+    const [idOng, setIdOng] = useLocalStorage('id');
 
-    async function getPost() {
-        await busca("/api/Doacao/todas", setPosts, {
-            headers: {
-                'Authorization': token
-            }
-        })
-    }
+    const [usuario, setUsuario] = useState<Usuario>({
+        id: 0,
+        nome: "",
+        email: "",
+        senha: "",
+        telefone: "",
+        endereco: "",
+        cnpj: "",
+        tipo: "ONG",
+        foto: "",
+      });
+
+
+
+    useEffect(() => {
+        if (token === '') {
+            navigate('/login')
+        }
+        getProfile();
+      }, [token])
 
     useEffect(() => {
 
@@ -33,10 +46,27 @@ function ListaDoacao() {
 
     }, [posts.length])
 
+    async function getPost() {
+        await busca("/api/Doacoes/todas", setPosts, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    async function getProfile() {
+        await buscaId(`/api/Usuarios/id/${idOng}`, setUsuario, {
+          headers:{
+            'Authorization': token
+          }
+        } )
+      }
+
     return (
         <>
-        
+            
             {
+                
                 posts.map(post => (
                     <Box m={2} >
                         <Card variant="outlined">
@@ -51,7 +81,7 @@ function ListaDoacao() {
                                     {"Produto: "+ post.titulo}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {"Descrição: "+ post.descricaoDoacao}
+                                    {"Descrição: "+ post.descricao}
                                 </Typography>
                                 <Typography variant="body2" component="p">
                                     {"Validade: "+ post.validade}

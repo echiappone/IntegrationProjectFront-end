@@ -24,7 +24,7 @@ function Perfil() {
     id: 0,
     nome: "",
     email: "",
-    senha: "base64.decode",
+    senha: "",
     telefone: "",
     endereco: "",
     cnpj: "",

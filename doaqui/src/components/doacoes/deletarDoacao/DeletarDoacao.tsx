@@ -63,7 +63,7 @@ function DeletarDoacao() {
                                 Deseja deletar a Doacao:
                             </Typography>
                             <Typography color="textSecondary" >
-                                {doacao?.descricaoDoacao}
+                                {doacao?.descricao}
                             </Typography>
                         </Box>
 

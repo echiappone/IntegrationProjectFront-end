@@ -19,9 +19,9 @@ function CadastroDoacoes() {
             titulo: "",
             contato: "",
             quantidade: 0,
-            descricaoDoacao: "",
+            descricao: "",
             validade: "",
-            cnpJ_Doador: "",
+            cnpjDoador: "",
             foto: ""
         }
     );
@@ -32,9 +32,9 @@ function CadastroDoacoes() {
             titulo: "",
             contato: "",
             quantidade: 1,
-            descricaoDoacao: "",
+            descricao: "",
             validade: "",
-            cnpJ_Doador: "",
+            cnpjDoador: "",
             foto: ""
         }
     );
@@ -48,9 +48,9 @@ function CadastroDoacoes() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(doacao.cnpJ_Doador !== '' && doacao.contato !== '' && doacao.descricaoDoacao !== '' && doacao.quantidade !== 0 && doacao.titulo !== '' && doacao.validade !== '' && doacao.foto !== '')
+        if(doacao.cnpjDoador !== '' && doacao.contato !== '' && doacao.descricao !== '' && doacao.quantidade !== 0 && doacao.titulo !== '' && doacao.validade !== '' && doacao.foto !== '')
         {
-            await cadastroDoacao(`/api/Doacao`, doacao, setDoacaoResultado);
+            await cadastroDoacao(`/api/Doacoes`, doacao, setDoacaoResultado);
             toast.success('Doação cadastrada com sucesso', {
                 position: "bottom-right",
                 autoClose: 2000,
@@ -96,8 +96,8 @@ function CadastroDoacoes() {
                             </div>
 
                             <div className="input-group-doacao">
-                                <label htmlFor="cnpj"> CNPJ </label>
-                                <input value={doacao.cnpJ_Doador} type="text" id="cnpj_Doador" name="cnpJ_Doador" placeholder="Digite o CNPJ da sua empresa" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                                <label htmlFor="cnpjDoador"> CNPJ </label>
+                                <input value={doacao.cnpjDoador} type="text" id="cnpjDoador" name="cnpjDoador" placeholder="Digite o CNPJ da sua empresa" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                                 <div id="txtCPNJ"></div>
                             </div>
 
@@ -123,7 +123,8 @@ function CadastroDoacoes() {
 
                             <div className="input-group-doacao">
                                 <label htmlFor="descricao"> Descrição</label>
-                                <input value={doacao.descricaoDoacao} type="text" id="descricao" name="descricaoDoacao" placeholder="Digite uma descrição" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                                <input value={doacao.descricao} type="text" id="descricao" name="descricao" placeholder="Digite uma descrição" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                                <div id="txtDescricao"></div>
                             </div>
 
                             <div className="input-group-doacao">

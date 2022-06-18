@@ -4,9 +4,9 @@ interface DoacoesDTO
     titulo: string;
     contato: string;
     quantidade: number;
-    descricaoDoacao: string;
+    descricao: string;
     validade: string;
-    cnpJ_Doador: string;
+    cnpjDoador: string;
     foto: string;
 }
 

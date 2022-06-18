@@ -6,7 +6,7 @@ export const api = axios.create({
 
 export const login = async(url: any, dados: any, setToken: any, setId: any, setCnpj: any) => {
     const resposta = await api.post(url, dados)
-    setToken('Bearer ' + resposta.data.token)
+    setToken(resposta.data.token)
     setId(resposta.data.id)
     setCnpj(resposta.data.cnpj)
 }
