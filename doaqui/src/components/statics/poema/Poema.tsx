@@ -3,25 +3,28 @@ import './Poema.css';
 
 function Poema() {
     return (
-        <div>
-        <div>
-            <p>Vi ontem um bicho
-                Na imundície do pátio
-                Catando comida entre os detritos.
-                Quando achava alguma coisa,
-                Não examinava nem cheirava:
-                Engolia com voracidade.
-                O bicho não era um cão,
-                Não era um gato,
-                Não era um rato.
-                O bicho, meu Deus, era um homem.
-                <h6>O Bicho, de Manuel Bandeira</h6>
+        <div className="container">
+            <div className="aspas">
+                <img src="https://www.pensador.com/img/quote.png" alt="Foto do poema"></img>
+            </div>
+            <div className="Poema">
+                <p>Vi ontem um bicho</p>
+                <p>Na imundície do pátio<p />
+                    <p>Catando comida entre os detritos.</p>
+                    <p>Quando achava alguma coisa,</p>
+                    <p>Não examinava nem cheirava:</p>
+                    <p>Engolia com voracidade.</p>
+                    <p>O bicho não era um cão,</p>
+                    <p>Não era um gato,</p>
+                    <p>Não era um rato.</p>
+                    <p> O bicho, meu Deus, era um homem.</p>
+                    <h5 className="Autor e título">O Bicho, de Manuel Bandeira.</h5>
                 </p>
             </div>
-            <div>
-            <img src="https://images.pexels.com/photos/4868573/pexels-photo-4868573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foto do poema"></img>
+            <div className="Img">
+                <img src="https://4.bp.blogspot.com/-PPd-Tq9hQXM/WLvyH9_1-DI/AAAAAAAAU0M/KdxUX4wrvw0ExRl8l6Bc0gUFRpphYTkzgCLcB/s1600/Homem.jpg" alt="Foto do poema"></img>
             </div>
-        </div> 
+        </div>
     );
 }
 
