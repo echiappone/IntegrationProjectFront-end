@@ -1,4 +1,5 @@
-interface Doacao {
+interface DoacoesDTO 
+{   
     id: number;
     titulo: string;
     contato: string;
@@ -9,4 +10,4 @@ interface Doacao {
     foto: string;
 }
 
-export default Doacao;
+export default DoacoesDTO;

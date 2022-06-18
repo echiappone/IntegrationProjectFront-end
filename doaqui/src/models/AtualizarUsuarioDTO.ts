@@ -1,13 +1,11 @@
-interface Usuario {
+interface AtualizarUsuarioDTO {
     id: number;
     nome: string;
     email: string;
-    senha: string;
+    foto: string;
     telefone: string;
     endereco: string;
     cnpj: string;
-    tipo: string;
-    foto: string;
 }
 
-export default Usuario;
+export default AtualizarUsuarioDTO;

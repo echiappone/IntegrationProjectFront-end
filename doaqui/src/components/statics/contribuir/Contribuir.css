@@ -35,14 +35,16 @@
 }
 
 #h2_passos {
-    margin-top: 0px;
+    margin-top: 10px;
     margin-bottom: 0px;
     height: 55px;
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 300;
-    font-size: 65px;
+    font-size: 48px;
     width: 1000px;
 }
+
+
 
 /* Section */
 #quero_doar section {
@@ -95,7 +97,7 @@
     height: 45px;
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 300;
-    font-size: 65px;
+    font-size: 48px;
     border-bottom: 18px solid #05c19c;
 }
 
