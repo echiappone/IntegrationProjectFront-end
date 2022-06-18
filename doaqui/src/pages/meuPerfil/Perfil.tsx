@@ -10,7 +10,10 @@ import { useNavigate } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { buscaId, put } from "../../services/Service";
 import { toast } from "react-toastify";
-//import base64 from 'react-native-base64'
+import AtualizarUsuarioDTO from "../../models/AtualizarUsuarioDTO";
+import AtualizarSenhaUsuarioDTO from "../../models/AtualizarSenhaUsuarioDTO";
+import { Search } from "@material-ui/icons";
+
 
 function Perfil() {
 
@@ -20,17 +23,27 @@ function Perfil() {
 
   const [idOng, setIdOng] = useLocalStorage('id');
 
-  const [usuario, setUsuario] = useState<Usuario>({
+  const [usuario, setUsuario] = useState<AtualizarUsuarioDTO>({
     id: 0,
     nome: "",
     email: "",
-    senha: "",
     telefone: "",
     endereco: "",
     cnpj: "",
-    tipo: "ONG",
-    foto: "",
+    foto: ""
   });
+
+  const [usuarioSenha, setUsuarioSenha] = useState<AtualizarSenhaUsuarioDTO>({
+    id: 0,
+    senhaAntiga: "",
+    senhaNova: ""
+  })
+
+  const [comparaUsuarioSenha, setComparaUsuarioSenha] = useState<AtualizarSenhaUsuarioDTO>({
+    id: 0,
+    senhaAntiga: "",
+    senhaNova: ""
+  })
 
   useEffect(() => {
     if (token === '') {
@@ -48,25 +61,39 @@ function Perfil() {
     })
   }
 
+  function updatedModelSenha(e: ChangeEvent<HTMLInputElement>) {
+
+    setUsuarioSenha({
+        ...usuarioSenha,
+        [e.target.name]: e.target.value
+    })
+  }
+
   async function getProfile() {
     await buscaId(`/api/Usuarios/id/${idOng}`, setUsuario, {
       headers:{
         'Authorization': token
       }
+    } );
+    await buscaId(`/api/Usuarios/id/${idOng}`, setComparaUsuarioSenha, {
+      headers:{
+        'Authorization': token
+      }
     } )
+    
   }
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
-    if(usuario.foto !== "" && usuario.telefone !== "" && usuario.endereco !== "" && usuario.nome !== "")
+    if(usuario.cnpj !== "" && usuario.email !== "" && usuario.nome !== "" && usuario.telefone !== "" && usuario.endereco !== "")
     {
-        await put(`/api/Usuarios`, usuario, setUsuario, 
+        await put(`/api/Usuarios/usuario`, usuario, setUsuario, 
         {
-          header:{
+          headers:{
             'Authorization': token
           }
         })
-        toast.success('Usuario cadastrado com sucesso', {
+        toast.success('Usuario atualizado com sucesso', {
             position: "bottom-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -91,6 +118,30 @@ function Perfil() {
             });
     }
 }
+
+async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
+  e.preventDefault()
+  if(usuarioSenha.senhaAntiga === comparaUsuarioSenha.senhaAntiga)
+  {
+      await put(`/api/Usuarios/usuario`, usuario, setUsuario, 
+      {
+        headers:{
+          'Authorization': token
+        }
+      });
+      toast.success('Usuario atualizado com sucesso', {
+          position: "bottom-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+          });
+      }
+  }
+
 
   return (
     // eslint-disable-next-line react/jsx-no-comment-textnodes
@@ -119,8 +170,9 @@ function Perfil() {
                 <input
                   type="text"
                   id="cnpj"
+                  name="cnpj"
                   value={usuario.cnpj}
-                  disabled={true}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 />
                 <div id="txtCNPJ"></div>
               </div>
@@ -132,7 +184,7 @@ function Perfil() {
                   id="email"
                   name="email"
                   value={usuario.email}
-                  disabled={true}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 />
                 <div id="txtEmail"></div>
               </div>
@@ -208,14 +260,16 @@ function Perfil() {
           <div id="perfil-container-right-bottom">
             <h1 className="h1-cima">Segurança</h1>
             <h1 className="h1-baixo">Alterar senha</h1>
-            <form>
+            <form onSubmit={onSubmitSenha}>
 
               <div className="input-group-perfil">
                 <label> Senha Atual </label>
                 <input
-                  type="text"
+                  type="password"
                   id="senhaAtual"
                   placeholder="Digite sua senha atual"
+                  value={usuarioSenha.senhaAntiga}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
                 />
                 <div id="txtSenha"></div>
               </div>
@@ -223,9 +277,11 @@ function Perfil() {
               <div className="input-group-perfil">
                 <label>Senha</label>
                 <input
-                  type="Senha"
+                  type="password"
                   id="novaSenha"
                   placeholder="Digite sua nova senha"
+                  value={usuarioSenha.senhaNova}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
                 />
                 <div id="txtNovaSenha"></div>
               </div>
@@ -233,9 +289,10 @@ function Perfil() {
               <div className="input-group-perfil">
                 <label> Confirmar senha</label>
                 <input
-                  type="Senha"
+                  type="password"
                   id="confirmaSenha"
                   placeholder="Confirme sua nova senha"
+                  
                 />
                 <div id="txtConfirmaSenha"></div>
               </div>
