@@ -13,6 +13,7 @@ import { toast } from "react-toastify";
 import AtualizarUsuarioDTO from "../../models/AtualizarUsuarioDTO";
 import AtualizarSenhaUsuarioDTO from "../../models/AtualizarSenhaUsuarioDTO";
 import { Search } from "@material-ui/icons";
+import AutenticarUsuarioSenhaDTO from "../../models/AutenticarUsuarioSenhaDTO";
 
 
 function Perfil() {
@@ -39,10 +40,10 @@ function Perfil() {
     senhaNova: ""
   })
 
-  const [comparaUsuarioSenha, setComparaUsuarioSenha] = useState<AtualizarSenhaUsuarioDTO>({
-    id: 0,
+  const [usuarioConfirmaSenha, setUsuarioConfirmaSenha] = useState<AutenticarUsuarioSenhaDTO>({
     senhaAntiga: "",
-    senhaNova: ""
+    senhaNova: "",
+    confirmarSenhaNova: ""
   })
 
   useEffect(() => {
@@ -63,8 +64,8 @@ function Perfil() {
 
   function updatedModelSenha(e: ChangeEvent<HTMLInputElement>) {
 
-    setUsuarioSenha({
-        ...usuarioSenha,
+    setUsuarioConfirmaSenha({
+        ...usuarioConfirmaSenha,
         [e.target.name]: e.target.value
     })
   }
@@ -74,13 +75,7 @@ function Perfil() {
       headers:{
         'Authorization': token
       }
-    } );
-    await buscaId(`/api/Usuarios/id/${idOng}`, setComparaUsuarioSenha, {
-      headers:{
-        'Authorization': token
-      }
     } )
-    
   }
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
@@ -106,7 +101,7 @@ function Perfil() {
     }
     else
     {
-        toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+        toast.error('Dados inconsistentes. Favor verificar as informações inseridas.', {
             position: "bottom-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -121,15 +116,20 @@ function Perfil() {
 
 async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
   e.preventDefault()
-  if(usuarioSenha.senhaAntiga === comparaUsuarioSenha.senhaAntiga)
-  {
-      await put(`/api/Usuarios/usuario`, usuario, setUsuario, 
-      {
-        headers:{
-          'Authorization': token
-        }
-      });
-      toast.success('Usuario atualizado com sucesso', {
+  if(usuarioConfirmaSenha.senhaNova !== "" && usuarioConfirmaSenha.senhaNova === usuarioConfirmaSenha.confirmarSenhaNova && usuarioConfirmaSenha.senhaAntiga !== "")
+  { 
+      usuarioSenha.id = usuario.id;
+      usuarioSenha.senhaAntiga = usuarioConfirmaSenha.senhaAntiga;
+      usuarioSenha.senhaNova = usuarioConfirmaSenha.senhaNova;
+
+      try{
+        await put(`/api/Usuarios/senha`, usuarioSenha, setUsuarioSenha, 
+        {
+          headers:{
+            'Authorization': token
+          }
+        });
+        toast.success('Usuario atualizado com sucesso', {
           position: "bottom-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -140,6 +140,32 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
           progress: undefined,
           });
       }
+      catch(exception){
+        toast.error('Senha antiga incorreta.', {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+            });
+      }
+    }
+    else
+    {
+      toast.error('Dados inconsistentes. Favor verificar as informações inseridas.', {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+        });
+    }
   }
 
 
@@ -266,9 +292,10 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                 <label> Senha Atual </label>
                 <input
                   type="password"
-                  id="senhaAtual"
+                  id="senhaAntiga"
                   placeholder="Digite sua senha atual"
-                  value={usuarioSenha.senhaAntiga}
+                  name="senhaAntiga"
+                  value={usuarioConfirmaSenha.senhaAntiga}
                   onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
                 />
                 <div id="txtSenha"></div>
@@ -278,9 +305,10 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                 <label>Senha</label>
                 <input
                   type="password"
-                  id="novaSenha"
+                  id="senhaNova"
+                  name="senhaNova"
                   placeholder="Digite sua nova senha"
-                  value={usuarioSenha.senhaNova}
+                  value={usuarioConfirmaSenha.senhaNova}
                   onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
                 />
                 <div id="txtNovaSenha"></div>
@@ -290,9 +318,11 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                 <label> Confirmar senha</label>
                 <input
                   type="password"
-                  id="confirmaSenha"
+                  id="confirmarSenhaNova"
+                  name="confirmarSenhaNova"
                   placeholder="Confirme sua nova senha"
-                  
+                  value={usuarioConfirmaSenha.confirmarSenhaNova}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
                 />
                 <div id="txtConfirmaSenha"></div>
               </div>
