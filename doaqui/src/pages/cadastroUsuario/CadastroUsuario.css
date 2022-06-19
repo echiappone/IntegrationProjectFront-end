@@ -45,6 +45,7 @@
 }
 #form-box-usuario h1{
     font-size: 55px;
+    font-family: 'Bebas Neue';
 }
 #form-box-usuario p{
     font-weight: bold;
@@ -93,11 +94,11 @@ form .input-group-usuario button{
     cursor: pointer;
     font-size: 16px;
 }
-@media (max-width:930px) {
-    .img-box{
+@media (max-width:950px) {
+    #img-box-usuario{
         display: none;
     }
-    .box{
+    #form-box-usuario{
         width: 700px;
     }
     .form-box{
