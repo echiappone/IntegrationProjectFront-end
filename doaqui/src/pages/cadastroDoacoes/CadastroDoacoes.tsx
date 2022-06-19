@@ -17,12 +17,12 @@ function CadastroDoacoes() {
         {
             id: 0,
             titulo: "",
+            descricao: "",
             contato: "",
             quantidade: 0,
-            descricao: "",
             validade: "",
-            cnpjDoador: "",
-            foto: ""
+            foto: "",
+            cnpjDoador: ""
         }
     );
 
@@ -30,12 +30,12 @@ function CadastroDoacoes() {
         {
             id: 1,
             titulo: "",
+            descricao: "",
             contato: "",
             quantidade: 1,
-            descricao: "",
             validade: "",
-            cnpjDoador: "",
-            foto: ""
+            foto: "",
+            cnpjDoador: ""
         }
     );
     
@@ -61,6 +61,7 @@ function CadastroDoacoes() {
                 theme: "colored",
                 progress: undefined,
                 });
+                navigate("/fazer-doacao");
         }
         else
         {
@@ -78,7 +79,6 @@ function CadastroDoacoes() {
     }
 
     return (
-        
         <>
         <NavbarPages />
                 <div id="containerPrincipal-doacoes">

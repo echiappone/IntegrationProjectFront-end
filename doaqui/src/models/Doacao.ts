@@ -1,4 +1,4 @@
-interface Doacao {
+interface Doacao{
     id: number;
     titulo: string;
     contato: string;
