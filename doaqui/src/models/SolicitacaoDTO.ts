@@ -1,10 +1,6 @@
-import Doacao from "./Doacao";
-import Usuario from "./Usuario";
-
 interface SolicitacaoDTO {
-    id: number;
-    doacao: Doacao;
-    ong: Usuario;
+    idONG: number,
+    idDoacao: number
 }
 
 export default SolicitacaoDTO;
