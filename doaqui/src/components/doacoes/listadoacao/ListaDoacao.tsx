@@ -13,6 +13,7 @@ import CardMedia from '@mui/material/CardMedia';
 import SolicitacaoDTO from '../../../models/SolicitacaoDTO';
 import Doacao from '../../../models/Doacao';
 import { toast } from 'react-toastify';
+import HistoricoSolicitacaoDTO from '../../../models/HistoricoSolicitacaoDTO';
 
 
 function ListaDoacao() {
@@ -22,7 +23,7 @@ function ListaDoacao() {
     const [token, setToken] = useLocalStorage('token');
     const [idOng, setIdOng] = useLocalStorage('id');
 
-    const [solicitacoes, setSolicitacoes] = useState<Solicitacao[]>([]);
+    const [solicitacoes, setSolicitacoes] = useState<HistoricoSolicitacaoDTO[]>([]);
 
     const [solicitacao, setSolicitacao] = useState<SolicitacaoDTO>({
         idONG: parseInt(idOng),
@@ -47,6 +48,7 @@ function ListaDoacao() {
         }
         getProfile();
         getPost();
+        getSolicitacoes();
     }, [token])
 
     async function getPost() {
@@ -74,8 +76,7 @@ function ListaDoacao() {
     }
 
     async function handleSolicitacao(id: number) {
-        console.log(id)
-        getSolicitacoes();
+        
         setSolicitacao({
             ...solicitacao,
             idDoacao: id
@@ -86,16 +87,9 @@ function ListaDoacao() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
-        try {
-            await post('/api/Solicitacoes', solicitacao, setSolicitacao, {
-                headers: {
-                    'Authorization': token
-                }
-            });
+        if(solicitacoes.find(sol => sol.doacao.id === solicitacao.idDoacao)){
 
-            getPost();
-
-            toast.success('Solicitação concluida com sucesso!', {
+            toast.error('Você já solicitou essa doação!', {
                 position: "bottom-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -103,21 +97,44 @@ function ListaDoacao() {
                 pauseOnHover: false,
                 draggable: false,
                 theme: "colored",
-                progress: undefined
-            })
-
-        } catch (error) {
-            toast.error('Não foi possivel concluir sua soliciatação, tente novamente!', {
-                position: "bottom-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined
-            })
+                progress: undefined,
+                });
         }
+        else{
+            try {
+                await post('/api/Solicitacoes', solicitacao, setSolicitacao, {
+                    headers: {
+                        'Authorization': token
+                    }
+                });
+    
+                getPost();
+    
+                toast.success('Solicitação concluida com sucesso!', {
+                    position: "bottom-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined
+                })
+    
+            } catch (error) {
+                toast.error('Não foi possivel concluir sua soliciatação, tente novamente!', {
+                    position: "bottom-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined
+                })
+            }
+        }
+        
     }
 
     return (

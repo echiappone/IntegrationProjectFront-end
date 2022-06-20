@@ -21,10 +21,8 @@ function TabDoacao() {
         <>
             <div id='doacoes'>
                 <TabContext value={value}>
-                   
-                        <Tabs centered indicatorColor="secondary" onChange={handleChange}>
-                        <h2 id="h2_doacoes">Escolha sua<span id="span-borda"> doação!</span></h2>
-                        </Tabs>
+                         
+                        <h2 id="h2_doacoes">Escolha sua <span id="span-borda-tabdoacao">doação!</span></h2>
                 
                     <TabPanel value="1" >
                         <Box display="flex" flexWrap="wrap" justifyContent="center">

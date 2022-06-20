@@ -17,9 +17,10 @@
     font-weight: 300;
     font-size: 48px;
     width: 1000px;
+    padding-bottom: 70px;
 }
 
-#span-borda {
+#span-borda-tabdoacao{
     margin-top: 0px;
     margin-bottom: 0px;
     height: 45px;

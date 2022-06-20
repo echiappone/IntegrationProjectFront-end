@@ -33,7 +33,7 @@ const NavbarLogado = () => {
             <a href="/" className="nav-logo"></a>
 
             <div className={'nav-items'}>
-                <a href="/perfil">Perfil</a>
+                <a href="/meuPerfil">Perfil</a>
                 <a href="/doacoes">Doações</a>
             </div>
             <div className={'nav-items2'} onClick={goLogout}>
