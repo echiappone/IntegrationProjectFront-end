@@ -22,7 +22,8 @@ function CadastroDoacoes() {
             quantidade: 0,
             validade: "",
             foto: "",
-            cnpjDoador: ""
+            cnpjDoador: "",
+            limite: 0
         }
     );
 
@@ -35,7 +36,8 @@ function CadastroDoacoes() {
             quantidade: 1,
             validade: "",
             foto: "",
-            cnpjDoador: ""
+            cnpjDoador: "",
+            limite: 1
         }
     );
     
@@ -48,7 +50,7 @@ function CadastroDoacoes() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(doacao.cnpjDoador !== '' && doacao.contato !== '' && doacao.descricao !== '' && doacao.quantidade !== 0 && doacao.titulo !== '' && doacao.validade !== '' && doacao.foto !== '')
+        if(doacao.cnpjDoador !== '' && doacao.contato !== '' && doacao.descricao !== '' && doacao.quantidade !== 0 && doacao.titulo !== '' && doacao.validade !== '' && doacao.foto !== '' && doacao.limite > 0)
         {
             await cadastroDoacao(`/api/Doacoes`, doacao, setDoacaoResultado);
             toast.success('Doação cadastrada com sucesso', {
@@ -108,9 +110,14 @@ function CadastroDoacoes() {
                                 <div id="txtTelefone"></div>
                             </div>
 
-                            <div className="input-group-doacao">
+                            <div className="input-group-doacao w50">
                                 <label htmlFor="quantidade">Quantidade</label>
                                 <input value={doacao.quantidade} type="text" id="quantidade" name="quantidade" placeholder="Digite a quantidade do produto" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
+                                <div id="txtQuantidade"></div>
+                            </div>
+                            <div className="input-group-doacao w50">
+                                <label htmlFor="quantidade">Limite por ONG</label>
+                                <input value={doacao.limite} type="text" id="limite" name="limite" placeholder="Digite o limite por ONG" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                                 <div id="txtQuantidade"></div>
                             </div>
 
@@ -137,7 +144,6 @@ function CadastroDoacoes() {
                                 <button type="submit">Cadastrar</button>
                             </div>
 
-                            
                         </form>
                     </div>
                 </div>
