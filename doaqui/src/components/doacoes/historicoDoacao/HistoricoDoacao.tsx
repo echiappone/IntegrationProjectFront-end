@@ -32,7 +32,8 @@ function HistoricoDoacao() {
             quantidade: 0,
             validade: "",
             foto: "",
-            cnpjDoador: ""
+            cnpjDoador: "",
+            limite: 0
         }
     );
 

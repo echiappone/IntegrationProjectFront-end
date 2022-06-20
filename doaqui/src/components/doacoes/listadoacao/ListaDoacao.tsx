@@ -134,7 +134,7 @@ function ListaDoacao() {
                 })
             }
         }
-        
+        getSolicitacoes();
     }
 
     return (

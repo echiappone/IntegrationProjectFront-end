@@ -7,6 +7,7 @@ interface Doacao{
     descricao: string;
     validade: string;
     cnpjDoador: string;
+    limite: number;
     
 }
 
