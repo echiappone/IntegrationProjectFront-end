@@ -36,21 +36,6 @@ function Login() {
             [e.target.name]: e.target.value
         })
     }
-    useEffect(() => {
-        if (token !== '') {
-            navigate('/doacoes')
-            toast.success('Você já esta logado', {
-                position: "bottom-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-                });
-        }
-    }, [token])
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
 
@@ -109,18 +94,18 @@ function Login() {
                                 id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth/>
                             */}
 
-                            <div className="input-group">
+                            <div className="input-group-login">
                                 <label htmlFor="email">E-mail</label>
                                 <input value={dto.email} type="email" id="email" name="email" placeholder="Digite o seu email" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                                 <div id="txtEmail"></div>
                             </div>
 
-                            <div className="input-group">
+                            <div className="input-group-login">
                                 <label htmlFor="senha">Senha</label>
                                 <input value={dto.senha} type="password" id="senha" name="senha" placeholder="Digite sua senha" onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} />
                             </div>
 
-                            <Box marginTop={2} textAlign='center' className="input-group">
+                            <Box marginTop={2} textAlign='center' className="input-group-login">
                                 <Button type='submit' variant='contained' color='primary'>
                                     Logar
                                 </Button>
@@ -130,7 +115,7 @@ function Login() {
                                 <Box marginRight={1}>
                                     <Typography variant='subtitle1' gutterBottom align='center' className='label1'>Não tem uma conta?</Typography>
                                 </Box>
-                                <Link to='/cadastro'>
+                                <Link to='/cadastro' id='link-cadastro'>
                                     <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
                                 </Link>
                             </Box>

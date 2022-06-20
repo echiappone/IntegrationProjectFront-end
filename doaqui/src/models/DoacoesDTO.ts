@@ -1,13 +1,13 @@
-interface Doacao {
+interface DoacoesDTO 
+{   
     id: number;
     titulo: string;
-    foto: string;
     contato: string;
     quantidade: number;
     descricao: string;
     validade: string;
     cnpjDoador: string;
-    
+    foto: string;
 }
 
-export default Doacao;
+export default DoacoesDTO;

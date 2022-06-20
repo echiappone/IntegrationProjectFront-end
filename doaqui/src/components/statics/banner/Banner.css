@@ -5,7 +5,17 @@
 #banner{
     display: flex;
     flex-direction: column;
-    padding-top: 125px;
+    padding-top: 100px;
+}
+
+#banner_txt h1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 55px;
+    font-family: 'Hind Vadodara', sans-serif;
+    font-weight: 700;
+    font-size: 65px;
+    width: 500px;
 }
 
 #banner_txt{
@@ -18,7 +28,17 @@
     user-select: none;
 }
 
-#banner_txt h1{
+#nossas_acoes{
+    width: 425px;
+    margin-left: 15%;
+    
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#nossas_acoes h1{
     margin-top: 0px;
     margin-bottom: 0px;
     height: 55px;
@@ -80,6 +100,7 @@
 #banner_btn a:hover {
     opacity: 0.8;
 }
+
 
 /*responsividade fonte*/
 @media (max-width: 1280px) {

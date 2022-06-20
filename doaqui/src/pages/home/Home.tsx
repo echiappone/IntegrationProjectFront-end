@@ -42,7 +42,6 @@ function Home() {
             <Fazemos />
             <Contribuir />
             <Carrossel />
-            <Poema />
             <FooterNao />
             <Footer />
         </>

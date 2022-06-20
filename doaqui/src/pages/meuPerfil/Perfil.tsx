@@ -1,125 +1,344 @@
 import Avatar from "@mui/material/Avatar";
-import React from "react";
-import Footer from '../../components/statics/footer/Footer';
-import NavbarPages from '../../components/statics/navbarPages/NavbarPages';
-import {TextField, Box, Button} from '@material-ui/core';
-import './Perfil.css';
+import React, { useEffect, useState, ChangeEvent } from "react";
+import Footer from "../../components/statics/footer/Footer";
+import { Button } from "@material-ui/core";
+import { Box } from "@mui/material";
+import "./Perfil.css";
+import NavbarLogado from "../../components/statics/navbarLogado/NavbarLogado";
+import useLocalStorage from "react-use-localstorage";
+import { useNavigate } from "react-router-dom";
+import Usuario from "../../models/Usuario";
+import { buscaId, put } from "../../services/Service";
+import { toast } from "react-toastify";
+import AtualizarUsuarioDTO from "../../models/AtualizarUsuarioDTO";
+import AtualizarSenhaUsuarioDTO from "../../models/AtualizarSenhaUsuarioDTO";
+import { Search } from "@material-ui/icons";
+import AutenticarUsuarioSenhaDTO from "../../models/AutenticarUsuarioSenhaDTO";
+
 
 function Perfil() {
-    return (
-        // eslint-disable-next-line react/jsx-no-comment-textnodes
-        <>
-            <NavbarPages />
-            <div id="perfil-container">
-                <div id="perfil-container-left">
-                    <div id="perfil-container-left-top">
-                        <Avatar id="perfil-avatar"
-                            alt="Imagem Usuario"
-                            src="https://voxnews.com.br/wp-content/uploads/2017/04/unnamed.png"
-                            variant="circular"
-                        />
-                        <h1>Nome da ONG</h1>
-                    </div>
-                    <div id="perfil-container-left-bottom">
 
-                    </div>
-                </div>
-                <div id="perfil-container-right">
-                    <div id="perfil-container-right-top">
-                        <h1 className='h1-cima'>Informações</h1>
-                        <h1 className='h1-baixo'>Dados ONG</h1>
-                        <form>
-                            {/*
-                            <TextField id='nome' label='Nome da ONG' variant='outlined' name='nome' margin='normal' fullWidth/>
-                            <TextField id='cnpj' label='CNPJ' variant='outlined' name='cnpj' margin='normal' fullWidth/>
-                            <TextField id='nomePresidente' label='Nome do(a) presidente da ONG' variant='outlined' name='presidente' margin='normal' fullWidth/>
-                            <TextField id='email' label='E-mail' variant='outlined' name='email' margin='normal' fullWidth/>
-                            <TextField id='telefone' label='Telefone' variant='outlined' name='telefone' margin='normal' fullWidth/>
-                            <TextField id='endereco' label='Endereço' variant='outlined' name='endereco' margin='normal' fullWidth />
-                            */}
+  let navigate = useNavigate();
 
-                        <div className="input-group">
-                            <label> Nome da ONG </label>
-                            <input type="text" id="nome" placeholder="Digite o seu nome completo" />
-                            <div id="txtNome"></div>
-                        </div>
+  const [token, setToken] = useLocalStorage('token');
 
-                        <div className="input-group">
-                            <label>CNPJ</label>
-                            <input type="CNPJ" id="CNPJ" placeholder="Digite o CNPJ da sua empresa" />
-                            <div id="txtCNPJ"></div>
-                        </div>
+  const [idOng, setIdOng] = useLocalStorage('id');
+
+  const [usuario, setUsuario] = useState<AtualizarUsuarioDTO>({
+    id: 0,
+    nome: "",
+    email: "",
+    telefone: "",
+    endereco: "",
+    cnpj: "",
+    foto: ""
+  });
+
+  const [usuarioSenha, setUsuarioSenha] = useState<AtualizarSenhaUsuarioDTO>({
+    id: 0,
+    senhaAntiga: "",
+    senhaNova: ""
+  })
+
+  const [usuarioConfirmaSenha, setUsuarioConfirmaSenha] = useState<AutenticarUsuarioSenhaDTO>({
+    senhaAntiga: "",
+    senhaNova: "",
+    confirmarSenhaNova: ""
+  })
+
+  useEffect(() => {
+    if (token === '') {
+        navigate('/login')
+    }
+    getProfile();
+  }, [token])
 
 
-                        <div className="input-group">
-                            <label> Telefone</label>
-                            <input type="Telefone" id="Telefone" placeholder="Digite o Telefone" />
-                            <div id="txtTelefone"></div>
-                        </div>
+  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
-                        <div className="input-group">
-                            <label>E-mail</label>
-                            <input type="email" id="email" placeholder="Digite o seu email" />
-                            <div id="txtEmail"></div>
-                        </div>
+    setUsuario({
+        ...usuario,
+        [e.target.name]: e.target.value
+    })
+  }
 
-                        <div className="input-group">
-                            <label> Endereço</label>
-                            <input type="Endereco" id="Endereco" placeholder="Digite o Endereço" />
-                            <div id="txtEndereco"></div>
-                        </div>
+  function updatedModelSenha(e: ChangeEvent<HTMLInputElement>) {
 
-                            <Box id='box-botao-atualizar-dados'>
-                                <Button id='botao-atualizar-dados' type='submit'>
-                                    <p>Atualizar Dados</p>
-                                </Button>
-                            </Box>
-                        </form>
-                        
-                    </div>
-                    <div id="perfil-container-right-bottom">
+    setUsuarioConfirmaSenha({
+        ...usuarioConfirmaSenha,
+        [e.target.name]: e.target.value
+    })
+  }
 
-                    <h1 className='h1-cima'>Segurança</h1>
-                        <h1 className='h1-baixo'>Alterar senha</h1>
-                        <form>
-                            {/*
-                            <TextField id='senhaAtual' label='Senha atual' variant='outlined' name='senhaAtual' margin='normal' fullWidth/>
-                            <TextField id='novaSenha' label='Nova senha' variant='outlined' name='novaSenha' margin='normal' fullWidth/>
-                            <TextField id='confirmaSenha' label='Confirme a nova senha' variant='outlined' name='confirmaSenha' margin='normal' fullWidth/>
-                            */}
-                            
-                            <div className="input-group">
-                                <label> Senha Atual </label>
-                                <input type="text" id="senhaAtual" placeholder="Digite sua senha atual" />
-                                <div id="txtSenha"></div>
-                            </div>
+  async function getProfile() {
+    await buscaId(`/api/Usuarios/id/${idOng}`, setUsuario, {
+      headers:{
+        'Authorization': token
+      }
+    } )
+  }
 
-                            <div className="input-group">
-                                <label>Senha</label>
-                                <input type="Senha" id="novaSenha" placeholder="Digite sua nova senha" />
-                                <div id="txtNovaSenha"></div>
-                            </div>
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if(usuario.cnpj !== "" && usuario.email !== "" && usuario.nome !== "" && usuario.telefone !== "" && usuario.endereco !== "")
+    {
+        await put(`/api/Usuarios/usuario`, usuario, setUsuario, 
+        {
+          headers:{
+            'Authorization': token
+          }
+        })
+        toast.success('Usuario atualizado com sucesso', {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+            });
+    }
+    else
+    {
+        toast.error('Dados inconsistentes. Favor verificar as informações inseridas.', {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+            });
+    }
+}
+
+async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
+  e.preventDefault()
+  if(usuarioConfirmaSenha.senhaNova !== "" && usuarioConfirmaSenha.senhaNova === usuarioConfirmaSenha.confirmarSenhaNova && usuarioConfirmaSenha.senhaAntiga !== "")
+  { 
+      usuarioSenha.id = usuario.id;
+      usuarioSenha.senhaAntiga = usuarioConfirmaSenha.senhaAntiga;
+      usuarioSenha.senhaNova = usuarioConfirmaSenha.senhaNova;
+
+      try{
+        await put(`/api/Usuarios/senha`, usuarioSenha, setUsuarioSenha, 
+        {
+          headers:{
+            'Authorization': token
+          }
+        });
+        toast.success('Usuario atualizado com sucesso', {
+          position: "bottom-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+          });
+      }
+      catch(exception){
+        toast.error('Senha antiga incorreta.', {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+            });
+      }
+    }
+    else
+    {
+      toast.error('Dados inconsistentes. Favor verificar as informações inseridas.', {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+        });
+    }
+  }
 
 
-                            <div className="input-group">
-                                <label> Confirmar senha</label>
-                                <input type="Senha" id="confirmaSenha" placeholder="Confirme sua nova senha" />
-                                <div id="txtConfirmaSenha"></div>
-                            </div>
+  return (
+    // eslint-disable-next-line react/jsx-no-comment-textnodes
+    <>
+      <NavbarLogado />
+      <div id="perfil-container">
+        <div id="perfil-container-left">
+          <div id="perfil-container-left-top">
+            <Avatar
+              id="perfil-avatar"
+              alt="Imagem Usuario"
+              src={usuario.foto}
+              variant="circular"
+            />
+            <h1>{usuario.nome}</h1>
+          </div>
+          <div id="perfil-container-left-bottom"></div>
+        </div>
+        <div id="perfil-container-right">
+          <div id="perfil-container-right-top">
+            <h1 className="h1-cima">Informações</h1>
+            <h1 className="h1-baixo">Dados ONG</h1>
+            <form onSubmit={onSubmit}>
+            <div className="input-group-perfil">
+                <label>CNPJ</label>
+                <input
+                  type="text"
+                  id="cnpj"
+                  name="cnpj"
+                  value={usuario.cnpj}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                />
+                <div id="txtCNPJ"></div>
+              </div>
 
-                            <Box id='box-botao-atualizar-senha'>
-                                <Button id='botao-atualizar-senha' type='submit'>
-                                    <p>Atualizar senha</p>
-                                </Button>
-                            </Box>
-                        </form>
+            <div className="input-group-perfil">
+                <label htmlFor="email">E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={usuario.email}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                />
+                <div id="txtEmail"></div>
+              </div>
 
-                    </div>
-                </div>
-            </div>
-            <Footer />
-        </>
-    );
+              
+
+              <div className="input-group-perfil">
+                <label htmlFor="nome"> Nome da ONG </label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Digite o seu nome completo"
+                  value={usuario.nome}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+
+                />
+                <div id="txtNome"></div>
+              </div>
+
+
+
+              <div className="input-group-perfil">
+                <label htmlFor="telefone"> Telefone</label>
+                <input
+                  type="text"
+                  id="telefone"
+                  name="telefone"
+                  placeholder="Digite o Telefone"
+                  value={usuario.telefone}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                />
+                <div id="txtTelefone"></div>
+              </div>
+
+              
+
+              <div className="input-group-perfil">
+                <label htmlFor="endereco">Endereço</label>
+                <input
+                  type="text"
+                  id="endereco"
+                  name="endereco"
+                  placeholder="Digite o Endereço"
+                  value={usuario.endereco}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+
+                />
+                <div id="txtEndereco"></div>
+              </div>
+
+              <div className="input-group-perfil">
+                <label htmlFor="foto">Foto</label>
+                <input
+                  type="text"
+                  id="foto"
+                  name="foto"
+                  placeholder="Digite a URL da imagem"
+                  value={usuario.foto}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+
+                />
+                <div id="txtEndereco"></div>
+              </div>
+
+              <Box id="box-botao-atualizar-dados">
+                <Button id="botao-atualizar-dados" type="submit">
+                  <p>Atualizar Dados</p>
+                </Button>
+              </Box>
+            </form>
+          </div>
+          <div id="perfil-container-right-bottom">
+            <h1 className="h1-cima">Segurança</h1>
+            <h1 className="h1-baixo">Alterar senha</h1>
+            <form onSubmit={onSubmitSenha}>
+
+              <div className="input-group-perfil">
+                <label> Senha Atual </label>
+                <input
+                  type="password"
+                  id="senhaAntiga"
+                  placeholder="Digite sua senha atual"
+                  name="senhaAntiga"
+                  value={usuarioConfirmaSenha.senhaAntiga}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
+                />
+                <div id="txtSenha"></div>
+              </div>
+
+              <div className="input-group-perfil">
+                <label>Senha</label>
+                <input
+                  type="password"
+                  id="senhaNova"
+                  name="senhaNova"
+                  placeholder="Digite sua nova senha"
+                  value={usuarioConfirmaSenha.senhaNova}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
+                />
+                <div id="txtNovaSenha"></div>
+              </div>
+
+              <div className="input-group-perfil">
+                <label> Confirmar senha</label>
+                <input
+                  type="password"
+                  id="confirmarSenhaNova"
+                  name="confirmarSenhaNova"
+                  placeholder="Confirme sua nova senha"
+                  value={usuarioConfirmaSenha.confirmarSenhaNova}
+                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
+                />
+                <div id="txtConfirmaSenha"></div>
+              </div>
+
+              <Box id="box-botao-atualizar-senha">
+                <Button id="botao-atualizar-senha" type="submit">
+                  <p>Atualizar senha</p>
+                </Button>
+              </Box>
+            </form>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
 }
 
 export default Perfil;

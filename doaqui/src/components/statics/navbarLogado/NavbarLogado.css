@@ -1,0 +1,97 @@
+.transicao {
+    transition-timing-function: 1s;
+}
+
+
+/*MENU PRINCIPAL*/
+.Navbar {
+    color: #FF7F0B;
+    position: fixed;
+    width: 100%;
+    z-index: 1000000;
+    top:0;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.925);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.192);
+}
+/*FIM MENU PRINCIPAL*/
+
+/*LOGO*/
+.Navbar>.nav-logo {
+
+    background-image: url(https://i.imgur.com/9A0998r.png);
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+    background-size: contain;
+    background-position: center;
+    margin: 15px;
+}
+/*FIM LOGO*/
+
+/*ITEM1*/
+.Navbar>.nav-items>a {
+    color: #FF7F0B;
+    font-family: 'Hind Vadodara';
+    font-size: 20px;
+    text-decoration: none;
+    margin: 15px;
+    position: relative;
+    opacity: 0.9;
+}
+
+.Navbar>.nav-items>a:hover {
+    opacity: 1;
+}
+
+.Navbar>.nav-items>a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #FF7F0B;
+    transition: all 0.45s;
+}
+
+.Navbar>.nav-items>a:hover::before {
+    width: 100%;
+}
+/*FIM ITEM1*/
+
+/*ITEM2*/
+.Navbar>.nav-items2>a {
+    color: #FF7F0B;
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    text-decoration: none;
+    margin: 15px;
+    position: relative;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.Navbar>.nav-items2>a:hover {
+    opacity: 1;
+    color: #FF7F0B;
+    
+}
+
+.Navbar>.nav-items2>a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #FF7F0B;
+    transition: all 0.45s;
+}
+
+.Navbar>.nav-items2>a:hover::before {
+    width: 100%;
+}
+/*FIM ITEM2*/
