@@ -6,15 +6,13 @@ import './ListaDoacao.css';
 import useLocalStorage from 'react-use-localstorage';
 import { useNavigate } from 'react-router-dom';
 import { Box } from '@mui/material';
-import { useSelector } from "react-redux";
-import { TokenState } from '../../../store/tokens/tokensReducer';
 import Doacoes from '../../../models/Doacao';
-import { toast } from 'react-toastify';
 import Usuario from '../../../models/Usuario';
 import Solicitacao from '../../../models/Solicitacao';
 import CardMedia from '@mui/material/CardMedia';
 import SolicitacaoDTO from '../../../models/SolicitacaoDTO';
 import Doacao from '../../../models/Doacao';
+import { toast } from 'react-toastify';
 
 
 function ListaDoacao() {
@@ -127,6 +125,7 @@ function ListaDoacao() {
             {
                 posts.map(post => (
                     <Box m={2} >
+                    < div className = "Card">
                         <form onSubmit={onSubmit}>
                             <Card variant="outlined">
                                 <CardMedia
@@ -158,23 +157,13 @@ function ListaDoacao() {
 
                                 </CardContent>
                                 <CardActions>
-                                    <Box display="flex" justifyContent="center" mb={1.5}>
-                                        <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="inherit" >
-                                                Mais informações
-                                            </Button>
-                                        </Box>
-
-
-                                        <Box mx={1}>
-                                            <Button type="submit" variant="contained" size='small' color="primary" onClick={() => handleSolicitacao(post.id)}>
+                                            <Button type="submit" id='Button' onClick={() => handleSolicitacao(post.id)}>
                                                 Quero essa doação
                                             </Button>
-                                        </Box>
-                                    </Box>
                                 </CardActions>
                             </Card>
                         </form>
+                        </div>
                     </Box>
                 ))
             }

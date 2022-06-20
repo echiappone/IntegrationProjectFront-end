@@ -1,7 +1,7 @@
 import Avatar from "@mui/material/Avatar";
 import React, { useEffect, useState, ChangeEvent } from "react";
 import Footer from "../../components/statics/footer/Footer";
-import { Button } from "@material-ui/core";
+import { AppBar, Button, Tab, Tabs } from "@material-ui/core";
 import { Box } from "@mui/material";
 import "./Perfil.css";
 import NavbarLogado from "../../components/statics/navbarLogado/NavbarLogado";
@@ -13,7 +13,9 @@ import { toast } from "react-toastify";
 import AtualizarUsuarioDTO from "../../models/AtualizarUsuarioDTO";
 import AtualizarSenhaUsuarioDTO from "../../models/AtualizarSenhaUsuarioDTO";
 import { Search } from "@material-ui/icons";
+import { TabContext, TabPanel } from '@material-ui/lab';
 import AutenticarUsuarioSenhaDTO from "../../models/AutenticarUsuarioSenhaDTO";
+import HistoricoDoacao from "../../components/doacoes/historicoDoacao/HistoricoDoacao";
 
 
 function Perfil() {
@@ -23,6 +25,7 @@ function Perfil() {
   const [token, setToken] = useLocalStorage('token');
 
   const [idOng, setIdOng] = useLocalStorage('id');
+  const [value, setValue] = useState('1')
 
   // DTO para manipulação e update de dados do usuário
   const [usuario, setUsuario] = useState<AtualizarUsuarioDTO>({
@@ -171,6 +174,9 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
     }
   }
 
+  function handleChange(event: React.ChangeEvent<{}>, newValue: string) {
+    setValue(newValue);
+}
 
   return (
     // eslint-disable-next-line react/jsx-no-comment-textnodes
@@ -187,7 +193,15 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
             />
             <h1>{usuario.nome}</h1>
           </div>
-          <div id="perfil-container-left-bottom"></div>
+          <div id="perfil-container-left-bottom">
+          <div className='largura'>
+                <TabContext value={value}>
+                  <Box display="flex" flexWrap="wrap" justifyContent="center">
+                  <HistoricoDoacao />
+                  </Box>
+                </TabContext>
+            </div>
+          </div>
         </div>
         <div id="perfil-container-right">
           <div id="perfil-container-right-top">
