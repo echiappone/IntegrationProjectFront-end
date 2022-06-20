@@ -92,7 +92,7 @@ function ListaDoacao() {
                     'Authorization': token
                 }
             });
-            
+
             getPost();
 
             toast.success('Solicitação concluida com sucesso!', {
@@ -125,44 +125,41 @@ function ListaDoacao() {
             {
                 posts.map(post => (
                     <Box m={2} >
-                    < div className = "Card">
-                        <form onSubmit={onSubmit}>
-                            <Card variant="outlined">
-                                <CardMedia
-                                    component="img"
-                                    height="140"
-                                    image={post.foto}
-                                    alt="Imagem do produto"
-                                />
-                                <CardContent>
-                                    
-                                    <Typography color="textSecondary" gutterBottom>
-                                        Doação de:
-                                    </Typography>
-                                    <Typography variant="h5" component="h2">
-                                        { }
-                                    </Typography>
-                                    <Typography variant="body2" component="p">
-                                        {"Produto: " + post.titulo}
-                                    </Typography>
-                                    <Typography variant="body2" component="p">
-                                        {"Descrição: " + post.descricao}
-                                    </Typography>
-                                    <Typography variant="body2" component="p">
-                                        {"Validade: " + post.validade}
-                                    </Typography>
-                                    <Typography variant="body2" component="p">
-                                        {"Quantidade: " + post.quantidade}
-                                    </Typography>
+                        < div className="Card">
+                            <form onSubmit={onSubmit}>
+                                <Card variant="outlined">
+                                    <CardMedia
+                                        component="img"
+                                        height="140"
+                                        image={post.foto}
+                                        alt="Imagem do produto"
+                                    />
+                                    <CardContent>
 
-                                </CardContent>
-                                <CardActions>
-                                            <Button type="submit" id='Button' onClick={() => handleSolicitacao(post.id)}>
-                                                Quero essa doação
-                                            </Button>
-                                </CardActions>
-                            </Card>
-                        </form>
+                                        <Typography variant="h5" color="textSecondary" gutterBottom>
+                                            {"Produto: " + post.titulo}
+                                        </Typography>
+                                        <Typography variant="h5" component="h2">
+                                            { }
+                                        </Typography>
+                                        <Typography variant="body2" component="p">
+                                            {"Descrição: " + post.descricao}
+                                        </Typography>
+                                        <Typography variant="body2" component="p">
+                                            {"Validade: " + post.validade}
+                                        </Typography>
+                                        <Typography variant="body2" component="p">
+                                            {"Quantidade: " + post.quantidade}
+                                        </Typography>
+
+                                    </CardContent>
+                                    <CardActions>
+                                        <Button type="submit" id='Button' onClick={() => handleSolicitacao(post.id)}>
+                                            Quero essa doação
+                                        </Button>
+                                    </CardActions>
+                                </Card>
+                            </form>
                         </div>
                     </Box>
                 ))

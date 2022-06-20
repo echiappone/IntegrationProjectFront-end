@@ -12,8 +12,8 @@ import { toast } from 'react-toastify';
 import Usuario from '../../../models/Usuario';
 import Solicitacao from '../../../models/Solicitacao';
 import CardMedia from '@mui/material/CardMedia';
-import SolicitacaoDTO from '../../../models/SolicitacaoDTO';
 import Doacoes from '../../../models/DoacoesDTO';
+import HistoricoSolicitacaoDTO from '../../../models/HistoricoSolicitacaoDTO';
 
 
 function HistoricoDoacao() {
@@ -21,7 +21,7 @@ function HistoricoDoacao() {
     const [token, setToken] = useLocalStorage('token');
     let navigate = useNavigate();
     const [idOng, setIdOng] = useLocalStorage('id');
-    const [solicitacoes, setSolicitacoes] = useState<SolicitacaoDTO[]>([]);
+    const [solicitacoes, setSolicitacoes] = useState<HistoricoSolicitacaoDTO[]>([]);
     
     const [doacao, setDoacao] = useState<Doacao>(
         {
