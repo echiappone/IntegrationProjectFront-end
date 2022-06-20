@@ -95,22 +95,20 @@ function HistoricoDoacao() {
                 {
                     solicitacoes.map(solicitacoes => (
                         <Box m={2} >
-                            <Card variant="outlined">
+                            <div id="Cardsd">
                                 <CardMedia
                                     component="img"
-                                    height="140"
+                                    height="150"
                                     image={solicitacoes.doacao.foto}
                                     alt="Imagem do produto"
                                 />
+                               
                                 <CardContent>
                                     <Typography color="textSecondary" gutterBottom>
-                                        Doação de:
+                                    {"Produto: "+ solicitacoes.doacao.titulo}
                                     </Typography>
                                     <Typography variant="h5" component="h2">
                                         {}
-                                    </Typography>
-                                    <Typography variant="body2" component="p">
-                                        {"Produto: "+ solicitacoes.doacao.titulo}
                                     </Typography>
                                     <Typography variant="body2" component="p">
                                         {"Descrição: "+ solicitacoes.doacao.descricao}
@@ -123,7 +121,7 @@ function HistoricoDoacao() {
                                     </Typography>
                                     
                                 </CardContent>
-                            </Card>
+                            </div>
                         </Box>
                     ))
                 }

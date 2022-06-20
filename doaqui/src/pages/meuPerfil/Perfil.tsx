@@ -195,11 +195,11 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
           </div>
           <div id="perfil-container-left-bottom">
           <div className='largura'>
-                <TabContext value={value}>
-                  <Box display="flex" flexWrap="wrap" justifyContent="center">
+                
+                  <div id="cardsd">
                   <HistoricoDoacao />
-                  </Box>
-                </TabContext>
+                  </div>
+                
             </div>
           </div>
         </div>

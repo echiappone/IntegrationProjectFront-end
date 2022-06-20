@@ -88,9 +88,9 @@
 
 #botao-atualizar-dados{
     width: 40%;
-    min-width: 150px;
-    margin-top: 50px;
-    height: 75px;
+    min-width: 130px;
+    margin-top: 30px;
+    height: 45px;
     background-color: #05C19C;
     border-radius: 20px;
     border: none;
@@ -101,8 +101,8 @@
 #botao-atualizar-dados p{
     font-family: 'Bebas Neue';
     font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
+    font-weight: 300;
+    font-size: 25px;
     line-height: 50px;
     color: white;
     padding-top: 20px;
@@ -139,9 +139,9 @@
 
 #botao-atualizar-senha{
     width: 40%;
-    min-width: 150px;
-    margin-top: 50px;
-    height: 75px;
+    min-width: 130px;
+    margin-top: 30px;
+    height: 45px;
     background-color: #05C19C;
     border-radius: 20px;
     border: none;
@@ -152,8 +152,8 @@
 #botao-atualizar-senha p{
     font-family: 'Bebas Neue';
     font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
+    font-weight: 300;
+    font-size: 25px;
     line-height: 50px;
     color: white;
     padding-top: 20px;
@@ -183,4 +183,10 @@ form .input-group-perfil input{
 }
 form .input-group-perfil input:focus{
     border: 2px solid #E67E22;
+}
+@media (max-width: 1330px) {
+    #botao-atualizar-senha {
+        top: -40px;
+        right: -5%;
+    }
 }
