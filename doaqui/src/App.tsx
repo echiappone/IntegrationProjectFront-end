@@ -29,7 +29,7 @@ function App() {
           <Route path='/doacoes' element={<Doacoes />} />
           <Route path="/listaDoacoes" element={<ListaDoacao />} />
           <Route path="/deletarDoacao/:id" element={<DeletarDoacao />} />
-          <Route path='/meuPerfil' element={<Perfil />}/>
+          <Route path='/perfil' element={<Perfil />}/>
 
         </Routes>
       </Router>
