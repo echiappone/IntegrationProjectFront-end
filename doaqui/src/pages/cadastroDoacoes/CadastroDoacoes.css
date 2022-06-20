@@ -45,6 +45,7 @@
 }
 #form-box-doacoes h1{
     font-size: 55px;
+    font-family: 'Bebas Neue';
 }
 #form-box-doacoes p{
     font-weight: bold;
@@ -93,11 +94,11 @@ form .input-group-doacao button{
     cursor: pointer;
     font-size: 16px;
 }
-@media (max-width:930px) {
-    .img-box{
+@media (max-width:950px) {
+    #img-box-doacoes{
         display: none;
     }
-    .box{
+    #form-box-doacoes{
         width: 700px;
     }
     .form-box{

@@ -26,7 +26,7 @@
 
 #perfil-container-left-top h1{
     text-align: center;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-bottom: 0px;
     font-family: 'Hind Vadodara', sans-serif;
     font-weight: 700;
@@ -63,7 +63,6 @@
 
 #perfil-container-right-top{
     width: 100%;
-    margin-top: 30px;
     align-items: center;
 }
 

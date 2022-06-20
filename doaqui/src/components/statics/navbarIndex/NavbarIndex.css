@@ -15,7 +15,7 @@
     align-items: center;
     background: rgba(255, 255, 255, 0.925);
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.192);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);;
 }
 /*FIM MENU PRINCIPAL*/
 
@@ -127,7 +127,7 @@
     }
 
     .Navbar>.nav-items.open {
-        transform: translateX(0);
+        transform: translateX(0);        
     }
 
     /*FIM ITEM1*/

@@ -24,6 +24,7 @@ function Perfil() {
 
   const [idOng, setIdOng] = useLocalStorage('id');
 
+  // DTO para manipulação e update de dados do usuário
   const [usuario, setUsuario] = useState<AtualizarUsuarioDTO>({
     id: 0,
     nome: "",
@@ -34,12 +35,14 @@ function Perfil() {
     foto: ""
   });
 
+  // DTO para update de senha do usuário
   const [usuarioSenha, setUsuarioSenha] = useState<AtualizarSenhaUsuarioDTO>({
     id: 0,
     senhaAntiga: "",
     senhaNova: ""
   })
 
+  // DTO para manipulação e autenticação de senha
   const [usuarioConfirmaSenha, setUsuarioConfirmaSenha] = useState<AutenticarUsuarioSenhaDTO>({
     senhaAntiga: "",
     senhaNova: "",
