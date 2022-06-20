@@ -6,19 +6,17 @@ import './ListaDoacao.css';
 import useLocalStorage from 'react-use-localstorage';
 import { useNavigate } from 'react-router-dom';
 import { Box } from '@mui/material';
-import { useSelector } from "react-redux";
-import { TokenState } from '../../../store/tokens/tokensReducer';
 import Doacoes from '../../../models/Doacao';
-import { toast } from 'react-toastify';
 import Usuario from '../../../models/Usuario';
 import Solicitacao from '../../../models/Solicitacao';
 import CardMedia from '@mui/material/CardMedia';
 import SolicitacaoDTO from '../../../models/SolicitacaoDTO';
 import Doacao from '../../../models/Doacao';
+import { toast } from 'react-toastify';
 
 
 function ListaDoacao() {
-    
+  
     const [posts, setPosts] = useState<Doacoes[]>([]);
     const [token, setToken] = useLocalStorage('token');
     let navigate = useNavigate();
@@ -165,51 +163,52 @@ function ListaDoacao() {
             {
                 posts.map(post => (
                     <Box m={2} >
-                        <Card variant="outlined">
+                        < div className = "Card">
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image= {post.foto}
+                        
+                            />
+                             {/*    <Card variant="outlined">
                             <CardMedia
                                 component="img"
                                 height="140"
                                 image={post.foto}
-                                alt="Imagem do produto"
-                            />
+                                 alt="Imagem do produto" */}
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Doação de:
-                                </Typography>
-                                <Typography variant="h5" component="h2">
-                                    {}
+                                {post.titulo}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {"Produto: "+ post.titulo}
+                                    {"Descricao: "+ post.descricao}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {"Descrição: "+ post.descricao}
+                                    {"Quantidade: "+ post.quantidade}
                                 </Typography>
                                 <Typography variant="body2" component="p">
                                     {"Validade: "+ post.validade}
                                 </Typography>
                                 <Typography variant="body2" component="p">
-                                    {"Quantidade: "+ post.quantidade}
+                                    {"Contato: "+ post.contato}
+                                </Typography>
+                                <Typography variant="body2" component="p">
+                                    {"Cnpj: "+ post.cnpjDoador}
                                 </Typography>
                                 
                             </CardContent>
                             <CardActions>
-                                <Box display="flex" justifyContent="center" mb={1.5}>
-                                        <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="inherit" >
-                                                Mais informações
-                                            </Button>
-                                        </Box>
-
-            
-                                        <Box mx={1}>
+                               
+                                        
+                                        <div><Button id='Button'>Solicitar doação</Button>
+                                        </div>
+                                        {/*<Box mx={1}>
                                             <Button variant="contained" size='small' color="primary" onClick={() => handleSolicitacao(post)}>
                                                 Quero essa doação
                                             </Button>
-                                        </Box>
-                                </Box>
+                                </Box>*/}
                             </CardActions>
-                        </Card>
+                            </div>
                     </Box>
                 ))
             }
