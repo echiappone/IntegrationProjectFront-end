@@ -54,7 +54,7 @@ function Perfil() {
 
   useEffect(() => {
     if (token === '') {
-        navigate('/login')
+      navigate('/login')
     }
     getProfile();
   }, [token])
@@ -63,104 +63,48 @@ function Perfil() {
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
     setUsuario({
-        ...usuario,
-        [e.target.name]: e.target.value
+      ...usuario,
+      [e.target.name]: e.target.value
     })
   }
 
   function updatedModelSenha(e: ChangeEvent<HTMLInputElement>) {
 
     setUsuarioConfirmaSenha({
-        ...usuarioConfirmaSenha,
-        [e.target.name]: e.target.value
+      ...usuarioConfirmaSenha,
+      [e.target.name]: e.target.value
     })
   }
 
   async function getProfile() {
     await buscaId(`/api/Usuarios/id/${idOng}`, setUsuario, {
-      headers:{
+      headers: {
         'Authorization': token
       }
-    } )
+    })
   }
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
-    if(usuario.cnpj !== "" && usuario.email !== "" && usuario.nome !== "" && usuario.telefone !== "" && usuario.endereco !== "")
-    {
-        await put(`/api/Usuarios/usuario`, usuario, setUsuario, 
+    if (usuario.cnpj !== "" && usuario.email !== "" && usuario.nome !== "" && usuario.telefone !== "" && usuario.endereco !== "") {
+      await put(`/api/Usuarios/usuario`, usuario, setUsuario,
         {
-          headers:{
+          headers: {
             'Authorization': token
           }
         })
-        toast.success('Usuario atualizado com sucesso', {
-            position: "bottom-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: "colored",
-            progress: undefined,
-            });
+      toast.success('Usuario atualizado com sucesso', {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     }
-    else
-    {
-        toast.error('Dados inconsistentes. Favor verificar as informações inseridas.', {
-            position: "bottom-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: "colored",
-            progress: undefined,
-            });
-    }
-}
-
-async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
-  e.preventDefault()
-  if(usuarioConfirmaSenha.senhaNova !== "" && usuarioConfirmaSenha.senhaNova === usuarioConfirmaSenha.confirmarSenhaNova && usuarioConfirmaSenha.senhaAntiga !== "")
-  { 
-      usuarioSenha.id = usuario.id;
-      usuarioSenha.senhaAntiga = usuarioConfirmaSenha.senhaAntiga;
-      usuarioSenha.senhaNova = usuarioConfirmaSenha.senhaNova;
-
-      try{
-        await put(`/api/Usuarios/senha`, usuarioSenha, setUsuarioSenha, 
-        {
-          headers:{
-            'Authorization': token
-          }
-        });
-        toast.success('Usuario atualizado com sucesso', {
-          position: "bottom-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          theme: "colored",
-          progress: undefined,
-          });
-      }
-      catch(exception){
-        toast.error('Senha antiga incorreta.', {
-            position: "bottom-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: "colored",
-            progress: undefined,
-            });
-      }
-    }
-    else
-    {
+    else {
       toast.error('Dados inconsistentes. Favor verificar as informações inseridas.', {
         position: "bottom-right",
         autoClose: 2000,
@@ -170,20 +114,77 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
         draggable: false,
         theme: "colored",
         progress: undefined,
+      });
+    }
+  }
+
+  async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if (usuarioConfirmaSenha.senhaNova !== "" && usuarioConfirmaSenha.senhaNova === usuarioConfirmaSenha.confirmarSenhaNova && usuarioConfirmaSenha.senhaAntiga !== "") {
+      usuarioSenha.id = usuario.id;
+      usuarioSenha.senhaAntiga = usuarioConfirmaSenha.senhaAntiga;
+      usuarioSenha.senhaNova = usuarioConfirmaSenha.senhaNova;
+
+      try {
+        await put(`/api/Usuarios/senha`, usuarioSenha, setUsuarioSenha,
+          {
+            headers: {
+              'Authorization': token
+            }
+          });
+        toast.success('Usuario atualizado com sucesso', {
+          position: "bottom-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
         });
+      }
+      catch (exception) {
+        toast.error('Senha antiga incorreta.', {
+          position: "bottom-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
+      }
+    }
+    else {
+      toast.error('Dados inconsistentes. Favor verificar as informações inseridas.', {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     }
   }
 
   function handleChange(event: React.ChangeEvent<{}>, newValue: string) {
     setValue(newValue);
-}
+  }
 
   return (
     // eslint-disable-next-line react/jsx-no-comment-textnodes
     <>
       <NavbarLogado />
+      {/* Container da pagina inteira */}
       <div id="perfil-container">
+
+        {/* Container da esquerda */}
         <div id="perfil-container-left">
+
+          {/* Container da foto e nome*/}
           <div id="perfil-container-left-top">
             <Avatar
               id="perfil-avatar"
@@ -193,46 +194,59 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
             />
             <h1>{usuario.nome}</h1>
           </div>
-          <div id="perfil-container-left-bottom">
-          <div className='largura'>
-                
-                  <div id="cardsd">
+
+          {/* Container do historico de doacoes */}
+          <section id="section-doacoes">
+            <label id="label-checkbox" htmlFor="checkbox">
+              <h4>Minhas Solicitações</h4>
+              <i className="fa-solid fa-chevron-right"></i>
+            </label>
+            <input type="checkbox" name="checkbox" id="checkbox" />
+            
+            <div id="perfil-container-left-bottom">
+              <div>
+
+                <div id="cardsd">
                   <HistoricoDoacao />
-                  </div>
-                
+                </div>
+
+              </div>
             </div>
-          </div>
+          </section>
+
         </div>
+
+        {/* Container da direita */}
         <div id="perfil-container-right">
           <div id="perfil-container-right-top">
             <h1 className="h1-cima">Informações</h1>
             <h1 className="h1-baixo">Dados ONG</h1>
             <form onSubmit={onSubmit}>
-            <div className="input-group-perfil">
+              <div className="input-group-perfil">
                 <label>CNPJ</label>
                 <input
                   type="text"
                   id="cnpj"
                   name="cnpj"
                   value={usuario.cnpj}
-                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 />
                 <div id="txtCNPJ"></div>
               </div>
 
-            <div className="input-group-perfil">
+              <div className="input-group-perfil">
                 <label htmlFor="email">E-mail</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={usuario.email}
-                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 />
                 <div id="txtEmail"></div>
               </div>
 
-              
+
 
               <div className="input-group-perfil">
                 <label htmlFor="nome"> Nome da ONG </label>
@@ -242,13 +256,11 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                   name="nome"
                   placeholder="Digite o seu nome completo"
                   value={usuario.nome}
-                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
 
                 />
                 <div id="txtNome"></div>
               </div>
-
-
 
               <div className="input-group-perfil">
                 <label htmlFor="telefone"> Telefone</label>
@@ -258,12 +270,12 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                   name="telefone"
                   placeholder="Digite o Telefone"
                   value={usuario.telefone}
-                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 />
                 <div id="txtTelefone"></div>
               </div>
 
-              
+
 
               <div className="input-group-perfil">
                 <label htmlFor="endereco">Endereço</label>
@@ -273,7 +285,7 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                   name="endereco"
                   placeholder="Digite o Endereço"
                   value={usuario.endereco}
-                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
 
                 />
                 <div id="txtEndereco"></div>
@@ -287,7 +299,7 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                   name="foto"
                   placeholder="Digite a URL da imagem"
                   value={usuario.foto}
-                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
 
                 />
                 <div id="txtEndereco"></div>
@@ -313,7 +325,7 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                   placeholder="Digite sua senha atual"
                   name="senhaAntiga"
                   value={usuarioConfirmaSenha.senhaAntiga}
-                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
                 />
                 <div id="txtSenha"></div>
               </div>
@@ -326,7 +338,7 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                   name="senhaNova"
                   placeholder="Digite sua nova senha"
                   value={usuarioConfirmaSenha.senhaNova}
-                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
                 />
                 <div id="txtNovaSenha"></div>
               </div>
@@ -339,7 +351,7 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                   name="confirmarSenhaNova"
                   placeholder="Confirme sua nova senha"
                   value={usuarioConfirmaSenha.confirmarSenhaNova}
-                  onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
                 />
                 <div id="txtConfirmaSenha"></div>
               </div>
@@ -350,6 +362,7 @@ async function onSubmitSenha(e: ChangeEvent<HTMLFormElement>) {
                 </Button>
               </Box>
             </form>
+
           </div>
         </div>
       </div>

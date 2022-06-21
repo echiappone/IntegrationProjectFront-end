@@ -1,6 +1,4 @@
-
-
-#perfil-container{
+#perfil-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -8,23 +6,24 @@
     background-color: #F5F5F5;
     padding-top: 125px;
 }
+
 /* CODIGO CONTAINER ESQUERDA*/
-#perfil-container-left{
+#perfil-container-left {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
     position: relative;
-    justify-content:flex-start;
+    justify-content: flex-start;
 }
 
-#perfil-container-left-top{
+#perfil-container-left-top {
     align-items: center;
     justify-content: center;
     width: 60%;
 }
 
-#perfil-container-left-top h1{
+#perfil-container-left-top h1 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0px;
@@ -33,16 +32,15 @@
     font-size: 40px;
 }
 
-#perfil-avatar{
-    width:25vw;
-    height:25vw;
+#perfil-avatar {
+    width: 25vw;
+    height: 25vw;
     margin: 0 auto;
 }
 
-
 /* CODIGO CONTAINER DIREITA CIMA*/
 
-#perfil-container-right{
+#perfil-container-right {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,22 +49,22 @@
     align-items: center;
 }
 
-.h1-cima{
+.h1-cima {
     line-height: 59.92px;
     size: 40px;
 }
 
-.h1-baixo{
+.h1-baixo {
     line-height: 53.93px;
     size: 36px;
 }
 
-#perfil-container-right-top{
+#perfil-container-right-top {
     width: 100%;
     align-items: center;
 }
 
-#perfil-container-right-top h1{
+#perfil-container-right-top h1 {
     margin-top: 0px;
     margin-bottom: 0px;
     font-family: 'Hind Vadodara', sans-serif;
@@ -74,19 +72,20 @@
     font-size: 40px;
 }
 
-#perfil-container-right-top form{
+#perfil-container-right-top form {
     width: 80%;
     margin-top: 10px;
 }
 
-#box-botao-atualizar-dados{
+#box-botao-atualizar-dados {
     align-items: center;
     justify-content: center;
     width: 100%;
     display: flex;
+    min-width: 450px;
 }
 
-#botao-atualizar-dados{
+#botao-atualizar-dados {
     width: 40%;
     min-width: 130px;
     margin-top: 30px;
@@ -98,7 +97,7 @@
     margin-bottom: 30px;
 }
 
-#botao-atualizar-dados p{
+#botao-atualizar-dados p {
     font-family: 'Bebas Neue';
     font-style: normal;
     font-weight: 300;
@@ -111,13 +110,13 @@
 
 /* CODIGO CONTAINER DIREITA BAIXO*/
 
-#perfil-container-right-bottom{
+#perfil-container-right-bottom {
     width: 100%;
     margin-top: 30px;
     align-items: center;
 }
 
-#perfil-container-right-bottom h1{
+#perfil-container-right-bottom h1 {
     margin-top: 0px;
     margin-bottom: 0px;
     font-family: 'Hind Vadodara', sans-serif;
@@ -125,19 +124,20 @@
     font-size: 40px;
 }
 
-#perfil-container-right-bottom form{
+#perfil-container-right-bottom form {
     width: 80%;
     margin-top: 10px;
 }
 
-#box-botao-atualizar-senha{
+#box-botao-atualizar-senha {
     align-items: center;
     justify-content: center;
     width: 100%;
     display: flex;
+    min-width: 450px;
 }
 
-#botao-atualizar-senha{
+#botao-atualizar-senha {
     width: 40%;
     min-width: 130px;
     margin-top: 30px;
@@ -149,7 +149,7 @@
     margin-bottom: 30px;
 }
 
-#botao-atualizar-senha p{
+#botao-atualizar-senha p {
     font-family: 'Bebas Neue';
     font-style: normal;
     font-weight: 300;
@@ -160,16 +160,18 @@
     display: block;
 }
 
-form .input-group-perfil{
+form .input-group-perfil {
     margin-bottom: 15px;
 }
-form .input-group-perfil label{
+
+form .input-group-perfil label {
     color: #3D3D3D;
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
-form .input-group-perfil input{
+
+form .input-group-perfil input {
     width: 100%;
     height: 47px;
     background-color: rgba(255, 255, 255, 0.32);
@@ -181,12 +183,95 @@ form .input-group-perfil input{
     color: #616161;
     transition: all 0.4s ease;
 }
-form .input-group-perfil input:focus{
+
+form .input-group-perfil input:focus {
     border: 2px solid #E67E22;
 }
+
+#section-doacoes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+}
+
+
+#label-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 500px;
+    background-color: #05C19C;
+    height: 50px;
+    border-radius: 30px;
+}
+
+#label-checkbox h4 {
+    color: white;
+    font-family: 'Bebas Neue';
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+#label-checkbox i {
+    font-size: 30px;
+    color: white;
+    padding-right: 20px;
+
+}
+
+#checkbox {
+    display: none;
+}
+
+#checkbox:checked~#perfil-container-left-bottom {
+    display: none;
+}
+
+#perfil-container-left-bottom {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+/*
+#cardsd {
+    display: flex;
+    flex-direction: row;
+    width: 470px;
+}
+*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #DDD;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #BBB;
+}
+
+
 @media (max-width: 1330px) {
-    #botao-atualizar-senha {
-        top: -40px;
-        right: -5%;
+    #perfil-container {
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        align-items: center;
     }
 }

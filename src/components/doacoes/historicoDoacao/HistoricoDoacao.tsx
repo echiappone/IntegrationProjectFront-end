@@ -95,7 +95,7 @@ function HistoricoDoacao() {
             <>
                 {
                     solicitacoes.map(solicitacoes => (
-                        <Box m={2} >
+                        <Box m={2} id="container-cards">
                             <div id="Cardsd">
                                 <CardMedia
                                     component="img"
@@ -112,13 +112,16 @@ function HistoricoDoacao() {
                                         {}
                                     </Typography>
                                     <Typography variant="body2" component="p">
+                                        {"Contato: "+ solicitacoes.doacao.contato}
+                                    </Typography>
+                                    <Typography variant="body2" component="p">
                                         {"Descrição: "+ solicitacoes.doacao.descricao}
                                     </Typography>
                                     <Typography variant="body2" component="p">
                                         {"Validade: "+ solicitacoes.doacao.validade}
                                     </Typography>
                                     <Typography variant="body2" component="p">
-                                        {"Quantidade: "+ solicitacoes.doacao.quantidade}
+                                        {"Quantidade: "+ solicitacoes.doacao.limite}
                                     </Typography>
                                     
                                 </CardContent>

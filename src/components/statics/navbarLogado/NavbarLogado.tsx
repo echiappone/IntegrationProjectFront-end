@@ -32,11 +32,11 @@ const NavbarLogado = () => {
         <div className="Navbar">
             <a href="/" className="nav-logo"></a>
 
-            <div className={'nav-items'}>
+            <div className={'nav-items-logado'}>
                 <a href="/perfil">Perfil</a>
                 <a href="/doacoes">Doações</a>
             </div>
-            <div className={'nav-items2'} onClick={goLogout}>
+            <div className={'nav-items2-logado'} onClick={goLogout}>
                 <a>Logout</a>
             </div>
 

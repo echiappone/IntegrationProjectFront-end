@@ -13,7 +13,6 @@ const NavbarErick = () => {
                 <a href="#inicio">Inicio</a>
                 <a className="transicao" href="#como_funciona">Como Funciona</a>
                 <a href="#nossas_acoes">Nossas Ações</a>
-                <a href="#sobre_nos">Sobre Nós</a>
                 <a href="/fazer-doacao">Quero Doar</a>
             </div>
             <div className={`nav-items2 ${isOpen && "open"}`}>

@@ -14,7 +14,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: auto;
-    display: flex;
     min-width: 28rem;
     box-shadow: 0 0 9px 0.1px rgba(194, 118, 18, 0.178);
     overflow: hidden;

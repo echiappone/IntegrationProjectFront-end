@@ -33,7 +33,7 @@
 /*FIM LOGO*/
 
 /*ITEM1*/
-.Navbar>.nav-items>a {
+.Navbar>.nav-items-logado>a {
     color: #FF7F0B;
     font-family: 'Hind Vadodara';
     font-size: 20px;
@@ -43,11 +43,11 @@
     opacity: 0.9;
 }
 
-.Navbar>.nav-items>a:hover {
+.Navbar>.nav-items-logado>a:hover {
     opacity: 1;
 }
 
-.Navbar>.nav-items>a::before {
+.Navbar>.nav-items-logado>a::before {
     content: "";
     position: absolute;
     left: 0;
@@ -58,13 +58,13 @@
     transition: all 0.45s;
 }
 
-.Navbar>.nav-items>a:hover::before {
+.Navbar>.nav-items-logado>a:hover::before {
     width: 100%;
 }
 /*FIM ITEM1*/
 
 /*ITEM2*/
-.Navbar>.nav-items2>a {
+.Navbar>.nav-items2-logado>a {
     color: #FF7F0B;
     font-family: 'Bebas Neue';
     font-size: 20px;
@@ -75,13 +75,13 @@
     cursor: pointer;
 }
 
-.Navbar>.nav-items2>a:hover {
+.Navbar>.nav-items2-logado>a:hover {
     opacity: 1;
     color: #FF7F0B;
     
 }
 
-.Navbar>.nav-items2>a::before {
+.Navbar>.nav-items2-logado>a::before {
     content: "";
     position: absolute;
     left: 0;
@@ -92,7 +92,7 @@
     transition: all 0.45s;
 }
 
-.Navbar>.nav-items2>a:hover::before {
+.Navbar>.nav-items2-logado>a:hover::before {
     width: 100%;
 }
 /*FIM ITEM2*/
