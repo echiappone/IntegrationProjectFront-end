@@ -196,7 +196,6 @@ form .input-group-perfil input:focus {
 
 }
 
-
 #label-checkbox {
     display: flex;
     flex-direction: row;
@@ -204,7 +203,7 @@ form .input-group-perfil input:focus {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 10px;
-    width: 500px;
+    width: 600px;
     background-color: #05C19C;
     height: 50px;
     border-radius: 30px;
@@ -234,6 +233,7 @@ form .input-group-perfil input:focus {
 
 #perfil-container-left-bottom {
     height: 500px;
+    width: 600px;
     overflow-y: scroll;
 }
 
@@ -273,5 +273,32 @@ form .input-group-perfil input:focus {
         flex-wrap: wrap-reverse;
         justify-content: center;
         align-items: center;
+    }
+    form .input-group-perfil input {
+        min-width: 400px;
+    }
+
+    #perfil-container-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 0%;
+        position: relative;
+        justify-content: flex-start;
+    }
+
+    .h1-dados {
+        line-height: 200px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .h1-senha {
+        align-items: center;
+        text-align: center;
+    }
+
+    form .input-group-perfil {
+        margin-left: 100px;
     }
 }
