@@ -97,7 +97,7 @@ function HistoricoDoacao() {
                     solicitacoes.map(solicitacoes => (
                         <Box m={2} id="container-cards">
                             <div id="Cardsd">
-                                <CardMedia
+                                <CardMedia id='imagem-doacao'
                                     component="img"
                                     height="150"
                                     image={solicitacoes.doacao.foto}
@@ -105,13 +105,13 @@ function HistoricoDoacao() {
                                 />
                                
                                 <CardContent>
-                                    <Typography color="textSecondary" gutterBottom>
+                                    <Typography id='titulo-doacao' color="textSecondary" gutterBottom>
                                     {"Produto: "+ solicitacoes.doacao.titulo}
                                     </Typography>
                                     <Typography variant="h5" component="h2">
                                         {}
                                     </Typography>
-                                    <Typography variant="body2" component="p">
+                                    <Typography id='contato-doacao' variant="body2" component="p">
                                         {"Contato: "+ solicitacoes.doacao.contato}
                                     </Typography>
                                     <Typography variant="body2" component="p">
@@ -122,6 +122,9 @@ function HistoricoDoacao() {
                                     </Typography>
                                     <Typography variant="body2" component="p">
                                         {"Quantidade: "+ solicitacoes.doacao.limite}
+                                    </Typography>
+                                    <Typography variant="body2" component="p">
+                                        {"CNPJ Doador: "+ solicitacoes.doacao.cnpjDoador}
                                     </Typography>
                                     
                                 </CardContent>

@@ -219,8 +219,7 @@ function Perfil() {
         {/* Container da direita */}
         <div id="perfil-container-right">
           <div id="perfil-container-right-top">
-            <h1 className="h1-cima">Informações</h1>
-            <h1 className="h1-baixo">Dados ONG</h1>
+            <h1 className="h1-dados">Dados ONG</h1>
             <form onSubmit={onSubmit}>
               <div className="input-group-perfil">
                 <label>CNPJ</label>
@@ -313,8 +312,7 @@ function Perfil() {
             </form>
           </div>
           <div id="perfil-container-right-bottom">
-            <h1 className="h1-cima">Segurança</h1>
-            <h1 className="h1-baixo">Alterar senha</h1>
+            <h1 className="h1-senha">Alterar senha</h1>
             <form onSubmit={onSubmitSenha}>
 
               <div className="input-group-perfil">
