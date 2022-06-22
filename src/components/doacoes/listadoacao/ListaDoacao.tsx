@@ -144,10 +144,10 @@ function ListaDoacao() {
                     <Box m={2} >
                         < div className="Card">
                             <form onSubmit={onSubmit}>
-                                <Card variant="outlined">
+                                <Card className='content' variant="outlined">
                                     <CardMedia
                                         component="img"
-                                        height="140"
+                                        height="250"
                                         image={post.foto}
                                         alt="Imagem do produto"
                                     />
