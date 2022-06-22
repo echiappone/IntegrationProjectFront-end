@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <img src="src/assets/imgs/integrantes.png" alt="logo" >
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</h1>
 
-## Available Scripts
+<br> 
 
-In the project directory, you can run:
+# IntegrationProjectFront-end
 
-### `npm start`
+## :computer: Projeto
+Uma plataforma de e-commerce que facilita os processos de doações entre empresas e ONGs. 
+Com intuito de alcançar um publico que não realiza doações devido a processos e formulários longos e burocráticos, trazemos algo novo, removendo telas e formulários desnecessários, tornando-os simples, dinâmicos e intuitivos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## :rocket: Tecnologias
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
 
-### `npm test`
+- [HTML](https://devdocs.io/html/)
+- [CSS](https://devdocs.io/css/) 
+- [REACT](https://devdocs.io/react/)
+- [TYPESCRIPT](https://devdocs.io/typescript/)
+### No front-end definimos uma paleta de cores em _hexadecimal:_
+* E67E22
+* F5F5F5
+* 05c19c
+* 331B3B
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Fontes utilizadas:
+* Hind Vadodara
+* Bebas Neue
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **INTEGRANTES DA APLICACAO:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Erick Chiappone
+* Naomy Santana
+* Gustavo Carvalho
+* Renata Nunes
+* Yasmim Cristine
+* Nickole Bueno
+* Fabricio Dias
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Link com o Linkedin e GitHub de todos os participantes: <https://linktr.ee/GrupoDev2>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## :wrench: ACESSO:
+Para rodar a aplicação, acesse: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://doaqui.vercel.app/
